@@ -1,5 +1,9 @@
 import Vue, { PluginFunction } from "vue";
 
+export interface PlainObject {
+  [key: string]: any
+}
+
 export interface LoadingOption {
   /** 注册HMTL ID */
   id: string,
@@ -32,7 +36,8 @@ declare module "vue/types/vue" {
 }
 
 
-interface RuiVueLego extends PluginFunction<any> {}
+interface RuiVueLego extends PluginFunction<any> {
+}
 
 
 declare const ruiVueLego: RuiVueLego;

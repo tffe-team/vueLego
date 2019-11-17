@@ -7,6 +7,7 @@ import Icon from './icon/Icon.vue';
 import $toast from './toast/index';
 import $loading from './loading/index';
 
+import { locale } from '../locales/index'
 
 const components = [
   Icon,
@@ -15,8 +16,12 @@ const components = [
   Loading
 ];
 
-const install = function(Vue) {
+const install = function(Vue, opts: any = {}) {
   if (install['installed']) return;
+  Vue.config.lang = opts.locale || 'zh-CN';
+  if (opts.lang) {
+    locale(Vue.config.lang, opts.lang)
+  }
   components.map((component) => {
     Vue.component(component.name, component);
   });
@@ -29,8 +34,9 @@ if (typeof window !== 'undefined' && window['Vue']) {
 }
 export default {
     install,
+    locale,
     Icon,
     Dialog,
     Picker,
-    Loading
+    Loading,
 };

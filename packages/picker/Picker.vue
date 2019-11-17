@@ -4,9 +4,11 @@
 </template>
 
 <script>
-require('./picker.min.js')
+import locale from '../../mixins/locale'
+const picker = require('./picker.min.js')
 export default {
   name: "Picker",
+  mixins: [locale],
   props: {
     show: { //是否展示
       type: Boolean,
@@ -15,12 +17,12 @@ export default {
     },
     cancelTxt : { // 取消文案
       type : String,
-      default: '取消',
+      default: '',
       required: false
     },
     confirmTxt : { // 确认文案
       type : String,
-      default: '取消',
+      default: '',
       required: false
     },
     title : { //标题
@@ -117,8 +119,8 @@ export default {
         pickerData = this.formatList,
         selectedIndex = this.selectIndexs,
         pickerTitle = this.title,
-        cancelTxt = this.cancelTxt,
-        confirmTxt = this.confirmTxt;
+        cancelTxt = this.cancelTxt || this.$translate('cancel'),
+        confirmTxt = this.confirmTxt || this.$translate('confirm');
         this.picker = new Picker({
           data: pickerData,
           cancelTxt: cancelTxt,
