@@ -4,18 +4,15 @@ import zhCN from "./lang/zh-CN";
 let defaultMessages = {};
 
 let merged = false;
+
 const vueI18nHandler = function() {
   const vuei18n = Object.getPrototypeOf(this || Vue).$t;
-  // @ts-ignore
   if (typeof vuei18n === "function" && !!Vue.locale) {
     if (!merged) {
       merged = true;
-      // @ts-ignore
       Vue.locale(
-        // @ts-ignore
-        Vue.config.lang,
-        // @ts-ignore
-        Object.assign(Vue.config.lang === "zh-CN" ? zhCN : {}, Vue.locale(Vue.config.lang) || {},defaultMessages)
+        Vue.prototype.$lang,
+        Object.assign(Vue.prototype.$lang === "zh-CN" ? zhCN : {}, Vue.locale(Vue.prototype.$lang) || {}, defaultMessages)
       );
     }
     return vuei18n.apply(this, arguments);
@@ -25,9 +22,7 @@ const vueI18nHandler = function() {
 function i18n(keysStr, params) {
   let value = vueI18nHandler.apply(this, arguments);
   if (value !== null && value !== undefined) return value;
-  console.log(Vue.config.lang , 'Vue.config.lang ')
-  // @ts-ignore
-  let message = Object.assign({}, Vue.config.lang === "zh-CN" ? zhCN : {}, defaultMessages);
+  let message = Object.assign({}, Vue.prototype.$lang === "zh-CN" ? zhCN : {}, defaultMessages);
   let keys = (keysStr && keysStr.split(".")) || [];
   let result = null;
   if (keys.length) {
@@ -48,11 +43,9 @@ function i18n(keysStr, params) {
 function locale(lang, messages) {
   if (typeof lang === "object") {
     messages = lang;
-    // @ts-ignore
-    lang = Vue.config.lang;
+    lang = Vue.prototype.$lang;
   }
-  // @ts-ignore
-  Vue.config.lang = lang;
+  Vue.prototype.$lang = lang;
   Object.assign(defaultMessages, messages);
 }
 

@@ -18,9 +18,9 @@ const components = [
 
 const install = function(Vue, opts: any = {}) {
   if (install['installed']) return;
-  Vue.config.lang = opts.locale || 'zh-CN';
+  Vue.prototype.$lang = opts.locale || 'zh-CN';
   if (opts.lang) {
-    locale(Vue.config.lang, opts.lang)
+    locale(Vue.prototype.$lang, opts.lang)
   }
   components.map((component) => {
     Vue.component(component.name, component);
