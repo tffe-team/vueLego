@@ -19,7 +19,7 @@ const vueI18nHandler = function() {
   }
 };
 
-function i18n(keysStr, params) {
+function i18n(keysStr) {
   let value = vueI18nHandler.apply(this, arguments);
   if (value !== null && value !== undefined) return value;
   let message = Object.assign({}, Vue.prototype.$lang === "zh-CN" ? zhCN : {}, defaultMessages);
@@ -37,7 +37,7 @@ function i18n(keysStr, params) {
       }
     }
   }
-  return simpleTemplate(result, params);
+  return result
 }
 
 function locale(lang, messages) {
@@ -47,33 +47,6 @@ function locale(lang, messages) {
   }
   Vue.prototype.$lang = lang;
   Object.assign(defaultMessages, messages);
-}
-
-function getArgType(arg) {
-  return Object.prototype.toString
-    .call(arg)
-    .toLowerCase()
-    .match(/\s(\w+)/)[1];
-}
-
-function simpleTemplate(templ, conf) {
-  let pars = templ && templ.match(/{.+?}/g);
-  if (pars && conf) {
-    pars = pars.map(p => p.replace(/\{\s*(\w+|\d+).*?\}/, "$1"));
-    pars.forEach((c, i) => {
-      let reg = new RegExp("{\\s*" + c + "\\s*(?:=\\s*(\\S*?))?\\s*?}", "g");
-      templ = templ.replace(reg, (a, b) => {
-        return getArgType(conf[c]) == "function"
-          ? conf[c]()
-          : conf[c] !== undefined
-          ? conf[c]
-          : b
-          ? b
-          : a;
-      });
-    });
-  }
-  return templ;
 }
 
 export { i18n, locale };
