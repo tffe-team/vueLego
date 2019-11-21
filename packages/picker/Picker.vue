@@ -4,14 +4,26 @@
 </template>
 
 <script>
-import Picker from 'better-picker'
+import locale from '../../mixins/locale'
+const picker = require('./picker.min.js')
 export default {
   name: "Picker",
+  mixins: [locale],
   props: {
     show: { //是否展示
       type: Boolean,
       default: false,
       required: true
+    },
+    cancelTxt : { // 取消文案
+      type : String,
+      default: '',
+      required: false
+    },
+    confirmTxt : { // 确认文案
+      type : String,
+      default: '',
+      required: false
     },
     title : { //标题
       type : String,
@@ -106,9 +118,13 @@ export default {
       const self = this,
         pickerData = this.formatList,
         selectedIndex = this.selectIndexs,
-        pickerTitle = this.title;
+        pickerTitle = this.title,
+        cancelTxt = this.cancelTxt || this.$translate('cancel'),
+        confirmTxt = this.confirmTxt || this.$translate('confirm');
         this.picker = new Picker({
           data: pickerData,
+          cancelTxt: cancelTxt,
+          confirmTxt: confirmTxt,
 					selectedIndex: selectedIndex,
 					title: pickerTitle
         })

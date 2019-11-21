@@ -1,4 +1,9 @@
 import Vue, { PluginFunction } from "vue";
+import { VueConfiguration } from "vue/types/vue";
+
+export interface PlainObject {
+  [key: string]: any
+}
 
 export interface LoadingOption {
   /** 注册HMTL ID */
@@ -25,14 +30,18 @@ export interface ToastOption {
 }
 
 declare module "vue/types/vue" {
+  interface VueConstructor {
+    locale: Function
+  }
   interface Vue {
+    $lang: string,
     $tips: (option: ToastOption) => void,
     $toast: (option: ToastOption) => void
   }
 }
 
-
-interface RuiVueLego extends PluginFunction<any> {}
+interface RuiVueLego extends PluginFunction<any> {
+}
 
 
 declare const ruiVueLego: RuiVueLego;

@@ -14,15 +14,24 @@
         <slot></slot>
       </div>
       <footer class="ft" v-if='showOkBtn'>
-        <button class="rui-btn  rui-btn-dialog" v-if="showCancelBtn" @click='cancelCallBack' :data-event="cancelEventName">{{cancelTxt}}</button>
-        <button class="rui-btn  rui-btn-dialog" @click='okCallBack' :data-event="okEventName">{{okText}}</button>
+        <button
+          v-if="showCancelBtn"
+          @click='cancelCallBack'
+          :data-event="cancelEventName"
+          class="rui-btn rui-btn-dialog">{{cancelTxt || $translate('cancel')}}</button>
+        <button
+          @click='okCallBack'
+          :data-event="okEventName"
+          class="rui-btn rui-btn-dialog">{{okText || $translate('iKnow')}}</button>
       </footer>
     </div>
   </div>
 </template>
 <script>
+import locale from '../../mixins/locale'
 export default {
   name: 'alert',
+  mixins: [locale],
   props: {
     type : {
       type : String,
@@ -76,12 +85,12 @@ export default {
     },
     okText: {
       type : String,
-      default: '我知道了',
+      default: '',
       required: false
     },
     cancelTxt: {
       type: String,
-      default: '取消',
+      default: '',
       required: false
     }
   },
