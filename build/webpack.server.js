@@ -10,7 +10,9 @@ module.exports = {
   entry: './examples/main.ts',
   output: {
     path: resolve('../dist'),
-    filename: '[name].js'
+    publicPath : "/",
+    filename: '[name].js',
+    chunkFilename: '[name].js'
   },
   resolve: {
     extensions: ['.js', '.vue', '.ts', '.json'],
@@ -23,6 +25,7 @@ module.exports = {
     contentBase: path.join(__dirname, "../dist"),
     compress: true,
     port: 9000,
+    historyApiFallback:true,
     watchOptions: {
       poll: 1000,
     },

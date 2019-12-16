@@ -5,47 +5,32 @@
    </header>
    <div class="flex bd">
       <ul class="rui-list">
-        <li class="item title">
-           <div class="label flex">弹层</div>
+        <li class="item  title" >
+          <div class="label flex">基础组件</div>
         </li>
-        <li class="item" @click="errorDialog">
-          <div class="label flex">错误弹层</div>
-          <div class="label"><i class="rui-ico">&#xe904;</i></div>
-        </li>
-        <li class="item" @click="successDialog">
-          <div class="label flex">成功弹层</div>
-          <div class="label"><i class="rui-ico">&#xe904;</i></div>
-        </li>
-        <li class="item" @click="infoDialog">
-          <div class="label flex">提示弹层</div>
-          <div class="label"><i class="rui-ico">&#xe904;</i></div>
-        </li>
-         <li class="item" @click="confirmDialog">
-          <div class="label flex">确认弹层</div>
+        <li class="item">
+          <div class="label flex">Button按钮</div>
           <div class="label"><i class="rui-ico">&#xe904;</i></div>
         </li>
         <li class="item title">
-           <div class="label flex">loading</div>
+          <div class="label flex">反馈组件</div>
         </li>
-        <li class="item" @click="loading">
-          <div class="label flex">常规loading</div>
+        <router-link tag="li" class="item" to="/dialog">
+          <div class="label flex">Dialog弹层</div>
           <div class="label"><i class="rui-ico">&#xe904;</i></div>
-        </li>
-        <li class="item title">
-          <div class="label flex">提醒弹层</div>
-        </li>
-        <li class="item" @click="tips">
-          <div class="label flex">常规提醒弹层</div>
+        </router-link>
+       <router-link tag="li" class="item" to="/tips">
+          <div class="label flex">Tips弱提醒</div>
           <div class="label"><i class="rui-ico">&#xe904;</i></div>
-        </li>
-        <li class="item" @click="failTips">
-          <div class="label flex">失败醒弹层</div>
+        </router-link>
+          <router-link tag="li" class="item" to="/totast">
+          <div class="label flex">Totast通知</div>
           <div class="label"><i class="rui-ico">&#xe904;</i></div>
-        </li>
-        <li class="item" @click="sucessTips">
-          <div class="label flex">成功提醒弹层</div>
+        </router-link>
+        <!-- <li class="item title" @click="successDialog">
+          <div class="label flex">表单组件</div>
           <div class="label"><i class="rui-ico">&#xe904;</i></div>
-        </li>
+        </li> -->
       </ul>
    </div>
  </div>

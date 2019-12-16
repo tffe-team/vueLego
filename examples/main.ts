@@ -8,7 +8,6 @@ import lego from '../packages/'
 // import lego from '../dist/rui-vue-lego.min.js'
 
 Vue.use(lego)
-// 合并svg
 new Vue({
   router,
   render: (h: any) => h(App),
