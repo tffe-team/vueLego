@@ -1,4 +1,4 @@
-.m-lego-dialog {
+.vue-lego-dialog {
   .rui-dialog {
     padding-top: 0;
     .bd {
@@ -64,6 +64,11 @@
     }
     .sucess{
       background-color: #42C905;
+      color: #fff;
+      font-size: .18rem;
+    }
+    .info{
+      background-color: #508CF0;
       color: #fff;
       font-size: .18rem;
     }

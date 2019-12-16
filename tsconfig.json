@@ -1,11 +1,16 @@
 {
   "compilerOptions": {
-      "target": "es5",
+      "target": "esnext",
+      "strict": true,
+      "noEmit": false,
       "module": "esnext",
       "moduleResolution": "node",
+      "esModuleInterop": true,
       "jsx": "preserve",
       "jsxFactory": "h",
       "allowSyntheticDefaultImports": true,
+      "suppressImplicitAnyIndexErrors": true,
+      "strictNullChecks": false,
       "sourceMap": true,
       "baseUrl": "./example",
       "alwaysStrict": true,
@@ -32,5 +37,5 @@
     "packages/**/*.vue",
     "packages/**/*.md"
   ],
-  "exclude": ["./dist", "./static"]
+  "exclude": ["./dist", "./static", "node_modules"]
 }

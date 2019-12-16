@@ -6,7 +6,11 @@
         "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
       }
     }],
-    "stage-0"
+    "stage-3"
   ],
-  "plugins": ["transform-runtime", "transform-vue-jsx"]
+  "plugins": ["transform-vue-jsx",
+    "babel-plugin-transform-runtime",
+    "babel-plugin-transform-es2015-modules-commonjs"]
 }
+
+

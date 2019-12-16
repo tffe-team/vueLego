@@ -13,7 +13,7 @@ const defaultProps: LoadingOption = {
 }
 
 
-let loadingInstance = null
+let loadingInstance: any = null
 const LoadingConstructor = Vue.extend(Loading)
 
 
@@ -31,7 +31,7 @@ LoadingConstructor.prototype.hide = function() {
   if(!this.visible) return
   this.instance = null
   this.visible = false
-  const loadingEl = document.getElementById(defaultProps.id)
+  const loadingEl: any = document.getElementById(defaultProps.id)
   document.body.removeChild(loadingEl)
 }
 

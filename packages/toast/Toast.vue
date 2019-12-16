@@ -1,35 +1,28 @@
 <template>
-  <transition name="toast">
-    <div :class="['m-toast', 'rui-toast', 'rui-toast-common', {'rui-toast-hasIcon' : type === 'icon'}]" v-show="visible">
-      <div class="icon-box" v-if="type === 'icon'">
-        <Icon class="icon" iconClass="toast-succ" v-if="isSuccess"/>
-        <Icon class="icon" iconClass="toast-fail" v-else/>
-      </div>
-      <div>{{msg}}</div>
+  <div :class="['m-toast', 'rui-toast', 'rui-toast-common', {'rui-toast-hasIcon' : iconName !== ''}]" v-show="visible">
+    <div class="icon-box" > 
+      <i class="icon rui-ico" v-if="iconName==='success'">&#xe60b;</i>
+      <i class="icon rui-ico" v-if="iconName==='fail'">&#xe90b;</i>
     </div>
-  </transition>
+    <div>{{msg}}</div>
+  </div>
 </template>
 <script>
 export default {
   name: 'Toast',
   props: {
+    iconName : {
+      type : String,
+      required: false
+    },
     msg : {
       type : String,
       required: true
-    },
-    visible: {
-      type: Boolean,
-      required: true
-    },
-    type : {
-      type : String,
-      default: 'txt',
-      required: false
-    },
-    isSuccess : {
-      type : Boolean,
-      default: false,
-      required: false
+    }
+  },
+  data() {
+    return {
+       visible : this.value
     }
   }
 }
