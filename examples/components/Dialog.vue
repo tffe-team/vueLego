@@ -23,8 +23,12 @@
           <div class="label flex">提示弹层</div>
           <div class="label"><i class="rui-ico">&#xe904;</i></div>
         </li>
-         <li class="item" @click="confirmDialog">
+        <li class="item" @click="confirmDialog">
           <div class="label flex">确认弹层</div>
+          <div class="label"><i class="rui-ico">&#xe904;</i></div>
+        </li>
+        <li class="item" @click="renderDialog">
+          <div class="label flex">render弹层</div>
           <div class="label"><i class="rui-ico">&#xe904;</i></div>
         </li>
       </ul>
@@ -74,6 +78,28 @@ export default class Dialog extends Vue {
       okText: '确定',
       onOk: function () {
         console.log('确认窗口')
+      }
+    })
+  }
+  renderDialog() {
+    this.$dialog.confirm({
+      title: 'render弹层',
+      content: '内容没有保存，确定退出吗？',
+      render: function (h) {
+        return h('div', {
+          class: ['render-wrap'],
+          style: {
+            height: '40px',
+            maxHeight: '150px',
+            overflow: 'scroll'
+          }
+        },[
+          h('strong', 'render内容展示：render会覆盖content参数传递的文本值')
+        ], 'asda')
+      },
+      okText: '确定',
+      onOk:  () => {
+        this.confirmDialog()
       }
     })
   }
