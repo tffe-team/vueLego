@@ -6,13 +6,6 @@
    <div class="flex bd">
       <ul class="rui-list">
         <li class="item title">
-           <div class="label flex">loading</div>
-        </li>
-        <li class="item" @click="loading">
-          <div class="label flex">常规loading</div>
-          <div class="label"><i class="rui-ico">&#xe904;</i></div>
-        </li>
-        <li class="item title">
           <div class="label flex">提醒弹层</div>
         </li>
         <li class="item" @click="tips">
@@ -44,17 +37,17 @@ export default class Tips extends Vue {
     this.$router.go(-1)
   }
   failTips() {
-    this.$toast.fail({
+    this.$tips.fail({
       msg: '失败'
     })
   }
   sucessTips() {
-    this.$toast.success({
+    this.$tips.success({
       msg: '成功'
     })
   }
   tips() {
-    this.$toast({
+    this.$tips({
       msg: '测试'
     })
   }

@@ -41,7 +41,7 @@ import {Component, Vue, Prop} from 'vue-property-decorator'
 import {Action, Getter} from 'vuex-class'
 @Component
 export default class Welcome extends Vue {
-  title = '列表页'
+  title = 'rui-vue-lego'
   list: Array<any> = []
   mounted() {
   }
@@ -83,7 +83,7 @@ export default class Welcome extends Vue {
     })
   }
   loading() {
-     this.$loading.show()
+    this.$loading.show()
     setTimeout(() => {
       this.$loading.hide()
     }, 1000)

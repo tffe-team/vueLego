@@ -4,7 +4,7 @@ import Loading from './loading/Loading.vue'
 import Picker from './picker/Picker.vue'
 import Icon from './icon/Icon.vue'
 
-import $toast from './toast/index'
+import $tips from './tips/index'
 import $loading from './loading/index'
 
 const components = [
@@ -19,7 +19,7 @@ const install = function(Vue) {
   components.map((component) => {
     Vue.component(component.name, component);
   });
-  Vue.prototype.$toast = $toast
+  Vue.prototype.$tips = $tips
   Vue.prototype.$loading = $loading
   Vue.prototype.$dialog = Dialog
 };
