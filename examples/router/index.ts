@@ -5,6 +5,7 @@ Vue.use(Router)
 const Index = () => import('@/components/Index.vue')
 const Tips = () => import('@/components/Tips.vue')
 const Dialog = () => import('@/components/Dialog.vue')
+const Buttons = () => import('@/components/Buttons.vue')
 export default new Router({
   mode: 'history',
   routes: [
@@ -12,6 +13,11 @@ export default new Router({
       path: '/',
       component: Index,
       name: 'index'
+    },
+    {
+      path: '/buttons',
+      component: Buttons,
+      name: 'buttons'
     },
     {
       path: '/tips',
