@@ -1,10 +1,10 @@
 <template>
-  <div :class="['m-toast', 'rui-toast', 'rui-toast-common', {'rui-toast-hasIcon' : iconName !== ''}]" v-show="visible">
+  <div :class="['r-vue-lego-tips', 'rui-toast', 'rui-toast-vue-lego']" v-show="visible">
     <div class="icon-box" > 
-      <i class="icon rui-ico" v-if="iconName==='success'">&#xe60b;</i>
-      <i class="icon rui-ico" v-if="iconName==='fail'">&#xe90b;</i>
+      <i class="rui-ico icon" v-if="iconName==='success'">&#xe60b;</i>
+      <i class="rui-ico icon" v-if="iconName==='fail'">&#xe90b;</i>
     </div>
-    <div>{{msg}}</div>
+    <div class="message">{{message}}</div>
   </div>
 </template>
 <script>
@@ -15,14 +15,14 @@ export default {
       type : String,
       required: false
     },
-    msg : {
+    message : {
       type : String,
       required: true
     }
   },
   data() {
     return {
-       visible : this.value
+      visible : this.value
     }
   }
 }

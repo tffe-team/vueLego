@@ -1,2 +1,11 @@
 @charset "utf-8";
-// @import "../../../node_modules/ruicss/sass/index.scss";
+@charset "utf-8";
+$base: (
+    font-path: "~ruicss/sass/font/",
+);
+@import "ruicss/sass/index.scss";
+@include rui-toast(
+    $name:"vue-lego",
+){
+  min-width: 1.5rem;
+};
