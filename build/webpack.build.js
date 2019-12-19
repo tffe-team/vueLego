@@ -1,9 +1,9 @@
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const webpack = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-function resolve (dir) {
+
+function resolve(dir) {
   return path.join(__dirname, dir);
 }
 module.exports = {
@@ -21,16 +21,16 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.vue', '.ts', '.json'],
     alias: {
-        'vue': 'vue/dist/vue.esm.js',
-        '@': resolve('../packages')
+      'vue': 'vue/dist/vue.esm.js',
+      '@': resolve('../packages')
     }
   },
   externals: {
     vue: {
-        root: 'Vue',
-        commonjs: 'vue',
-        commonjs2: 'vue',
-        umd: 'vue'
+      root: 'Vue',
+      commonjs: 'vue',
+      commonjs2: 'vue',
+      umd: 'vue'
     }
   },
   plugins: [
@@ -38,67 +38,67 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'rui-vue-lego.css'
     }),
-    // new UglifyJsPlugin({
-    //   parallel: true,
-    //   sourceMap: true
-    // })
+    new UglifyJsPlugin({
+      cache: true,
+      parallel: true,
+      sourceMap: true,
+      uglifyOptions: {
+        output: {
+          comments: false,
+        }
+      }
+    })
   ],
   module: {
-    rules: [
-      {
-        // test: /\.vue$/,
-        // loader: 'vue-loader'
+    rules: [{
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
-            loaders: {
-                css: [
-                    'vue-style-loader',
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            sourceMap: true,
-                        },
-                    },
-                ],
-                less: [
-                    'vue-style-loader',
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            sourceMap: true,
-                        },
-                    },
-                    {
-                        loader: 'less-loader',
-                        options: {
-                            sourceMap: true,
-                        },
-                    },
-                ],
-            },
-            postLoaders: {
-                html: 'babel-loader?sourceMap'
-            },
-            sourceMap: true,
+          loaders: {
+            css: [
+              'vue-style-loader',
+              {
+                loader: 'css-loader',
+                options: {
+                  sourceMap: true,
+                },
+              },
+            ],
+            less: [
+              'vue-style-loader',
+              {
+                loader: 'css-loader',
+                options: {
+                  sourceMap: true,
+                },
+              },
+              {
+                loader: 'less-loader',
+                options: {
+                  sourceMap: true,
+                },
+              },
+            ],
+          },
+          postLoaders: {
+            html: 'babel-loader?sourceMap'
+          },
+          sourceMap: true,
         }
       },
-      
+
       {
         test: /\.(js|jsx|es6)$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
-        // query: {
-        //   presets: ["babel-preset-env"]
-        // }
         include: [resolve('../packages'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
       },
       {
         test: /\.css$/,
-         use: [
-          process.env.NODE_ENV !== 'production'
-            ? 'vue-style-loader'
-            : MiniCssExtractPlugin.loader,
+        use: [
+          process.env.NODE_ENV !== 'production' ?
+          'vue-style-loader' :
+          MiniCssExtractPlugin.loader,
           'css-loader'
         ]
       },
@@ -121,9 +121,10 @@ module.exports = {
       {
         test: /\.ts$/,
         loader: 'ts-loader',
-        options: { 
+        options: {
           transpileOnly: true,
-          appendTsSuffixTo: [/\.vue$/] }
+          appendTsSuffixTo: [/\.vue$/]
+        }
       }
     ]
   }

@@ -16,7 +16,6 @@ DialogComponent.newInstance = properties => {
   const onOk = _props.onOk
   const onCancel = _props.onCancel 
   const onRemove = _props.onRemove 
-
   delete _props.onOk
   delete _props.onCancel
   delete _props.onRemove

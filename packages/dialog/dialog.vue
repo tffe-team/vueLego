@@ -13,8 +13,8 @@
             <i v-if="iconName === 'success'" class="rui-ico circle-bg sucess">&#xe90a;</i>
             <i v-if="iconName === 'error'" class="rui-ico circle-bg">&#xe90b;</i>
         </h2>
-        <div>{{content}}</div>
-        <slot></slot> 
+        <contentRender v-if="render" :render="render" />
+        <div v-else>{{content}}</div>
       </div>
       <footer class="ft" v-if='!footerHide'>
         <button class="rui-btn  rui-btn-dialog" v-if="showCancel" @click='cancle'>{{cancelText}}</button>
@@ -24,6 +24,8 @@
   </div>
 </template>
 <script>
+
+import contentRender from './contentRender'
 export default {
   name: 'r-dialog',
   props: {
@@ -59,6 +61,12 @@ export default {
       type: Boolean,
       default: false
     },
+    render: {
+      type: Function
+    }
+  },
+  components: {
+    contentRender
   },
   data () {
     return {

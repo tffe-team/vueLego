@@ -1,0 +1,145 @@
+$default-bgcolor: #fff;
+$default-color: #333;
+$default-font-size: .13rem;
+
+$primary-bgcolor: #3790ff;
+$primary-color: #fff;
+
+$success-bgcolor: #05D380;
+$success-color: #fff;
+
+$plain-bgcolor: #fff;
+
+$round-radius: .17rem;
+
+$prefix: ".vue-lego-button";
+
+@keyframes loading {
+  from { transform: rotate(0deg);}
+  50%  { transform: rotate(180deg);}
+  to   { transform: rotate(360deg);}
+}
+
+.vue-lego-button {
+  font-size: $default-font-size;
+  color: $default-color;
+  height: .32rem;
+  line-height: .32rem;
+  background-color: $default-bgcolor;
+  padding: .0 .1rem;
+  &::after {
+    border-color: #ccc;
+    box-sizing: border-box;
+  }
+  &:active {
+    &::after {
+      border-color: #ccc;
+    }
+    color: #000;
+    background-color: rgba($color: #000, $alpha: .1);
+  }
+  &-primary {
+    color: $primary-color;
+    background-color: $primary-bgcolor;
+    &::after {
+      border-color: $primary-bgcolor;
+    }
+    &:active {
+      color: $primary-color;
+      background-color: rgba($color: $primary-bgcolor, $alpha: .8);
+    }
+  }
+  &-success {
+    color: $success-color;
+    background-color: $success-bgcolor;
+    &::after {
+      border-color: $success-bgcolor;
+    }
+    &:active {
+      color: $success-color;
+      background-color: rgba($color: $success-bgcolor, $alpha: .8);
+    }
+  }
+  &-plain {
+    background-color: $plain-bgcolor;
+    &.vue-lego-button-primary {
+      color: $primary-bgcolor;
+      &:active {
+        color: $primary-bgcolor;
+        background-color: rgba($color: #000, $alpha: .1);
+      }
+    }
+    &.vue-lego-button-success {
+      color: $success-bgcolor;
+      &:active {
+        color: $success-bgcolor;
+        background-color: rgba($color: #000, $alpha: .1);
+      }
+    }
+  }
+  &-disabled {
+    touch-action: none;
+    color: rgba($color: $default-color, $alpha: .5);
+    &#{$prefix}-primary {
+      &::after {
+        border-color: rgba($color: #3790FF, $alpha: .5);;
+      }
+      color: rgba($color: $primary-color, $alpha: .5);
+      background-color: rgba($color: #3790FF, $alpha: .5);
+    }
+    &#{$prefix}-primary#{$prefix}-plain {
+      color: rgba($color: $primary-bgcolor, $alpha: .5);
+      background-color: $default-bgcolor;
+    }
+
+    &#{$prefix}-success {
+      &::after {
+        border-color: rgba($color: #05d380, $alpha: .8);
+      }
+      background-color: linear-gradient(-90deg, rgba($color: #05d380, $alpha: .8) 0%, rgba($color: #00c475, $alpha: 1));
+      color: #c0f2de;
+    }
+    &#{$prefix}-success#{$prefix}-plain {
+      color: rgba($color: $success-bgcolor, $alpha: .5);
+      background-color: $default-bgcolor;
+    }
+  }
+  &-round {
+    border-radius: $round-radius;
+    &::after {
+      @include responsive(retina1x) {
+        border-radius: $round-radius * 1;
+      }
+      @include responsive(retina2x) {
+        border-radius: $round-radius * 2;
+      }
+      @include responsive(retina3x) {
+        border-radius: $round-radius * 3;
+      }
+    }
+  }
+  &-long {
+    width: 100%;
+    display: block;
+  }
+  &-loading {
+    touch-action: none;
+    .rui-ico {
+      display: inline-block;
+      transform-origin: center center;      
+      animation: loading 1s infinite linear;
+    }
+  }
+  &-large {
+    width: 100%;
+    display: block;
+    height: .44rem;
+    font-size: .17rem;
+    line-height: .44rem;
+  }
+  &-medium {
+    padding: 0 .27rem;
+  }
+  
+
+}

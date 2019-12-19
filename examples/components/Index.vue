@@ -8,10 +8,10 @@
         <li class="item  title" >
           <div class="label flex">基础组件</div>
         </li>
-        <li class="item">
+        <router-link tag="li" class="item" to="/buttons">
           <div class="label flex">Button按钮</div>
           <div class="label"><i class="rui-ico">&#xe904;</i></div>
-        </li>
+        </router-link>
         <li class="item title">
           <div class="label flex">反馈组件</div>
         </li>
@@ -23,7 +23,7 @@
           <div class="label flex">Tips弱提醒</div>
           <div class="label"><i class="rui-ico">&#xe904;</i></div>
         </router-link>
-          <router-link tag="li" class="item" to="/totast">
+        <router-link tag="li" class="item" to="/totast">
           <div class="label flex">Totast通知</div>
           <div class="label"><i class="rui-ico">&#xe904;</i></div>
         </router-link>
