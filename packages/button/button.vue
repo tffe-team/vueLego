@@ -1,6 +1,8 @@
 <template>
   <button :class="classes" :disabled="disabled" @click="tapButton">
-    <i v-if="loading" class="rui-ico">&#xe909;</i>
+    <div v-if="loading" class="loading-container">
+      <div class="loading-wheel"></div>
+    </div>
     <slot></slot>
   </button>
 </template>
@@ -14,17 +16,13 @@ export default {
       type: String,
       default: 'default'
     },
-    plain: {
-      type: Boolean,
-      default: false
-    },
     disabled: {
       type: Boolean,
       default: false
     },
-    round: {
-      type: Boolean,
-      default: false
+    shape: {
+      type: String,
+      default: 'normal'
     },
     long: {
       type: Boolean,
@@ -41,19 +39,18 @@ export default {
   },
   computed: {
     classes () {
-      const baseClass = 'rui-btn'
-      const classPrefix = 'vue-lego-button'
+      const baseClass = 'r-vue-lego-button'
+      const classPrefix = 'rui-btn'
       return [
         baseClass,
         classPrefix,
         `${classPrefix}-${this.type}`,
         {
-          [`${classPrefix}-plain`]: this.plain,
-          [`${classPrefix}-disabled`]: this.disabled,
-          [`${classPrefix}-round`]: this.round,
           [`${classPrefix}-long`]: this.long,
           [`${classPrefix}-loading`]: this.loading,
+          [`${classPrefix}-disabled`]: this.disabled,
           [`${classPrefix}-${this.size}`]: this.size !== 'normal',
+          [`${classPrefix}-${this.shape}`]: this.shape !== 'normal',
         }
       ]
     }
@@ -65,3 +62,11 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.r-vue-lego-button {
+  &::after {
+    box-sizing: border-box; // FIXME:
+  }
+}
+</style>

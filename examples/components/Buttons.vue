@@ -8,54 +8,34 @@
       <ul class="rui-list">
         <li class="item title">按钮类型</li>
         <div class="btns-wrap">
-          <r-button>默认按钮</r-button>
-          <r-button type="primary">主要按钮</r-button>
-          <r-button type="success">成功按钮</r-button>
-        </div>
-        <li class="item title">朴素按钮</li>
-        <div class="btns-wrap">
-          <r-button plain>默认按钮</r-button>
-          <r-button plain type="primary">主要按钮</r-button>
-          <r-button plain type="success">成功按钮</r-button>
+          <r-button>default</r-button>
+          <r-button type="primary">primary</r-button>
+          <r-button type="success">success</r-button>
+          <r-button type="primary-ghost">primary-ghost</r-button>
+          <r-button type="success-ghost">success-ghost</r-button>
         </div>
         <li class="item title">禁用按钮</li>
         <div class="btns-wrap">
-          <r-button disabled>默认按钮</r-button>
-          <r-button disabled type="primary">主要按钮</r-button>
-          <r-button disabled type="success">成功按钮</r-button>
-          <r-button disabled plain type="primary">主要按钮</r-button>
-          <r-button disabled plain type="success">成功按钮</r-button>
+          <r-button disabled>default</r-button>
+          <r-button disabled type="primary">primary</r-button>
+          <r-button disabled type="success">success</r-button>
+          <r-button disabled type="primary-ghost">primary-ghost</r-button>
+          <r-button disabled type="success-ghost">success-ghost</r-button>
         </div>
-        <li class="item title">圆角按钮</li>
+        <li class="item title">形状按钮</li>
         <div class="btns-wrap">
-          <r-button round>默认按钮</r-button>
-          <r-button round type="primary">主要按钮</r-button>
-          <r-button round type="success">成功按钮</r-button>
-          <r-button round plain type="primary">主要按钮</r-button>
-          <r-button round plain type="success">成功按钮</r-button>
-        </div>
-        <li class="item title">长按钮</li>
-        <div class="btns-wrap">
-          <r-button long>默认按钮</r-button>
-          <r-button long type="primary">主要按钮</r-button>
-          <r-button long type="success">成功按钮</r-button>
-          <r-button long plain type="primary">主要按钮</r-button>
-          <r-button long plain type="success">成功按钮</r-button>
-          <r-button long plain round type="success">成功按钮</r-button>
-        </div>
-        <li class="item title">加载状态</li>
-        <div class="btns-wrap">
-          <r-button loading long>加载状态</r-button>
+          <r-button shape="round" type="primary">椭圆按钮</r-button>
+          <r-button shape="round" type="success-ghost">椭圆按钮</r-button>
         </div>
         <li class="item title">按钮尺寸</li>
         <div class="btns-wrap">
-          <r-button size="large">large按钮</r-button>
-          <r-button size="medium">medium按钮</r-button>
-          <r-button type="primary" plain round size="medium">medium按钮</r-button>
+          <r-button shape="round" size="large">large按钮</r-button>
+          <r-button size="long">long按钮</r-button>
+          <r-button type="primary" size="medium">medium按钮</r-button>
         </div>
-        <li class="item title">事件绑定</li>
+        <li class="item title">加载状态</li>
         <div class="btns-wrap">
-          <r-button @click="clickBtn" size="medium">medium按钮</r-button>
+          <r-button type="primary-ghost" loading>加载状态</r-button>
         </div>
       </ul>
     </div>

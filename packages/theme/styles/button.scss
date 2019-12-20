@@ -1,145 +1,182 @@
-$default-bgcolor: #fff;
-$default-color: #333;
+
+$default-height: .32rem;
+$default-padding: 0 .27rem;
 $default-font-size: .13rem;
 
-$primary-bgcolor: #3790ff;
-$primary-color: #fff;
+$default-color: #333;
+$default-bgcolor: #fff;;
+$default-active-bgcolor: #dedede;
+$default-border-color: #dcdee2;
 
-$success-bgcolor: #05D380;
+$primary-color: #fff;
+$primary-bgcolor: #3790ff;
+$primary-ghost-color: #3790ff;
+
 $success-color: #fff;
+$success-bgcolor: #01c777;
+$success-ghost-color: #01c777;
 
 $plain-bgcolor: #fff;
-
 $round-radius: .17rem;
 
-$prefix: ".vue-lego-button";
+$medium-padding: 0 .5rem;
 
-@keyframes loading {
-  from { transform: rotate(0deg);}
-  50%  { transform: rotate(180deg);}
-  to   { transform: rotate(360deg);}
+$large-height: .44rem;
+$large-font-size: .17rem;
+
+$loading-size: .13rem;
+
+@keyframes loading-spin {
+  100% {
+    transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 
-.vue-lego-button {
-  font-size: $default-font-size;
-  color: $default-color;
-  height: .32rem;
-  line-height: .32rem;
-  background-color: $default-bgcolor;
-  padding: .0 .1rem;
-  &::after {
-    border-color: #ccc;
-    box-sizing: border-box;
+@include rui-btn(
+  $name: "default",
+  $color: $default-color,
+  $height: $default-height,
+  $padding: $default-padding,
+  $bgcolor: $default-bgcolor,
+  $active-bgcolor: $default-active-bgcolor,
+  $border-color: $default-border-color,
+  $active-border-color: $default-border-color,
+  $font-size: $default-font-size,
+){
+  &.rui-btn-loading .loading-wheel {
+    border: 1px solid $default-color;
+    border-left-color: transparent;
+    border-right-color: transparent;
   }
-  &:active {
-    &::after {
-      border-color: #ccc;
-    }
-    color: #000;
-    background-color: rgba($color: #000, $alpha: .1);
-  }
-  &-primary {
-    color: $primary-color;
-    background-color: $primary-bgcolor;
-    &::after {
-      border-color: $primary-bgcolor;
-    }
-    &:active {
-      color: $primary-color;
-      background-color: rgba($color: $primary-bgcolor, $alpha: .8);
-    }
-  }
-  &-success {
-    color: $success-color;
-    background-color: $success-bgcolor;
-    &::after {
-      border-color: $success-bgcolor;
-    }
-    &:active {
-      color: $success-color;
-      background-color: rgba($color: $success-bgcolor, $alpha: .8);
-    }
-  }
-  &-plain {
-    background-color: $plain-bgcolor;
-    &.vue-lego-button-primary {
-      color: $primary-bgcolor;
-      &:active {
-        color: $primary-bgcolor;
-        background-color: rgba($color: #000, $alpha: .1);
-      }
-    }
-    &.vue-lego-button-success {
-      color: $success-bgcolor;
-      &:active {
-        color: $success-bgcolor;
-        background-color: rgba($color: #000, $alpha: .1);
-      }
-    }
-  }
-  &-disabled {
-    touch-action: none;
-    color: rgba($color: $default-color, $alpha: .5);
-    &#{$prefix}-primary {
-      &::after {
-        border-color: rgba($color: #3790FF, $alpha: .5);;
-      }
-      color: rgba($color: $primary-color, $alpha: .5);
-      background-color: rgba($color: #3790FF, $alpha: .5);
-    }
-    &#{$prefix}-primary#{$prefix}-plain {
-      color: rgba($color: $primary-bgcolor, $alpha: .5);
-      background-color: $default-bgcolor;
-    }
+};
 
-    &#{$prefix}-success {
-      &::after {
-        border-color: rgba($color: #05d380, $alpha: .8);
-      }
-      background-color: linear-gradient(-90deg, rgba($color: #05d380, $alpha: .8) 0%, rgba($color: #00c475, $alpha: 1));
-      color: #c0f2de;
-    }
-    &#{$prefix}-success#{$prefix}-plain {
-      color: rgba($color: $success-bgcolor, $alpha: .5);
-      background-color: $default-bgcolor;
-    }
+@include rui-btn(
+  $name: "primary",
+  $color: $primary-color,
+  $height: $default-height,
+  $padding: $default-padding,
+  $bgcolor: $primary-bgcolor,
+  $font-size: $default-font-size,
+  $border-color: $primary-bgcolor,
+  $border-width: 0,
+  $active-border-color: rgba($color: $primary-bgcolor, $alpha: .8),
+  $active-bgcolor: rgba($color: $primary-bgcolor, $alpha: .8)
+){
+  &.rui-btn-loading .loading-wheel {
+    border: 1px solid $primary-color;
+    border-left-color: transparent;
+    border-right-color: transparent;
   }
-  &-round {
-    border-radius: $round-radius;
-    &::after {
-      @include responsive(retina1x) {
-        border-radius: $round-radius * 1;
-      }
-      @include responsive(retina2x) {
-        border-radius: $round-radius * 2;
-      }
-      @include responsive(retina3x) {
-        border-radius: $round-radius * 3;
-      }
-    }
-  }
-  &-long {
-    width: 100%;
-    display: block;
-  }
-  &-loading {
-    touch-action: none;
-    .rui-ico {
-      display: inline-block;
-      transform-origin: center center;      
-      animation: loading 1s infinite linear;
-    }
-  }
-  &-large {
-    width: 100%;
-    display: block;
-    height: .44rem;
-    font-size: .17rem;
-    line-height: .44rem;
-  }
-  &-medium {
-    padding: 0 .27rem;
-  }
-  
+};
 
-}
+
+@include rui-btn(
+  $name: "primary-ghost",
+  $color: $primary-ghost-color,
+  $height: $default-height,
+  $padding: $default-padding,
+  $bgcolor: $default-bgcolor,
+  $font-size: $default-font-size,
+  $border-color: $primary-bgcolor,
+  $active-border-color: rgba($color: $primary-bgcolor, $alpha: .8),
+  $active-bgcolor: rgba($color: $primary-bgcolor, $alpha: .8)
+){
+  &.rui-btn-loading .loading-wheel {
+    border: 1px solid $primary-ghost-color;
+    border-left-color: transparent;
+    border-right-color: transparent;
+  }
+};
+
+@include rui-btn(
+  $name: "success",
+  $color: $success-color,
+  $height: $default-height,
+  $padding: $default-padding,
+  $bgcolor: $success-bgcolor,
+  $font-size: $default-font-size,
+  $border-color: $success-bgcolor,
+  $border-width: 0,
+  $active-border-color: rgba($color: $success-bgcolor, $alpha: .8),
+  $active-bgcolor: rgba($color: $success-bgcolor, $alpha: .8)
+){
+  &.rui-btn-loading .loading-wheel {
+    border: 1px solid $success-color;
+    border-left-color: transparent;
+    border-right-color: transparent;
+  }
+};
+
+@include rui-btn(
+  $name: "success-ghost",
+  $color: $success-ghost-color,
+  $height: $default-height,
+  $padding: $default-padding,
+  $bgcolor: $default-bgcolor,
+  $font-size: $default-font-size,
+  $border-color: $success-bgcolor,
+  $active-border-color: rgba($color: $success-bgcolor, $alpha: .8),
+  $active-bgcolor: opacify($color:$success-bgcolor, $amount: 0.8)
+){
+  &.rui-btn-loading .loading-wheel {
+    border: 1px solid $success-ghost-color;
+    border-left-color: transparent;
+    border-right-color: transparent;
+  }
+};
+
+@include rui-btn(
+  $name: "round",
+  $radius: $round-radius
+);
+
+@include rui-btn(
+  $name: "long",
+  $width: 100%
+);
+
+@include rui-btn(
+  $name: "large",
+  $width: 100%,
+  $font-size: $large-font-size,
+  $height: $large-height,
+){
+  &.rui-btn-round::after {
+    @include responsive(retina1x) {
+      border-radius: $large-height * 1;
+    }
+    @include responsive(retina2x) {
+      border-radius: $large-height * 2;
+    }
+    @include responsive(retina3x) {
+      border-radius: $large-height * 3;
+    }
+  }
+};
+
+@include rui-btn(
+  $name: "medium",
+  $padding: $medium-padding
+);
+
+@include rui-btn(
+  $name: "loading"
+){
+  cursor: not-allowed;
+  touch-action: none;
+  .loading-container{
+    display: inline-block;
+    height: $loading-size;
+  }
+  .loading-wheel {
+    width: $loading-size;
+    height: $loading-size;
+    margin: 0 auto;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    animation: loading-spin 690ms infinite linear;
+  }
+};
