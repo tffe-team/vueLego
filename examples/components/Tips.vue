@@ -38,17 +38,17 @@ export default class Tips extends Vue {
   }
   failTips() {
     this.$tips.fail({
-      msg: '失败'
+      message: '失败'
     })
   }
   sucessTips() {
     this.$tips.success({
-      msg: '成功'
+      message: '成功'
     })
   }
   tips() {
-    this.$tips({
-      msg: '测试'
+    this.$tips.info({
+      message: '测试'
     })
   }
 }

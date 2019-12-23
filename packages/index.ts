@@ -8,6 +8,7 @@ import { InstallOption } from '../typings/lego'
 
 import $tips from './tips/index'
 import $loading from './loading/index'
+import $toast from './toast'
 
 const components = [
   Icon,
@@ -25,6 +26,7 @@ const install = function(Vue, options: InstallOption = {}) {
   Vue.prototype.$tips = $tips
   Vue.prototype.$loading = $loading
   Vue.prototype.$dialog = Dialog
+  Vue.prototype.$toast = $toast
   Vue.prototype.$LEGO = {
     theme: options.theme ? options.theme : options.theme,
     toast: {

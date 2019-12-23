@@ -1,9 +1,6 @@
 import Vue from 'vue'
 import Tips from './Tips.vue'
-// import { whichTransitionEvent } from '../utils/index'
 import { ToastOption } from '../../typings/lego'
-// import { prototype } from 'events'
-// import { setTimeout } from 'timers'
 
 let tipstInstance
 
@@ -27,18 +24,18 @@ const $tips = properties => {
   }
   const Instance = new Vue({
     data: Object.assign(_props, {
-      duration: 1000
+      duration: 3000
     }),
     mounted() {
       this.close()
     },
     methods: {
       close() {
-        timer = setTimeout(() => {
-          this.$children[0].visible = false
-          this.remove()
-          onClose()
-        }, this.duration)
+        // timer = setTimeout(() => {
+        //   this.$children[0].visible = false
+        //   this.remove()
+        //   onClose()
+        // }, this.duration)
        
       },
       remove() {
@@ -82,7 +79,6 @@ const $tips = properties => {
   }
 }
 
-
 function getToastInstance(options) {
   tipstInstance = tipstInstance ||  $tips(options)
   return tipstInstance
@@ -93,6 +89,9 @@ function createToast(options) {
   }
   getToastInstance(options)
   tipstInstance.show()
+}
+$tips.info = (option: ToastOption) => {
+  createToast(option)
 }
 $tips.success = (option: ToastOption) => {
   option.iconName = 'success'

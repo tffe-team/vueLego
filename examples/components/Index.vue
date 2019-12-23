@@ -23,8 +23,8 @@
           <div class="label flex">Tips弱提醒</div>
           <div class="label"><i class="rui-ico">&#xe904;</i></div>
         </router-link>
-        <router-link tag="li" class="item" to="/totast">
-          <div class="label flex">Totast通知</div>
+        <router-link tag="li" class="item" to="/toast">
+          <div class="label flex">Toast通知</div>
           <div class="label"><i class="rui-ico">&#xe904;</i></div>
         </router-link>
         <!-- <li class="item title" @click="successDialog">
