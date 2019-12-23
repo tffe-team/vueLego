@@ -49,6 +49,16 @@ $loading-size: .13rem;
     border-left-color: transparent;
     border-right-color: transparent;
   }
+  &.rui-btn-disabled {
+    &,&:active {
+      color: rgba($color: $default-color, $alpha: .5);
+      background-color: rgba($color: $default-bgcolor, $alpha: .5);
+      &::after {
+        border-color: rgba($color: $default-border-color, $alpha: .5);
+
+      }
+    }
+  }
 };
 
 @include rui-btn(
@@ -67,6 +77,16 @@ $loading-size: .13rem;
     border: 1px solid $primary-color;
     border-left-color: transparent;
     border-right-color: transparent;
+  }
+  &.rui-btn-disabled {
+    &,&:active {
+      color: rgba($color: $primary-color, $alpha: .5);
+      background-color: rgba($color: $primary-bgcolor, $alpha: .5);
+      &::after {
+        border-color: rgba($color: $primary-bgcolor, $alpha: .5);
+
+      }
+    }
   }
 };
 
@@ -87,6 +107,16 @@ $loading-size: .13rem;
     border-left-color: transparent;
     border-right-color: transparent;
   }
+  &.rui-btn-disabled {
+    &,&:active {
+      color: rgba($color: $primary-ghost-color, $alpha: .5);
+      background-color: rgba($color: $default-bgcolor, $alpha: .5);
+      &::after {
+        border-color: rgba($color: $primary-bgcolor, $alpha: .5);
+
+      }
+    }
+  }
 };
 
 @include rui-btn(
@@ -106,6 +136,16 @@ $loading-size: .13rem;
     border-left-color: transparent;
     border-right-color: transparent;
   }
+  &.rui-btn-disabled {
+    &,&:active {
+      color: rgba($color: $success-color, $alpha: .5);
+      background-color: rgba($color: $success-bgcolor, $alpha: .5);
+      &::after {
+        border-color: rgba($color: $success-bgcolor, $alpha: .5);
+
+      }
+    }
+  }
 };
 
 @include rui-btn(
@@ -123,6 +163,16 @@ $loading-size: .13rem;
     border: 1px solid $success-ghost-color;
     border-left-color: transparent;
     border-right-color: transparent;
+  }
+  &.rui-btn-disabled {
+    &,&:active {
+      color: rgba($color: $success-ghost-color, $alpha: .5);
+      background-color: rgba($color: $default-bgcolor, $alpha: .5);
+      &::after {
+        border-color: rgba($color: $success-bgcolor, $alpha: .5);
+
+      }
+    }
   }
 };
 
