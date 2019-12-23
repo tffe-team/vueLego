@@ -1,11 +1,12 @@
 <template>
-  <div class="rui-masker vue-lego-dialog" v-show="visible">
+  <div class="r-vue-lego-dialog" v-show="visible">
+    <div class="rui-masker " v-if="showMask"></div>
     <div class="rui-dialog" >
       <header class="hd" v-if="title">
         <h2 class="title">
           {{title}}
         </h2>
-        <span v-if="closeable" @click="close" class="">关闭</span>
+        <span v-if="closeAble" @click="close" class="close-btn">关闭</span>
       </header>
       <div class="bd">
         <h2 class="icon-wrap" v-if="iconName !== ''">
@@ -22,6 +23,7 @@
       </footer>
     </div>
   </div>
+  
 </template>
 <script>
 
@@ -33,7 +35,11 @@ export default {
       type: String,
       default: ''
     },
-    closeable:  {
+    showMask:  {
+      type: Boolean,
+      default: true
+    },
+    closeAble:  {
       type: Boolean,
       default: false
     },
@@ -79,10 +85,12 @@ export default {
     close() {
       this.visible = false;
       this.$emit('input', false);
-      this.$emit('on-cancel');
+      this.$emit('on-close');
     },
     cancle() {
-      this.close()
+      this.visible = false;
+      this.$emit('input', false);
+      this.$emit('on-cancel');
     },
     ok() {
       this.visible = false;
@@ -92,3 +100,22 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+.r-vue-lego-dialog{
+  border: 1px solid #ddd;
+  .close-btn{
+    position: absolute;
+    right: .1rem;
+    top: 0;
+  }
+  .rui-dialog {
+    position: absolute;
+    top: 0px;
+    z-index: 10010;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #ddd;
+  }
+}
+</style>

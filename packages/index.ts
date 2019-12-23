@@ -1,11 +1,11 @@
 
-import Dialog from './dialog/index'
 import Loading from './loading/Loading.vue'
 import Picker from './picker/Picker.vue'
 import Icon from './icon/Icon.vue'
 import Button from './button/Button.vue'
 import { InstallOption } from '../typings/lego'
 
+import $dialog from './dialog/index'
 import $tips from './tips/index'
 import $loading from './loading/index'
 import $toast from './toast'
@@ -13,7 +13,6 @@ import $toast from './toast'
 const components = [
   Icon,
   Button,
-  Dialog,
   Picker,
   Loading
 ];
@@ -25,7 +24,7 @@ const install = function(Vue, options: InstallOption = {}) {
   });
   Vue.prototype.$tips = $tips
   Vue.prototype.$loading = $loading
-  Vue.prototype.$dialog = Dialog
+  Vue.prototype.$dialog = $dialog
   Vue.prototype.$toast = $toast
   Vue.prototype.$LEGO = {
     theme: options.theme ? options.theme : options.theme,
@@ -41,7 +40,6 @@ if (typeof window !== 'undefined' && window['Vue']) {
 export default {
   install,
   Icon,
-  Dialog,
   Picker,
   Button,
   Loading

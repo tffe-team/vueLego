@@ -6,11 +6,9 @@ let tipstInstance
 
 const $tips = properties => {
   const _props = Object.assign({
-    onRemove: function () {
-      
+    onRemove: function () {   
     },
     onClose: function() {
-      
     }
   }, properties)
   let timer = null
@@ -31,12 +29,11 @@ const $tips = properties => {
     },
     methods: {
       close() {
-        // timer = setTimeout(() => {
-        //   this.$children[0].visible = false
-        //   this.remove()
-        //   onClose()
-        // }, this.duration)
-       
+        timer = setTimeout(() => {
+          this.$children[0].visible = false
+          this.remove()
+          onClose()
+        }, this.duration)
       },
       remove() {
         if (this.$el) {
@@ -97,7 +94,7 @@ $tips.success = (option: ToastOption) => {
   option.iconName = 'success'
   createToast(option)
 }
-$tips.fail = (option: ToastOption) => {
+$tips.error = (option: ToastOption) => {
   option.iconName = 'fail'
   createToast(option)
 }

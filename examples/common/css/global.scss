@@ -4,3 +4,23 @@
 	color: green;
 	line-height: 1.35;
 }
+.g-title{
+	color: #8a8585;
+	font-weight: normal;
+}
+.g-btn{
+	padding: .05rem .2rem;
+	margin: .15rem .1rem;
+}
+.g-success-btn{
+	background-color: #508CF0;
+	&:active{
+		background-color: #508CF0;
+	}
+}
+.g-error-btn{
+	background-color: red;
+	&:active{
+		background-color: red;
+	}
+}

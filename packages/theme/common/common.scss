@@ -4,8 +4,3 @@ $base: (
     font-path: "~ruicss/sass/font/",
 );
 @import "ruicss/sass/index.scss";
-@include rui-toast(
-    $name:"vue-lego",
-){
-  min-width: 1.5rem;
-};

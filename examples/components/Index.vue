@@ -1,6 +1,6 @@
 <template>
-  <div id="noFound" class="rui-flex">
-    <header class="rui-header rui-header-bank-card">
+  <div class="rui-flex">
+    <header class="rui-header rui-header-vue-lego">
       <h2 class="title">{{title}}</h2>
    </header>
    <div class="flex bd">
@@ -27,10 +27,6 @@
           <div class="label flex">Toast通知</div>
           <div class="label"><i class="rui-ico">&#xe904;</i></div>
         </router-link>
-        <!-- <li class="item title" @click="successDialog">
-          <div class="label flex">表单组件</div>
-          <div class="label"><i class="rui-ico">&#xe904;</i></div>
-        </li> -->
       </ul>
    </div>
  </div>

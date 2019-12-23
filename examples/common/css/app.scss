@@ -3,3 +3,21 @@ $base: (
     font-path: "~ruicss/sass/font/",
 );
 @import "ruicss/sass/index.scss";
+@include rui-header(
+    $name:"vue-lego",
+    $bgcolor: transparent,
+    $color: #423d3d
+){
+    border-bottom: 1px solid #eee;
+    .back{
+        color:#423d3d;
+        font-size: .25rem;
+    }
+};
+@include rui-btn(
+    $border-width: 0,
+    $border-color: #07c160,
+    $bgcolor: #07c160,
+    $active-bgcolor :#07c160,
+    $active-border-color: #07c160
+);
