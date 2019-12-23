@@ -59,7 +59,6 @@ export default {
       const baseClass = 'r-vue-lego-button'
       return [
         baseClass,
-        classPrefix,
         `${classPrefix}-${this.type}`,
         {
           [`${classPrefix}-loading`]: this.loading,
@@ -92,11 +91,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.r-vue-lego-button {
-  &::after {
-    box-sizing: border-box;
-  }
-}
-</style>

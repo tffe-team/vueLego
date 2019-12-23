@@ -33,6 +33,26 @@ $loading-size: .13rem;
   }
 }
 
+.r-vue-lego-button {
+  @include _btn;
+  height: $default-height;
+  line-height: $default-height;
+  padding: $default-padding;
+  font-size: $default-font-size;
+  color: $default-color;
+  background-color: $default-bgcolor;
+  &::after {
+    box-sizing: border-box;
+    border-color: $default-border-color;
+  }
+  &:active {
+    background-color: $default-active-bgcolor;
+    &::after {
+      border-color: $default-border-color;
+    }
+  }
+}
+
 @include rui-btn(
   $name: "default",
   $color: $default-color,
