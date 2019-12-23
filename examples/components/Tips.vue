@@ -1,26 +1,20 @@
 <template>
-  <div id="noFound" class="rui-flex">
-    <header class="rui-header rui-header-bank-card">
+  <div class="m-vue-lego-tips rui-flex">
+    <header class="rui-header rui-header-vue-lego">
+      <router-link class="rui-ico back" tag="i" to="/">&#xe902;</router-link>
       <h2 class="title">{{title}}</h2>
    </header>
    <div class="flex bd">
-      <ul class="rui-list">
-        <li class="item title">
-          <div class="label flex">提醒弹层</div>
-        </li>
-        <li class="item" @click="tips">
-          <div class="label flex">常规提醒弹层</div>
-          <div class="label"><i class="rui-ico">&#xe904;</i></div>
-        </li>
-        <li class="item" @click="failTips">
-          <div class="label flex">失败醒弹层</div>
-          <div class="label"><i class="rui-ico">&#xe904;</i></div>
-        </li>
-        <li class="item" @click="sucessTips">
-          <div class="label flex">成功提醒弹层</div>
-          <div class="label"><i class="rui-ico">&#xe904;</i></div>
-        </li>
-      </ul>
+      <h3 class="g-title">文字提醒</h3>
+      <div class="btn-box">
+        <div class="rui-btn g-btn" @click="shortTips">文字提醒</div>
+        <div class="rui-btn g-btn" @click="longTips">长文字提醒</div>
+      </div>
+      <h3 class="title">成功／失败</h3>
+      <div class="btn-box">
+        <div class="rui-btn g-btn g-success-btn" @click="successTips">成功</div>
+        <div class="rui-btn g-btn g-error-btn" @click="errorTips">失败</div>
+      </div>
    </div>
  </div>
 </template>
@@ -36,32 +30,32 @@ export default class Tips extends Vue {
   jumpUrl() {
     this.$router.go(-1)
   }
-  failTips() {
-    this.$tips.fail({
-      message: '失败'
+  shortTips() {
+    this.$tips.info({
+      message: '测试文案'
     })
   }
-  sucessTips() {
+  longTips() {
+    this.$tips.info({
+      message: '测试文案测试文案测试文案测试文案测试文案测试文案测试文案测试文案测试文案测试文案测试文案'
+    })
+  }
+  successTips() {
     this.$tips.success({
       message: '成功'
     })
   }
-  tips() {
-    this.$tips.info({
-      message: '测试'
+  errorTips() {
+    this.$tips.error({
+      message: '失败'
     })
   }
 }
 </script>
 <style lang="scss" scoped>
-  .flex{
-    background-color: #fff;
-  }
-  .bd{
-    .title{
-      font-weight: 800;
-      padding: .1rem 0;
-      color: #4f8cf0;
-    }
-  }
+ .m-vue-lego-tips{
+   .bd{
+      padding: .2rem;
+   }
+ }
 </style>

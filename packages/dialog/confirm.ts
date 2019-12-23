@@ -11,11 +11,15 @@ DialogComponent.newInstance = properties => {
     },
     onRemove: function () {
       
+    },
+    onClose: function () {
+      
     }
   }, properties)
   const onOk = _props.onOk
   const onCancel = _props.onCancel 
   const onRemove = _props.onRemove 
+  const onClose= _props.onClose 
   delete _props.onOk
   delete _props.onCancel
   delete _props.onRemove
@@ -26,9 +30,10 @@ DialogComponent.newInstance = properties => {
       okText: '确认',
       cancelText: '取消',
       iconName:'',
-      closeable: false,
+      closeAble: false,
       showCancel: false,
-      footerHide: false
+      footerHide: false,
+      showMask: true
     }, _props),
     methods: {
       cancel () {
@@ -41,6 +46,11 @@ DialogComponent.newInstance = properties => {
         onOk()
         this.remove();
       },
+      close () {
+        this.$children[0].visible = false;
+        onClose();
+        this.remove();
+      } ,
       remove () {
         this.destroy();
       },
@@ -63,6 +73,7 @@ DialogComponent.newInstance = properties => {
             this.visible = status
           },
           'on-cancel': this.cancel,
+          'on-close': this.close,
           'on-ok': this.ok
         }
       })

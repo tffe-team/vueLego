@@ -1,7 +1,7 @@
-import Dialog from './confirm'
+import $dialog from './confirm'
 let dialogInstance
 function getDialogInstance(options) {
-  dialogInstance = dialogInstance || Dialog.newInstance(options)
+  dialogInstance = dialogInstance || $dialog.newInstance(options)
   return dialogInstance
 }
 function confirm(options) {
@@ -11,30 +11,30 @@ function confirm(options) {
   getDialogInstance(options)
   dialogInstance.show()
 }
-Dialog.info = ((props = {}) => {
+$dialog.info = ((props = {}) => {
   props.iconName = 'info'
   props.showCancel = false
   return confirm(props)
 })
-Dialog.error = ((props = {}) => {
+$dialog.fail = ((props = {}) => {
   props.iconName = 'error'
   props.showCancel = false
   return confirm(props)
 })
-Dialog.success = ((props = {}) => {
+$dialog.success = ((props = {}) => {
   props.iconName = 'success'
   props.showCancel = false
   return confirm(props)
 })
-Dialog.confirm = ((props = {}) => {
+$dialog.confirm = ((props = {}) => {
   props.showCancel = true
   return confirm(props)
 })
-Dialog.remove = (() => {
+$dialog.remove = (() => {
   if(!dialogInstance) {
     return;
   }
   const instance = getDialogInstance({})
   instance.remove()
 })
-export default Dialog
+export default $dialog

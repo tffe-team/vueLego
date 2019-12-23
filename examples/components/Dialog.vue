@@ -1,37 +1,25 @@
 <template>
-  <div id="noFound" class="rui-flex">
-   <header class="rui-header rui-header-loan">
-      <span class="back" @click="jumpUrl">
-            <i class="rui-ico">&#xe902;</i>
-        </span>
+  <div  class="rui-flex">
+   <header class="rui-header rui-header-vue-lego">
+      <i class="rui-ico back"  @click="jumpUrl">&#xe902;</i>
       <h2 class="title">Dialog</h2>
     </header> 
    <div class="flex bd">
-      <ul class="rui-list">
-        <li class="item title">
-           <div class="label flex">弹层</div>
-        </li>
-        <li class="item" @click="errorDialog">
-          <div class="label flex">错误弹层</div>
-          <div class="label"><i class="rui-ico">&#xe904;</i></div>
-        </li>
-        <li class="item" @click="successDialog">
-          <div class="label flex">成功弹层</div>
-          <div class="label"><i class="rui-ico">&#xe904;</i></div>
-        </li>
-        <li class="item" @click="infoDialog">
-          <div class="label flex">提示弹层</div>
-          <div class="label"><i class="rui-ico">&#xe904;</i></div>
-        </li>
-        <li class="item" @click="confirmDialog">
-          <div class="label flex">确认弹层</div>
-          <div class="label"><i class="rui-ico">&#xe904;</i></div>
-        </li>
-        <li class="item" @click="renderDialog">
-          <div class="label flex">render弹层</div>
-          <div class="label"><i class="rui-ico">&#xe904;</i></div>
-        </li>
-      </ul>
+      <h3 class="g-title">提醒弹窗</h3>
+      <div class="btn-box">
+        <div class="rui-btn g-btn" @click="infoDialog(1)">提醒有title</div>
+        <div class="rui-btn g-btn" @click="infoDialog(0)">提醒有无title</div>
+      </div>
+      <h3 class="g-title">确认弹窗</h3>
+      <div class="btn-box">
+        <div class="rui-btn g-btn" @click="confirmDialog">确认弹窗</div>
+        <div class="rui-btn g-btn" @click="renderDialog">自定义内容</div>
+      </div>
+      <h3 class="g-title">反馈弹窗</h3>
+      <div class="btn-box">
+        <div class="rui-btn g-btn g-success-btn" @click="successDialog">成功</div>
+        <div class="rui-btn g-btn g-error-btn" @click="errorDialog">失败</div>
+      </div>
    </div>
  </div>
 </template>
@@ -45,7 +33,8 @@ export default class Dialog extends Vue {
   mounted() {
   }
   errorDialog() {
-     this.$dialog.error({
+     this.$dialog.fail({
+      closeAble: true,
       content: '出错了',
       okText: '我知道了',
       onOk: function () {
@@ -55,15 +44,23 @@ export default class Dialog extends Vue {
   }
   successDialog() {
      this.$dialog.success({
+      closeAble: true,
       content: '成功了成功了成功了',
+      showMask: false,
       okText: '成功了',
       onOk: function () {
         console.log('成功窗口')
       }
     })
   }
-  infoDialog() {
-     this.$dialog.info({
+  infoDialog(type: number) {
+    let title = ''
+    if(type) {
+      title = '提醒弹窗'
+    }
+    this.$dialog.info({
+      closeAble: true,
+      title: title,
       content: '提示信息',
       okText: '确定',
       onOk: function () {
@@ -113,10 +110,6 @@ export default class Dialog extends Vue {
     background-color: #fff;
   }
   .bd{
-    .title{
-      font-weight: 800;
-      padding: .1rem 0;
-      color: #4f8cf0;
-    }
+    padding: .2rem;
   }
 </style>

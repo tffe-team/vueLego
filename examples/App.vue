@@ -24,11 +24,10 @@ export default class App extends Vue {
 </script>
 
 <style lang="scss">
+@import '../packages/theme/index';
 @import 'common/css/app';
 @import 'common/css/global';
-@import '../packages/theme/index';
 .wrap{
-  background-color: #EFEFF4;
   height: 100%;
 }
 .child-view {
