@@ -1,5 +1,12 @@
 import Vue, { PluginFunction } from "vue";
 
+export interface InstallOption {
+  theme?: 'blue' | 'green'
+  toast?: {
+    duration?: number
+  }
+}
+
 export interface LoadingOption {
   /** 注册HMTL ID */
   id: string,
