@@ -14,33 +14,53 @@ export default {
   props: {
     type: {
       type: String,
-      default: 'default'
-    },
-    disabled: {
-      type: Boolean,
-      default: false
+      default: 'default',
+      validator (value) {
+        return ['default', 'primary', 'primary-ghost', 'success-ghost', 'success'].includes(value)
+      }
     },
     shape: {
       type: String,
-      default: 'normal'
+      default: 'normal',
+      validator (value) {
+        return ['normal', 'round'].includes(value)
+      }
     },
-    long: {
-      type: Boolean,
-      default: false
+    size: {
+      type: String,
+      default: 'normal',
+      validator (value) {
+        return ['normal', 'long', 'large', 'medium'].includes(value)
+      }
     },
     loading: {
       type: Boolean,
       default: false
     },
-    size: {
+    to: {
+      type: [Object, String]
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    replace: {
+      type: Boolean,
+      default: false
+    },
+    url: {
       type: String,
-      default: 'normal'
+      default: ''
+    },
+    long: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
     classes () {
-      const baseClass = 'r-vue-lego-button'
       const classPrefix = 'rui-btn'
+      const baseClass = 'r-vue-lego-button'
       return [
         baseClass,
         classPrefix,
@@ -57,7 +77,22 @@ export default {
   },
   methods: {
     tapButton(event) {
-      this.$emit('click', event);
+      this.$emit('click', event)
+      if(this.url) {
+        event.preventDefault()
+        window.location.href = this.url
+        return
+      }
+      if (this.to) {
+        event.preventDefault()
+        const router = this.$router
+        if (router) {
+          this.replace ? this.$router.replace(this.to) : this.$router.push(this.to)
+        } else {
+          window.location.href = this.to
+        }
+        return
+      }
     }
   }
 }
@@ -66,7 +101,7 @@ export default {
 <style lang="scss" scoped>
 .r-vue-lego-button {
   &::after {
-    box-sizing: border-box; // FIXME:
+    box-sizing: border-box;
   }
 }
 </style>

@@ -37,6 +37,11 @@
         <div class="btns-wrap">
           <r-button type="primary-ghost" loading>加载状态</r-button>
         </div>
+        <li class="item title">路由跳转</li>
+        <div class="btns-wrap">
+          <r-button type="primary-ghost" url="https://www.baidu.com">url跳转</r-button>
+          <r-button type="success-ghost" to="/">router跳转</r-button>
+        </div>
       </ul>
     </div>
   </div>
