@@ -51,10 +51,6 @@ export default {
     url: {
       type: String,
       default: ''
-    },
-    long: {
-      type: Boolean,
-      default: false
     }
   },
   computed: {
@@ -66,7 +62,6 @@ export default {
         classPrefix,
         `${classPrefix}-${this.type}`,
         {
-          [`${classPrefix}-long`]: this.long,
           [`${classPrefix}-loading`]: this.loading,
           [`${classPrefix}-disabled`]: this.disabled,
           [`${classPrefix}-${this.size}`]: this.size !== 'normal',
