@@ -1,25 +1,25 @@
 <template>
   <div class="r-vue-lego-dialog" v-show="visible">
-    <div class="rui-masker " v-if="showMask"></div>
-    <div class="rui-dialog" >
+    <div class="vue-lego-masker " v-if="showMask"></div>
+    <div class="vue-lego-dialog" >
       <header class="hd" v-if="title">
         <h2 class="title">
           {{title}}
         </h2>
-        <span v-if="closeAble" @click="close" class="close-btn">关闭</span>
+        <span v-if="closeAble" @click="close" class="close-btn vue-lego-ico">&#xe90c;</span>
       </header>
       <div class="bd">
         <h2 class="icon-wrap" v-if="iconName !== ''">
-            <i v-if="iconName === 'info'" class="rui-ico circle-bg info">&#xe90b;</i>
-            <i v-if="iconName === 'success'" class="rui-ico circle-bg sucess">&#xe90a;</i>
-            <i v-if="iconName === 'error'" class="rui-ico circle-bg">&#xe90b;</i>
+            <i v-if="iconName === 'info'" class="vue-lego-ico circle-bg info">&#xe90b;</i>
+            <i v-if="iconName === 'success'" class="vue-lego-ico circle-bg sucess">&#xe90a;</i>
+            <i v-if="iconName === 'error'" class="vue-lego-ico circle-bg">&#xe90b;</i>
         </h2>
         <contentRender v-if="render" :render="render" />
         <div v-else>{{content}}</div>
       </div>
       <footer class="ft" v-if='!footerHide'>
-        <button class="rui-btn  rui-btn-dialog" v-if="showCancel" @click='cancle'>{{cancelText}}</button>
-        <button class="rui-btn  rui-btn-dialog" @click='ok'>{{okText}}</button>
+        <button class="vue-lego-btn  vue-lego-btn-dialog" v-if="showCancel" @click='cancle'>{{cancelText}}</button>
+        <button class="vue-lego-btn  vue-lego-btn-dialog" @click='ok'>{{okText}}</button>
       </footer>
     </div>
   </div>
@@ -100,22 +100,3 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
-.r-vue-lego-dialog{
-  border: 1px solid #ddd;
-  .close-btn{
-    position: absolute;
-    right: .1rem;
-    top: 0;
-  }
-  .rui-dialog {
-    position: absolute;
-    top: 0px;
-    z-index: 10010;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    border: 1px solid #ddd;
-  }
-}
-</style>

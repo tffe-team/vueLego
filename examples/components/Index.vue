@@ -19,12 +19,16 @@
           <div class="label flex">Dialog弹层</div>
           <div class="label"><i class="rui-ico">&#xe904;</i></div>
         </router-link>
-       <router-link tag="li" class="item" to="/tips">
+        <router-link tag="li" class="item" to="/tips">
           <div class="label flex">Tips弱提醒</div>
           <div class="label"><i class="rui-ico">&#xe904;</i></div>
         </router-link>
         <router-link tag="li" class="item" to="/toast">
           <div class="label flex">Toast通知</div>
+          <div class="label"><i class="rui-ico">&#xe904;</i></div>
+        </router-link>
+        <router-link tag="li" class="item" to="/loading">
+          <div class="label flex">Loading</div>
           <div class="label"><i class="rui-ico">&#xe904;</i></div>
         </router-link>
       </ul>

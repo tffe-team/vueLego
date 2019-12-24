@@ -1,13 +1,13 @@
 <template>
   <div id="noFound" class="rui-flex">
-   <header class="rui-header rui-header-loan">
-      <span class="back" @click="jumpUrl">
-            <i class="rui-ico">&#xe902;</i>
-        </span>
-      <h2 class="title">Loading</h2>
-    </header> 
+    <header class="rui-header rui-header-vue-lego">
+      <router-link class="rui-ico back" tag="i" to="/">&#xe902;</router-link>
+      <h2 class="title">{{title}}</h2>
+   </header>
    <div class="flex bd">
-      <div class="rui-btn rui-btn-stacked rui-btn-login"  @click="loading">常规loading</div>
+      <div class="btn-box">
+        <div class="rui-btn g-btn" @click="loading">常规loading</div>
+      </div>
    </div>
  </div>
 </template>
@@ -17,7 +17,7 @@
 import {Component, Vue, Prop} from 'vue-property-decorator'
 @Component
 export default class Loading extends Vue {
-  title = '列表页'
+  title = 'loading'
   list: Array<any> = []
   mounted() {
   }
@@ -33,14 +33,4 @@ export default class Loading extends Vue {
 }
 </script>
 <style lang="scss" scoped>
-  .flex{
-    background-color: #fff;
-  }
-  .bd{
-    .title{
-      font-weight: 800;
-      padding: .1rem 0;
-      color: #4f8cf0;
-    }
-  }
 </style>

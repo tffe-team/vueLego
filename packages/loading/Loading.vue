@@ -1,5 +1,5 @@
 <template>
-  <div class="m-loading rui-loading rui-loading-common" v-show='visible'>
+  <div class="r-vue-lego-loading vue-lego-loading vue-lego-loading-common" v-show='visible'>
         <div class="inner">
             <i class="rui-ico"></i>
             <p class="tips">{{tips}}</p>
