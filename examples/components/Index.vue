@@ -110,7 +110,13 @@ export default class Welcome extends Vue {
     .title{
       font-weight: 800;
       padding: .1rem 0;
-      color: #4f8cf0;
+      color: #404040;
+      .label{
+        font-size: .18rem;
+      }
+      &::after{
+        bordeR: 0;
+      }
     }
   }
 </style>
