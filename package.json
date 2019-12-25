@@ -5,7 +5,7 @@
   "author": "Cindy <cro_tffe@hotmail.com>",
   "private": false,
   "main": "dist/rui-vue-lego.min.js",
-  "typings": "typings/lego.d.ts",
+  "typings": "typings/vue-lego.d.ts",
   "scripts": {
     "build": "webpack --config ./build/webpack.build.js",
     "dev": "node ./build/server.js"

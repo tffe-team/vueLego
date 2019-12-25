@@ -1,9 +1,5 @@
 <template>
   <div class="rui-flex">
-    <header class="rui-header rui-header-vue-lego">
-      <i class="rui-ico back"  @click="jumpUrl">&#xe902;</i>
-      <h2 class="title">Button</h2>
-    </header> 
     <div class="bd flex">
       <p class="g-title">按钮类型</p>
       <div class="btns-wrap">

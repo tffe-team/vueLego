@@ -1,11 +1,5 @@
 <template>
-  <div id="noFound" class="rui-flex">
-    <header class="rui-header rui-header-loan">
-      <span class="back" @click="jumpUrl">
-            <i class="rui-ico">&#xe902;</i>
-        </span>
-      <h2 class="title">Toast</h2>
-    </header>
+  <div class="rui-flex">
     <div class="flex bd">
       <ul class="rui-list">
         <li class="item title">

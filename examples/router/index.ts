@@ -14,12 +14,12 @@ export default new Router({
     {
       path: '/',
       component: Index,
-      name: 'index'
+      name: 'rui-vue-lego',
     },
     {
       path: '/buttons',
       component: Buttons,
-      name: 'buttons'
+      name: 'buttons',
     },
     {
       path: '/tips',

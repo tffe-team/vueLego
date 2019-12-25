@@ -1,8 +1,5 @@
 <template>
   <div class="rui-flex">
-    <header class="rui-header rui-header-vue-lego">
-      <h2 class="title">{{title}}</h2>
-   </header>
    <div class="flex bd">
       <ul class="rui-list">
         <li class="item  title" >
