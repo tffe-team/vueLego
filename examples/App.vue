@@ -24,7 +24,6 @@ export default class App extends Vue {
 </script>
 
 <style lang="scss">
-@import '../packages/theme/index';
 @import 'common/css/app';
 @import 'common/css/global';
 .wrap{

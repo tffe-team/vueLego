@@ -45,7 +45,39 @@ module.exports = {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue-loader'
+        loader: 'vue-loader',
+        options: {
+          loaders: {
+            css: [
+              'vue-style-loader',
+              {
+                loader: 'css-loader',
+                options: {
+                  sourceMap: false,
+                },
+              },
+            ],
+            scss: [
+              'vue-style-loader',
+              {
+                loader: 'css-loader',
+                options: {
+                  sourceMap: false,
+                },
+              },
+              {
+                loader: 'sass-loader',
+                options: {
+                  sourceMap: false,
+                },
+              },
+            ],
+          },
+          postLoaders: {
+            html: 'babel-loader?sourceMap'
+          },
+          sourceMap: false,
+        }
       },
       {
         test: /\.js$/,
@@ -54,22 +86,13 @@ module.exports = {
         include: [resolve('../examples'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
       },
       {
-        test: /\.css$/,
+        test: /\.(sa|sc|c)ss$/,
          use: [
           process.env.NODE_ENV !== 'production'
             ? 'vue-style-loader'
             : MiniCssExtractPlugin.loader,
-          'css-loader'
-        ]
-      },
-      {
-        test: /\.scss$/,
-        use: [
-          'vue-style-loader',
           'css-loader',
-          {
-            loader: 'sass-loader'
-          }
+          'sass-loader'
         ]
       },
       {

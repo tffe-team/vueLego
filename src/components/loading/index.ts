@@ -1,7 +1,7 @@
 
 import Vue from 'vue'
 import Loading from './Loading.vue'
-import { LoadingOption } from '../../typings/lego'
+import { LoadingOption } from '../../../typings/vue-lego'
 
 const defaultProps: LoadingOption = {
   id: '$loading-common-el',

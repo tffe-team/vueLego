@@ -28,12 +28,4 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.r-vue-lego-tips{
-  .icon{
-    font-size: .2rem;
-  }
-}
-.vue-lego-tips-icon{
-  min-width: 1rem;
-}
 </style>
