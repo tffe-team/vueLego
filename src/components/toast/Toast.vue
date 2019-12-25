@@ -40,7 +40,7 @@
 
 <style lang="scss">
   $toast-info-bgColor: #508CF0;
-  $toast-success-bgColor: #42C905;
+  $toast-success-bgColor: #07c160;
   $toast-error-bgColor: #fa5d5d;
 
   @keyframes slide-down {
