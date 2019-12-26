@@ -1,42 +1,21 @@
 <template>
-  <div id="noFound" class="rui-flex">
-    <header class="rui-header rui-header-loan">
-      <span class="back" @click="jumpUrl">
-            <i class="rui-ico">&#xe902;</i>
-        </span>
-      <h2 class="title">Toast</h2>
-    </header>
+  <div class="m-vue-lego-toast rui-flex">
     <div class="flex bd">
-      <ul class="rui-list">
-        <li class="item title">
-          <div class="label flex">通知提示</div>
-        </li>
-        <li class="item" @click="onInfoClick">
-          <div class="label flex">普通通知</div>
-          <div class="label"><i class="rui-ico">&#xe904;</i></div>
-        </li>
-        <li class="item" @click="onSuccessClick">
-          <div class="label flex">成功通知</div>
-          <div class="label"><i class="rui-ico">&#xe904;</i></div>
-        </li>
-        <li class="item" @click="onErrorClick">
-          <div class="label flex">错误通知</div>
-          <div class="label"><i class="rui-ico">&#xe904;</i></div>
-        </li>
-      </ul>
-      <ul class="rui-list">
-        <li class="item title">
-          <div class="label flex">自定义通知</div>
-        </li>
-        <li class="item" @click="onDurationClick">
-          <div class="label flex">自定义关闭时间</div>
-          <div class="label"><i class="rui-ico">&#xe904;</i></div>
-        </li>
-        <li class="item" @click="onCloseEventClick">
-          <div class="label flex">自定义关闭后回调</div>
-          <div class="label"><i class="rui-ico">&#xe904;</i></div>
-        </li>
-      </ul>
+      <h3 class="g-title">基础用法</h3>
+      <div class="btn-box">
+        <div class="rui-btn g-btn g-success-btn" @click="onShortClick">单行文字</div>
+        <div class="rui-btn g-btn g-success-btn" @click="onLongClick">多行文字</div>
+      </div>
+      <h3 class="g-title">通知类型</h3>
+      <div class="btn-box">
+        <div class="rui-btn g-btn g-success-btn" @click="onInfoClick">普通通知</div>
+        <div class="rui-btn g-btn" @click="onSuccessClick">成功通知</div>
+        <div class="rui-btn g-btn g-error-btn" @click="onErrorClick">错误通知</div>
+      </div>
+      <h3 class="g-title">自定义配置</h3>
+      <div class="btn-box">
+        <div class="rui-btn g-btn" @click="onCloseEventClick">自定义关闭回调</div>
+      </div>
     </div>
   </div>
 </template>
@@ -45,57 +24,52 @@
   export default {
     name: 'Toast',
     methods: {
-      jumpUrl() {
-        this.$router.go(-1)
+      onShortClick() {
+        this.$toast.info({
+          message: '我是单行文字，我是居中对齐',
+        });
+      },
+
+      onLongClick() {
+        this.$toast.info({
+          message: '我这里是非常长长长长长长长长长长长长长长长的多行文字，我是居左对齐',
+        });
       },
 
       onInfoClick() {
         this.$toast.info({
-          message: '我是内容',
-        })
+          message: '我是普通通知',
+        });
       },
 
       onSuccessClick() {
         this.$toast.success({
-          message: '我是成功内容'
-        })
+          message: '我是成功通知'
+        });
       },
 
       onErrorClick() {
         this.$toast.error({
-          message: '我是错误内容'
-        })
-      },
-
-      onDurationClick() {
-        this.$toast.success({
-          message: '我在 5 秒后关闭',
-          duration: 5000
-        })
+          message: '我是错误通知'
+        });
       },
 
       onCloseEventClick() {
-        this.$toast.error({
+        this.$toast.success({
           message: '我关闭后在控制台打印已经关闭了',
           onClose: () => {
-            console.log('已经关闭了')
+            console.log('已经关闭了');
           }
-        })
+        });
       }
     }
-  }
+  };
 </script>
 
 <style lang="scss" scoped>
-  .flex {
-    background-color: #fff;
-  }
-
-  .bd {
-    .title {
-      font-weight: 800;
-      padding: .1rem 0;
-      color: #4f8cf0;
+  .m-vue-lego-toast {
+    .bd {
+      padding: .2rem;
     }
   }
 </style>

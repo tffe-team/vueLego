@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Tips from './Tips.vue'
-import { ToastOption } from '../../typings/lego'
+import { ToastOption } from '../../../typings/vue-lego'
 
 let tipstInstance
 

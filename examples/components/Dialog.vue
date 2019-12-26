@@ -1,9 +1,5 @@
 <template>
   <div  class="rui-flex">
-   <header class="rui-header rui-header-vue-lego">
-      <i class="rui-ico back"  @click="jumpUrl">&#xe902;</i>
-      <h2 class="title">Dialog</h2>
-    </header> 
    <div class="flex bd">
       <h3 class="g-title">提醒弹窗</h3>
       <div class="btn-box">
@@ -99,9 +95,6 @@ export default class Dialog extends Vue {
         this.confirmDialog()
       }
     })
-  }
-  jumpUrl() {
-    this.$router.go(-1)
   }
 }
 </script>

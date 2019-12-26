@@ -21,3 +21,20 @@ $base: (
     $active-bgcolor :#07c160,
     $active-border-color: #07c160
 );
+@include rui-list(
+    $has-last-border : true,
+    $border-color: #c7c8cc,
+    $color: #666,
+    $item-padding : .1rem,
+    $item-border-width: 1px,
+    $active-bgcolor: #fff,
+    $label-padding: 0 .1rem,
+    $label-font-size: .14rem
+){
+    >.item{
+        margin: .15rem .1rem;
+        &::after{
+            border-radius: .5rem;
+        }
+    }
+};

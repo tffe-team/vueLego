@@ -1,9 +1,5 @@
 <template>
   <div class="m-vue-lego-tips rui-flex">
-    <header class="rui-header rui-header-vue-lego">
-      <router-link class="rui-ico back" tag="i" to="/">&#xe902;</router-link>
-      <h2 class="title">{{title}}</h2>
-   </header>
    <div class="flex bd">
       <h3 class="g-title">文字提醒</h3>
       <div class="btn-box">
@@ -26,9 +22,6 @@ export default class Tips extends Vue {
   title = '列表页'
   list: Array<any> = []
   mounted() {
-  }
-  jumpUrl() {
-    this.$router.go(-1)
   }
   shortTips() {
     this.$tips.info({

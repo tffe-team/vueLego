@@ -4,20 +4,23 @@ import Toast from './Toast.vue'
 let toastInstance: any
 let timer: any
 
-const defaultOptions = () => {
-  return {
-    type: 'info',
-    message: '',
-    visible: true,
-    duration: 3000,
-    onClose: null
-  }
+const defaultOptions = {
+  type: 'info',
+  message: '',
+  visible: true,
+  duration: 3000,
+  onClose: null
 }
 
 const $toast = (options) => {
   options = {
-    ...defaultOptions(),
+    ...defaultOptions,
     ...options
+  }
+
+  // 如果存在 toast 实例再次调用则直接销毁
+  if (toastInstance) {
+    removeInstance()
   }
 
   if (!toastInstance) {
@@ -27,13 +30,6 @@ const $toast = (options) => {
         return h(Toast, {
           props: this.$props,
           slot: 'default',
-          on: {
-            'on-close': () => {
-              if (typeof this.$props.onClose === 'function') {
-                this.$props.onClose()
-              }
-            }
-          }
         }, this.$props.message)
       }
     }).$mount()
@@ -46,20 +42,40 @@ const $toast = (options) => {
 
   if (options.duration && options.duration > 0) {
     timer = setTimeout(() => {
-      toastInstance.visible = false
+      removeInstance()
     }, options.duration)
   }
 }
 
-const createMethod = type => options => {
+const removeInstance = () => {
+  toastInstance.visible = false
+  if (typeof toastInstance.onClose === 'function') {
+    toastInstance.onClose()
+  }
+  toastInstance.$destroy()
+  toastInstance.$el.remove()
+  toastInstance = null
+}
+
+$toast.info = (options) => {
   $toast({
-    type,
+    type: 'info',
     ...options
   })
 }
 
-['info', 'success', 'error'].forEach(method => {
-  $toast[method] = createMethod(method)
-})
+$toast.success = (options) => {
+  $toast({
+    type: 'success',
+    ...options
+  })
+}
+
+$toast.error = (options) => {
+  $toast({
+    type: 'error',
+    ...options
+  })
+}
 
 export default $toast

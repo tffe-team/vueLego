@@ -1,0 +1,23 @@
+@charset "utf-8";
+$base: (
+    font-path: "~ruicss/sass/font/",
+    prefix: "vue-lego"
+);
+
+// @import "ruicss/sass/index.scss";
+
+@import "~ruicss/sass/lib/core/reset.scss";
+// @import "~ruicss/sass/lib/element/rui-badge.scss";
+@import "~ruicss/sass/lib/element/rui-btn.scss";
+// @import "~ruicss/sass/lib/element/rui-checked.scss";
+// @import "~ruicss/sass/lib/element/rui-input.scss";
+@import "~ruicss/sass/lib/element/rui-loading.scss";
+
+@import "~ruicss/sass/lib/fragment/rui-header.scss";
+// @import "~ruicss/sass/lib/fragment/rui-list.scss";
+@import "~ruicss/sass/lib/fragment/rui-tips.scss";
+// @import "./usage/fragment/rui-masker.scss";
+@import "~ruicss/sass/lib/fragment/rui-dialog.scss";
+@import "~ruicss/sass/lib/fragment/rui-popup.scss";
+@import "~ruicss/sass/lib/fragment/rui-picker.scss";
+// @import "~ruicss/sass/lib/layout/rui-flex.scss";

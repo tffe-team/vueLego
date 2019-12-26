@@ -1,10 +1,12 @@
 <template>
   <div id="app" class="wrap">
+    <header class="rui-header rui-header-vue-lego">
+      <i class="rui-ico back" v-if="this.title !== 'rui-vue-lego'" @click="jumpUrl">&#xe902;</i>
+      <h2 class="title">{{title}}</h2>
+    </header> 
     <transition :name="transitionName">
-       <keep-alive>
-          <router-view class="child-view"></router-view>
-       </keep-alive>
-  </transition>
+      <router-view class="child-view"></router-view>
+    </transition>
   </div>
 </template>
 
@@ -14,11 +16,16 @@ import {Component, Vue, Prop, Watch} from 'vue-property-decorator'
 @Component
 export default class App extends Vue {
   transitionName  = 'slide-right'
+  title = ''
   @Watch('$route')
   onRouterChange(to: any, from: any) {
     const toDepth = to.path.split('/').length
     const fromDepth = from.path.split('/').length
     this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
+    this.title = this.$route.name
+  }
+  jumpUrl() {
+    this.$router.go(-1)
   }
 }
 </script>

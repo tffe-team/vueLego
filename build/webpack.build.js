@@ -1,6 +1,7 @@
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 function resolve(dir) {
@@ -8,8 +9,7 @@ function resolve(dir) {
 }
 module.exports = {
   mode: "production",
-  mode: "development",
-  entry: './packages/index.ts',
+  entry: './src/index.ts',
   output: {
     path: resolve('../dist'),
     filename: 'rui-vue-lego.min.js',
@@ -19,10 +19,10 @@ module.exports = {
     globalObject: 'typeof self !== \'undefined\' ? self : this'
   },
   resolve: {
-    extensions: ['.js', '.vue', '.ts', '.json'],
+    extensions: ['.js', '.vue', '.ts', '.json', '.css'],
     alias: {
       'vue': 'vue/dist/vue.esm.js',
-      '@': resolve('../packages')
+      '@': resolve('../src')
     }
   },
   externals: {
@@ -36,7 +36,8 @@ module.exports = {
   plugins: [
     new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'rui-vue-lego.css'
+      filename: 'rui-vue-lego.css',
+      allChunks: true,
     }),
     new UglifyJsPlugin({
       cache: true,
@@ -60,22 +61,22 @@ module.exports = {
               {
                 loader: 'css-loader',
                 options: {
-                  sourceMap: true,
+                  sourceMap: false,
                 },
               },
             ],
-            less: [
+            scss: [
               'vue-style-loader',
               {
                 loader: 'css-loader',
                 options: {
-                  sourceMap: true,
+                  sourceMap: false,
                 },
               },
               {
-                loader: 'less-loader',
+                loader: 'sass-loader',
                 options: {
-                  sourceMap: true,
+                  sourceMap: false,
                 },
               },
             ],
@@ -83,7 +84,7 @@ module.exports = {
           postLoaders: {
             html: 'babel-loader?sourceMap'
           },
-          sourceMap: true,
+          sourceMap: false,
         }
       },
 
@@ -91,32 +92,20 @@ module.exports = {
         test: /\.(js|jsx|es6)$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
-        include: [resolve('../packages'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
+        include: [resolve('../src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
       },
       {
-        test: /\.css$/,
+        test: /\.(sa|sc|c)ss$/,
         use: [
-          process.env.NODE_ENV !== 'production' ?
-          'vue-style-loader' :
-          MiniCssExtractPlugin.loader,
-          'css-loader'
-        ]
-      },
-      {
-        test: /\.scss$/,
-        use: [
-          'vue-style-loader',
+            {
+                loader: MiniCssExtractPlugin.loader,
+                options: {
+                  publicPath: resolve('../dist')
+                }
+            },
           'css-loader',
-          {
-            loader: 'sass-loader',
-            options: {
-              indentedSyntax: true,
-              sassOptions: {
-                indentedSyntax: true
-              }
-            }
-          }
-        ]
+          'sass-loader',
+        ],
       },
       {
         test: /\.ts$/,
@@ -125,6 +114,14 @@ module.exports = {
           transpileOnly: true,
           appendTsSuffixTo: [/\.vue$/]
         }
+      },
+      {
+        test: /\.(png|jpg|gif)?$/,
+        loaders: ['url-loader?limit=8192&name=[name]_[sha512:hash:base64:7].[ext]']
+      },
+      {
+        test: /\.(eot|woff|ttf|svg)$/,
+        loader: 'url-loader?limit=81920&name=[name]_[sha512:hash:base64:7].[ext]'
       }
     ]
   }
