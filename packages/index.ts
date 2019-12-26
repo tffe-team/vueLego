@@ -17,7 +17,9 @@ const components = [
   Loading
 ];
 
-const install = function(Vue, options: InstallOption = {}) {
+const install = function(Vue, options: InstallOption = {
+  theme: 'blue'
+}) {
   if (install['installed']) return
   components.map((component) => {
     Vue.component(component.name, component);

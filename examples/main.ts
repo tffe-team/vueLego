@@ -6,7 +6,6 @@ import router from './router'
 import lego from '../packages/'
 
 // import lego from '../dist/rui-vue-lego.min.js'
-console.log(lego, 'lego')
 Vue.use(lego)
 new Vue({
   router,
