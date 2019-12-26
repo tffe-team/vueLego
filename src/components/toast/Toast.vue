@@ -16,9 +16,6 @@
         type: String,
         required: true,
         default: 'info',
-        validator(value) {
-          return ['info', 'success', 'error'].indexOf(value) !== -1;
-        }
       },
       visible: {
         type: Boolean,
@@ -29,9 +26,9 @@
     watch: {
       visible(val) {
         if (!val) {
-          this.$emit('on-close');
+          this.$destroy();
         }
       }
-    },
+    }
   };
 </script>

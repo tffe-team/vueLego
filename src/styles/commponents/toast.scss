@@ -9,9 +9,8 @@ $toast-error-bgColor: #fa5d5d;
   z-index: 1000;
 
   .toast-content {
-    padding: .08rem .16rem;
+    padding: .115rem .16rem;
     text-align: center;
-    animation: slide-down 300ms;
 
     &--info {
       background-color: $toast-info-bgColor;
