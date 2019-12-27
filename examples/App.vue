@@ -33,6 +33,7 @@ export default class App extends Vue {
 <style lang="scss">
 @import 'common/css/app';
 @import 'common/css/global';
+@import '../packages/theme/index';
 .wrap{
   height: 100%;
 }

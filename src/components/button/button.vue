@@ -14,9 +14,9 @@ export default {
   props: {
     type: {
       type: String,
-      default: 'default',
+      default: 'primary',
       validator (value) {
-        return ['default', 'primary', 'primary-ghost', 'success-ghost', 'success'].includes(value)
+        return ['primary', 'ghost', 'success'].includes(value)
       }
     },
     shape: {
@@ -55,16 +55,17 @@ export default {
   },
   computed: {
     classes () {
-      const classPrefix = 'rui-btn'
-      const baseClass = 'r-vue-lego-button'
+      const basePrefix = 'vue-lego-btn'
+      const classPrefix = `${basePrefix}-${this.$LEGO.theme}`
       return [
-        baseClass,
+        basePrefix,
+        classPrefix,
         `${classPrefix}-${this.type}`,
         {
-          [`${classPrefix}-loading`]: this.loading,
-          [`${classPrefix}-disabled`]: this.disabled,
-          [`${classPrefix}-${this.size}`]: this.size !== 'normal',
-          [`${classPrefix}-${this.shape}`]: this.shape !== 'normal',
+          [`${basePrefix}-loading`]: this.loading,
+          [`${basePrefix}-disabled`]: this.disabled,
+          [`${basePrefix}-${this.size}`]: this.size !== 'normal',
+          [`${basePrefix}-${this.shape}`]: this.shape !== 'normal',
         }
       ]
     }

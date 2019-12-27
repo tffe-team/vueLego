@@ -14,7 +14,6 @@
       </div>
       <h3 class="g-title">自定义配置</h3>
       <div class="btn-box">
-        <div class="rui-btn g-btn" @click="onDurationClick">自定义关闭时长</div>
         <div class="rui-btn g-btn" @click="onCloseEventClick">自定义关闭回调</div>
       </div>
     </div>
@@ -52,13 +51,6 @@
       onErrorClick() {
         this.$toast.error({
           message: '我是错误通知'
-        });
-      },
-
-      onDurationClick() {
-        this.$toast.success({
-          message: '我在 5 秒后关闭',
-          duration: 5000
         });
       },
 

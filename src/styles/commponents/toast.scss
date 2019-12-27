@@ -1,15 +1,33 @@
-.m-toast {
-  transition: opacity .4s;
-  font-size: .15rem;
-  .icon-box {
-    margin-bottom: .07rem;
-    .icon {
-      width: .5rem;
-      height: .5rem;
+$toast-info-bgColor: #508CF0;
+$toast-success-bgColor: #07c160;
+$toast-error-bgColor: #fa5d5d;
+
+.r-vue-lego-toast {
+  width: 100%;
+  top: 0;
+  position: fixed;
+  z-index: 1000;
+
+  .toast-content {
+    padding: .115rem .16rem;
+    text-align: center;
+
+    &--info {
+      background-color: $toast-info-bgColor;
+    }
+
+    &--success {
+      background-color: $toast-success-bgColor;
+    }
+
+    &--error {
+      background-color: $toast-error-bgColor;
+    }
+
+    .message {
+      display: inline-block;
+      color: #fff;
+      text-align: left;
     }
   }
 }
- .toast-enter, .toast-leave-active {
-  opacity: 0;
-}
-
