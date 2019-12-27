@@ -5,6 +5,7 @@ import { InstallOption } from '../typings/vue-lego'
 
 import Picker from './components/picker/index'
 import Button from './components/button/button'
+import Popup from './components/Popup/Popup'
 
 import $dialog from './components/dialog/'
 import $tips from './components/tips/'
@@ -15,7 +16,8 @@ import $toast from './components/toast/'
 
 const components = [
   Button,
-  Picker
+  Picker,
+  Popup
 ];
 
 const install = function(Vue, options: InstallOption = {}) {
@@ -41,5 +43,6 @@ if (typeof window !== 'undefined' && window['Vue']) {
 export default {
   install,
   Picker,
-  Button
+  Button,
+  Popup
 };

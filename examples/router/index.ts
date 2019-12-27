@@ -8,6 +8,7 @@ const Dialog = () => import('@/components/Dialog')
 const Buttons = () => import('@/components/Buttons')
 const Toast = () => import('@/components/Toast')
 const Loading = () => import('@/components/Loading')
+const Popup = () => import('@/components/Popup')
 export default new Router({
   mode: 'history',
   routes: [
@@ -40,6 +41,11 @@ export default new Router({
       path: '/loading',
       component: Loading,
       name: 'loading'
+    },
+    {
+      path: '/popup',
+      component: Popup,
+      name: 'popup'
     }
   ]
 })

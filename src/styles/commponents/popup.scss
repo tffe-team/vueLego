@@ -1,0 +1,24 @@
+
+@include rui-header(
+  $name:"popup",
+  $bgcolor:#f6f7f7,
+  $height: .24rem,
+  $font-size: .14rem
+){
+  text-align: center;
+  padding: .1rem .2rem;
+};
+
+.r-vue-lego-popup{
+  .popup-regret{
+    float: left;
+  }
+  .popup-title{
+    font-weight: 800;
+    font-size: .16rem;
+  }
+  .popup-affirm{
+    float: right;
+    color: #508CF0;
+  }
+}

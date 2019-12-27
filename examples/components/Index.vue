@@ -28,6 +28,13 @@
           <div class="label flex">Loading</div>
           <div class="label"><i class="rui-ico">&#xe904;</i></div>
         </router-link>
+         <li class="item title">
+          <div class="label flex">业务组件</div>
+        </li>
+        <router-link tag="li" class="item" to="/popup">
+          <div class="label flex">Popup</div>
+          <div class="label"><i class="rui-ico">&#xe904;</i></div>
+        </router-link>
       </ul>
    </div>
  </div>
