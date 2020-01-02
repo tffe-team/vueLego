@@ -1,5 +1,5 @@
 <template>
-  <div class="m-lego-picker">
+  <div :class="['m-lego-picker', `r-vue-lego-${$LEGO.theme}-picker`]">
   </div>
 </template>
 

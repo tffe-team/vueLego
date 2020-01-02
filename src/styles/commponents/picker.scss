@@ -1,14 +1,28 @@
 .picker {
-  z-index: $picker-comfirm-zIndex;
+  z-index: 1000;
+	.picker-content li{
+		font-size: .14rem;
+	}
+}
+
+.r-vue-lego-blue-picker {
   .picker-panel .picker-choose {
     .cancel {
-      color: $picker-cancel-color !important;
+      color: map-variable-get(blue, dialog, btn-color) !important;
     }
     .confirm {
-      color: $picker-comfirm-color !important;
+      color: map-variable-get(blue, dialog, btn-color) !important;
     }
 	}
-	.picker-content li{
-		font-size: $picker-comfirm-font-size;
+}
+
+.r-vue-lego-green-picker {
+  .picker-panel .picker-choose {
+    .cancel {
+      color: map-variable-get(green, dialog, btn-color) !important;
+    }
+    .confirm {
+      color: map-variable-get(green, dialog, btn-color) !important;
+    }
 	}
 }

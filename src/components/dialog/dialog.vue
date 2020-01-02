@@ -1,5 +1,5 @@
 <template>
-  <div class="r-vue-lego-dialog" v-show="visible">
+  <div :class="['r-vue-lego-dialog', `r-vue-lego-${$LEGO.theme}-dialog`]" v-show="visible">
     <div class="vue-lego-masker " v-if="showMask"></div>
     <div class="vue-lego-dialog" >
       <header class="hd" v-if="title">

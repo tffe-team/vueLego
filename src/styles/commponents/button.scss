@@ -10,9 +10,9 @@
     $color: $color,
     $bgcolor: $main-color,
     $border-color: $border-color,
-    $height: $default-height,
-    $padding: $default-padding,
-    $font-size: $default-font-size,
+    $height: $btn-height,
+    $padding: $btn-padding,
+    $font-size: $btn-fontSize,
     $active-border-color: rgba($color: $border-color, $alpha: .8),
     $active-bgcolor: rgba($color: $active-bgcolor, $alpha: .8)
   ){
@@ -69,9 +69,9 @@
 
 @include rui-btn(
   $name: "round",
-  $radius: $default-round-radius
+  $radius: $btn-round-radius
 ){
-  border-radius: $default-round-radius;
+  border-radius: $btn-round-radius;
 };
 
 
@@ -83,20 +83,20 @@
 @include rui-btn(
   $name: "large",
   $width: 100%,
-  $font-size: $large-font-size,
-  $height: $large-height,
+  $font-size: $btn-large-fontSize,
+  $height: $btn-large-height,
 ){
   &.vue-lego-btn-round {
-    border-radius: $large-height;
+    border-radius: $btn-large-height;
     &::after {
       @include responsive(retina1x) {
-        border-radius: $large-height * 1;
+        border-radius: $btn-large-height * 1;
       }
       @include responsive(retina2x) {
-        border-radius: $large-height * 2;
+        border-radius: $btn-large-height * 2;
       }
       @include responsive(retina3x) {
-        border-radius: $large-height * 3;
+        border-radius: $btn-large-height * 3;
       }
     }
   }
@@ -109,11 +109,11 @@
   touch-action: none;
   .loading-container{
     display: inline-block;
-    height: $loading-size;
+    height: $btn-loading-size;
   }
   .loading-wheel {
-    width: $loading-size;
-    height: $loading-size;
+    width: $btn-loading-size;
+    height: $btn-loading-size;
     margin: 0 auto;
     border-radius: 50%;
     border: 1px solid #fff;

@@ -1,32 +1,30 @@
 
-// for btn
-$default-height: .32rem;
-$default-padding: 0 .27rem;
-$default-font-size: .13rem;
-$default-color: #fff;
-$default-active-bgcolor: #dedede;
-$default-border-color: #dcdee2;
-$default-round-radius: .17rem;
-$medium-padding: 0 .5rem;
-$large-height: .44rem;
-$large-font-size: .17rem;
-$loading-size: .13rem;
+// for btn default
+$btn-height: .32rem;
+$btn-padding: 0 .27rem;
+$btn-fontSize: .13rem;
+$btn-color: #fff;
+$btn-active-bgColor: #dedede;
+$btn-active-borderColor: #dcdee2;
+$btn-round-radius: .17rem;
+$btn-large-height: .44rem;
+$btn-large-fontSize: .17rem;
+$btn-loading-size: .13rem;
 
-// for toast
+// for toast default
 $toast-info-bgColor: #508CF0;
 $toast-success-bgColor: #07c160;
 $toast-error-bgColor: #fa5d5d;
 
+// for dialog default
+$toast-sucess-bgColor: #42C905;
+$toast-info-bgColor: #508CF0;
 
 
 
-// $dialog-btn-color: #05D380;
-
-// for picker
-// $picker-cancel-color: #00B26D;
-// $picker-comfirm-color: #00B26D;
-// $picker-comfirm-zIndex: 1000;
-// $picker-comfirm-font-size: .14rem;
+// for picker default
+$picker-cancel-color: #00B26D;
+$picker-comfirm-color: #00B26D;
 
 @function map-variable-get($theme, $el, $key) {
   $theme: map-get($themes, $theme); 
@@ -56,8 +54,11 @@ $themes: (
     btn-ghost-color: #3790ff,
     btn-ghost-border-color: #3790ff,
 
-    // for toast
-    toast-info-bgcolor: #508CF0
+    // for dialog
+    dialog-btn-color: #3790ff,
+
+    // for picker
+    picker-btn-color: #3790ff
   ),
   green: (
     // for btn
@@ -75,7 +76,10 @@ $themes: (
     btn-ghost-color: #01c777,
     btn-ghost-border-color: #01c777,
 
-    // for toast
-    toast-info-bgcolor: #508CF0
+    // for dialog
+    dialog-btn-color: #01c777,
+
+    // for picker
+    picker-btn-color: #01c777,
   ),
 );
