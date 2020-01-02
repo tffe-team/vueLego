@@ -1,8 +1,81 @@
-// for dialog
-$dialog-btn-color: #05D380;
+
+// for btn
+$default-height: .32rem;
+$default-padding: 0 .27rem;
+$default-font-size: .13rem;
+$default-color: #fff;
+$default-active-bgcolor: #dedede;
+$default-border-color: #dcdee2;
+$default-round-radius: .17rem;
+$medium-padding: 0 .5rem;
+$large-height: .44rem;
+$large-font-size: .17rem;
+$loading-size: .13rem;
+
+// for toast
+$toast-info-bgColor: #508CF0;
+$toast-success-bgColor: #07c160;
+$toast-error-bgColor: #fa5d5d;
+
+
+
+
+// $dialog-btn-color: #05D380;
 
 // for picker
-$picker-cancel-color: #00B26D;
-$picker-comfirm-color: #00B26D;
-$picker-comfirm-zIndex: 1000;
-$picker-comfirm-font-size: .14rem;
+// $picker-cancel-color: #00B26D;
+// $picker-comfirm-color: #00B26D;
+// $picker-comfirm-zIndex: 1000;
+// $picker-comfirm-font-size: .14rem;
+
+@function map-variable-get($theme, $el, $key) {
+  $theme: map-get($themes, $theme); 
+  @each $label, $color in $theme {
+    $cur-label: #{$el}-#{$key};
+    @if $cur-label == $label {
+      @return $color;
+    }
+  }
+  @return '';
+};
+
+$themes: (
+  blue: (
+    // for btn
+    btn-round-radius:  .17rem,
+    btn-primary-bgcolor: #3790ff,
+    btn-primary-active-bgcolor: #3790ff,
+    btn-primary-color: #fff,
+    btn-primary-border-color: #3790ff,
+    btn-success-bgcolor: #01c777,
+    btn-success-active-bgcolor: #01c777,
+    btn-success-color: #fff,
+    btn-success-border-color: #01c777,
+    btn-ghost-bgcolor: #fff,
+    btn-ghost-active-bgcolor: #3790ff,
+    btn-ghost-color: #3790ff,
+    btn-ghost-border-color: #3790ff,
+
+    // for toast
+    toast-info-bgcolor: #508CF0
+  ),
+  green: (
+    // for btn
+    btn-round-radius:  .17rem,
+    btn-primary-bgcolor: #01c777,
+    btn-primary-active-bgcolor: #01c777,
+    btn-primary-color: #fff,
+    btn-primary-border-color: #01c777,
+    btn-success-bgcolor: #D92E2E,
+    btn-success-active-bgcolor: #D92E2E,
+    btn-success-color: #fff,
+    btn-success-border-color: #D92E2E,
+    btn-ghost-bgcolor: #fff,
+    btn-ghost-active-bgcolor: #01c777,
+    btn-ghost-color: #01c777,
+    btn-ghost-border-color: #01c777,
+
+    // for toast
+    toast-info-bgcolor: #508CF0
+  ),
+);

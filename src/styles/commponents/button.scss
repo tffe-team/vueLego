@@ -1,74 +1,10 @@
-$default-height: .32rem;
-$default-padding: 0 .27rem;
-$default-font-size: .13rem;
 
-$default-color: #fff;
-$default-active-bgcolor: #dedede;
-$default-border-color: #dcdee2;
-$default-round-radius: .17rem;
-
-$medium-padding: 0 .5rem;
-
-$large-height: .44rem;
-$large-font-size: .17rem;
-
-$loading-size: .13rem;
-
-$themes: (
-  blue: (
-    primary-bgcolor: #3790ff,
-    primary-active-bgcolor: #3790ff,
-    primary-color: #fff,
-    primary-border-color: #3790ff,
-
-    success-bgcolor: #01c777,
-    success-active-bgcolor: #01c777,
-    success-color: #fff,
-    success-border-color: #01c777,
-    
-    ghost-bgcolor: #fff,
-    ghost-active-bgcolor: #3790ff,
-    ghost-color: #3790ff,
-    ghost-border-color: #3790ff,
-
-    round-radius:  .17rem
-  ),
-  green: (
-    primary-bgcolor: #01c777,
-    primary-active-bgcolor: #01c777,
-    primary-color: #fff,
-    primary-border-color: #01c777,
-
-    success-bgcolor: #D92E2E,
-    success-active-bgcolor: #D92E2E,
-    success-color: #fff,
-    success-border-color: #D92E2E,
-    
-    ghost-bgcolor: #fff,
-    ghost-active-bgcolor: #01c777,
-    ghost-color: #01c777,
-    ghost-border-color: #01c777,
-
-    round-radius:  .17rem
-  ),
-);
-
-@function map-variable-get($type, $name, $key) {
-  $theme: map-get($themes, $type); 
-  @each $label, $color in $theme {
-    $cur-label: #{$name}-#{$key};
-    @if $cur-label == $label {
-      @return $color;
-    }
-  }
-  @return '';
-};
 
 @mixin vue-logo-base($theme, $name) {
-  $color: map-variable-get($theme, $name, color);
-  $main-color: map-variable-get($theme, $name, bgcolor);
-  $border-color: map-variable-get($theme, $name, border-color);
-  $active-bgcolor: map-variable-get($theme, $name, active-bgcolor);
+  $color: map-variable-get($theme, btn, #{$name}-color);
+  $main-color: map-variable-get($theme, btn, #{$name}-bgcolor);
+  $border-color: map-variable-get($theme, btn, #{$name}-border-color);
+  $active-bgcolor: map-variable-get($theme, btn, #{$name}-active-bgcolor);
   @include rui-btn(
     $name: #{$theme}-#{$name},
     $color: $color,
@@ -135,7 +71,7 @@ $themes: (
   $name: "round",
   $radius: $default-round-radius
 ){
-  border-radius: $default-round-radius; // TODO: 优化
+  border-radius: $default-round-radius;
 };
 
 

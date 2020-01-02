@@ -19,7 +19,7 @@ const components = [
 ];
 
 const install = function(Vue, options: InstallOption = {
-  theme: 'blue'
+  theme: 'green'
 }) {
   if (install['installed']) return
   components.map((component) => {
