@@ -89,8 +89,7 @@ export default class Dialog extends Vue {
         },[
           h('strong', 'render内容展示：render会覆盖content参数传递的文本值')
         ], 'asda')
-      },
-      okText: '确定',
+      },   
       onOk:  () => {
         this.confirmDialog()
       }

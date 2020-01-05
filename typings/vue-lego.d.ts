@@ -1,7 +1,14 @@
 import Vue, { PluginFunction } from "vue";
+import { VueConfiguration } from "vue/types/vue";
+
+export interface PlainObject {
+  [key: string]: any
+}
 
 export interface InstallOption {
-  theme?: 'blue' | 'green'
+  theme?: 'blue' | 'green',
+  lang?: 'zh-CN' | 'en-US',
+  locale?: PlainObject,
   toast?: {
     duration?: number
   }
@@ -48,7 +55,11 @@ export interface DialogOption {
 }
 
 declare module "vue/types/vue" {
+  interface VueConstructor {
+    locale: Function
+  }
   interface Vue {
+    $lang: string,
     $tips: (option: ToastOption) => void,
     $toast: (option: ToastOption) => void,
     $dialog: DialogClass,

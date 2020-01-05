@@ -18,8 +18,8 @@
         <div v-else>{{content}}</div>
       </div>
       <footer class="ft" v-if='!footerHide'>
-        <button class="vue-lego-btn  vue-lego-btn-dialog" v-if="showCancel" @click='cancle'>{{cancelText}}</button>
-        <button class="vue-lego-btn  vue-lego-btn-dialog" @click='ok'>{{okText}}</button>
+        <button class="vue-lego-btn  vue-lego-btn-dialog" v-if="showCancel" @click='cancle'>{{cancelText || $translate('cancel')}}</button>
+        <button class="vue-lego-btn  vue-lego-btn-dialog" @click='ok'>{{okText || $translate('confirm')}}</button>
       </footer>
     </div>
   </div>
@@ -28,8 +28,10 @@
 <script>
 
 import contentRender from './contentRender'
+import locale from '../../mixins/locale'
 export default {
   name: 'r-dialog',
+  mixins: [locale],
   props: {
     iconName:  {
       type: String,
@@ -57,11 +59,11 @@ export default {
     },
     okText: {
       type : String,
-      default: '确定'
+      default: ''
     },
     cancelText: {
       type: String,
-      default: '取消'
+      default: ''
     },
     footerHide: {
       type: Boolean,

@@ -10,6 +10,7 @@ import $dialog from './components/dialog/'
 import $tips from './components/tips/'
 import $loading from './components/loading/'
 import $toast from './components/toast/'
+import { locale } from './locales/index'
 
 
 
@@ -18,10 +19,17 @@ const components = [
   Picker
 ];
 
-const install = function(Vue, options: InstallOption = {
-  theme: 'blue'
-}) {
+const defaultOpts: InstallOption = {
+  theme: 'blue',
+  lang: 'zh-CN'
+}
+
+const install = function(Vue, options = defaultOpts) {
   if (install['installed']) return
+  Vue.prototype.$lang = options.lang || defaultOpts.lang
+  if (options.locale) {
+    locale(Vue.prototype.$lang, options.locale)
+  }
   components.map((component) => {
     Vue.component(component.name, component);
   });
@@ -30,7 +38,7 @@ const install = function(Vue, options: InstallOption = {
   Vue.prototype.$dialog = $dialog
   Vue.prototype.$toast = $toast
   Vue.prototype.$LEGO = {
-    theme: options.theme ? options.theme : options.theme,
+    theme: options.theme ? options.theme : defaultOpts.theme,
     toast: {
       duration: options.toast && options.toast.duration ? options.toast.duration : ''
     }

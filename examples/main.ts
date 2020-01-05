@@ -6,7 +6,13 @@ import router from './router'
 import lego from '../src/'
 
 // import lego from '../dist/rui-vue-lego.min.js'
-Vue.use(lego)
+import enUS from '../src/locales/lang/en-US'
+import znCN from '../src/locales/lang/zh-CN'
+
+Vue.use(lego, {
+  lang: 'zh-CN',
+  locale: znCN
+})
 new Vue({
   router,
   render: (h: any) => h(App),
