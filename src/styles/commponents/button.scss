@@ -1,82 +1,18 @@
-$default-height: .32rem;
-$default-padding: 0 .27rem;
-$default-font-size: .13rem;
 
-$default-color: #fff;
-$default-active-bgcolor: #dedede;
-$default-border-color: #dcdee2;
-$default-round-radius: .17rem;
-
-$medium-padding: 0 .5rem;
-
-$large-height: .44rem;
-$large-font-size: .17rem;
-
-$loading-size: .13rem;
-
-$themes: (
-  blue: (
-    primary-bgcolor: #3790ff,
-    primary-active-bgcolor: #3790ff,
-    primary-color: #fff,
-    primary-border-color: #3790ff,
-
-    success-bgcolor: #01c777,
-    success-active-bgcolor: #01c777,
-    success-color: #fff,
-    success-border-color: #01c777,
-    
-    ghost-bgcolor: #fff,
-    ghost-active-bgcolor: #3790ff,
-    ghost-color: #3790ff,
-    ghost-border-color: #3790ff,
-
-    round-radius:  .17rem
-  ),
-  green: (
-    primary-bgcolor: #01c777,
-    primary-active-bgcolor: #01c777,
-    primary-color: #fff,
-    primary-border-color: #01c777,
-
-    success-bgcolor: #D92E2E,
-    success-active-bgcolor: #D92E2E,
-    success-color: #fff,
-    success-border-color: #D92E2E,
-    
-    ghost-bgcolor: #fff,
-    ghost-active-bgcolor: #01c777,
-    ghost-color: #01c777,
-    ghost-border-color: #01c777,
-
-    round-radius:  .17rem
-  ),
-);
-
-@function map-variable-get($type, $name, $key) {
-  $theme: map-get($themes, $type); 
-  @each $label, $color in $theme {
-    $cur-label: #{$name}-#{$key};
-    @if $cur-label == $label {
-      @return $color;
-    }
-  }
-  @return '';
-};
 
 @mixin vue-logo-base($theme, $name) {
-  $color: map-variable-get($theme, $name, color);
-  $main-color: map-variable-get($theme, $name, bgcolor);
-  $border-color: map-variable-get($theme, $name, border-color);
-  $active-bgcolor: map-variable-get($theme, $name, active-bgcolor);
+  $color: map-variable-get($theme, btn, #{$name}-color);
+  $main-color: map-variable-get($theme, btn, #{$name}-bgcolor);
+  $border-color: map-variable-get($theme, btn, #{$name}-border-color);
+  $active-bgcolor: map-variable-get($theme, btn, #{$name}-active-bgcolor);
   @include rui-btn(
     $name: #{$theme}-#{$name},
     $color: $color,
     $bgcolor: $main-color,
     $border-color: $border-color,
-    $height: $default-height,
-    $padding: $default-padding,
-    $font-size: $default-font-size,
+    $height: $btn-height,
+    $padding: $btn-padding,
+    $font-size: $btn-fontSize,
     $active-border-color: rgba($color: $border-color, $alpha: .8),
     $active-bgcolor: rgba($color: $active-bgcolor, $alpha: .8)
   ){
@@ -133,9 +69,9 @@ $themes: (
 
 @include rui-btn(
   $name: "round",
-  $radius: $default-round-radius
+  $radius: $btn-round-radius
 ){
-  border-radius: $default-round-radius; // TODO: 优化
+  border-radius: $btn-round-radius;
 };
 
 
@@ -147,20 +83,20 @@ $themes: (
 @include rui-btn(
   $name: "large",
   $width: 100%,
-  $font-size: $large-font-size,
-  $height: $large-height,
+  $font-size: $btn-large-fontSize,
+  $height: $btn-large-height,
 ){
   &.vue-lego-btn-round {
-    border-radius: $large-height;
+    border-radius: $btn-large-height;
     &::after {
       @include responsive(retina1x) {
-        border-radius: $large-height * 1;
+        border-radius: $btn-large-height * 1;
       }
       @include responsive(retina2x) {
-        border-radius: $large-height * 2;
+        border-radius: $btn-large-height * 2;
       }
       @include responsive(retina3x) {
-        border-radius: $large-height * 3;
+        border-radius: $btn-large-height * 3;
       }
     }
   }
@@ -173,11 +109,11 @@ $themes: (
   touch-action: none;
   .loading-container{
     display: inline-block;
-    height: $loading-size;
+    height: $btn-loading-size;
   }
   .loading-wheel {
-    width: $loading-size;
-    height: $loading-size;
+    width: $btn-loading-size;
+    height: $btn-loading-size;
     margin: 0 auto;
     border-radius: 50%;
     border: 1px solid #fff;

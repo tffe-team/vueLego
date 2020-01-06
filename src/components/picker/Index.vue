@@ -1,12 +1,14 @@
 <template>
-  <div class="m-lego-picker">
+  <div :class="['m-lego-picker', `r-vue-lego-${$LEGO.theme}-picker`]">
   </div>
 </template>
 
 <script>
 import Picker from 'better-picker'
+import locale from '../../mixins/locale'
 export default {
   name: "Picker",
+  mixins: [locale],
   props: {
     show: { //是否展示
       type: Boolean,
@@ -14,6 +16,16 @@ export default {
       required: true
     },
     title : { //标题
+      type : String,
+      default: '',
+      required: false
+    },
+    cancelTxt : { // 取消文案
+      type : String,
+      default: '',
+      required: false
+    },
+    confirmTxt : { // 确认文案
       type : String,
       default: '',
       required: false
@@ -106,11 +118,15 @@ export default {
       const self = this,
         pickerData = this.formatList,
         selectedIndex = this.selectIndexs,
-        pickerTitle = this.title;
+        pickerTitle = this.title,
+        cancelTxt = this.cancelTxt || this.$translate('cancel'),
+        confirmTxt = this.confirmTxt || this.$translate('confirm');
         this.picker = new Picker({
           data: pickerData,
+          title: pickerTitle,
+          cancelTxt: cancelTxt,
+          confirmTxt: confirmTxt,
 					selectedIndex: selectedIndex,
-					title: pickerTitle
         })
 
         this.picker.on('picker.change', function (index, selectedIndex) {

@@ -27,12 +27,12 @@
       font-size: .2rem;
     }
     .sucess{
-      background-color: #42C905;
+      background-color: $toast-sucess-bgColor;
       color: #fff;
       font-size: .18rem;
     }
     .info{
-      background-color: #508CF0;
+      background-color: $toast-info-bgColor;
       color: #fff;
       font-size: .18rem;
     }
@@ -41,5 +41,17 @@
     position: absolute;
     right: .1rem;
     top: 0;
+  }
+}
+
+.r-vue-lego-blue-dialog {
+  .vue-lego-dialog > .ft .vue-lego-btn-dialog {
+    color: map-variable-get(blue, dialog, btn-color);
+  }
+}
+
+.r-vue-lego-green-dialog {
+  .vue-lego-dialog > .ft .vue-lego-btn-dialog {
+    color: map-variable-get(green, dialog, btn-color);
   }
 }
