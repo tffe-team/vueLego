@@ -1,7 +1,7 @@
 <template>
   <button :class="classes" :disabled="disabled" @click="tapButton">
     <div v-if="loading" class="loading-container">
-      <div class="loading-wheel"></div>
+      <i class="rui-ico">&#xe909;</i>
     </div>
     <slot></slot>
   </button>
