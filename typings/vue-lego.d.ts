@@ -39,6 +39,7 @@ export interface ToastOption {
 
 export interface DialogClass {
   info: Function,
+  fail: Function,
   error: Function,
   success : Function,
   confirm: Function,
