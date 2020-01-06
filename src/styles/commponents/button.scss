@@ -81,8 +81,30 @@
 );
 
 @include rui-btn(
+  $name: "small",
+  $padding: 0,
+  $font-size: $btn-small-fontSize,
+  $height: $btn-small-height,
+){
+  min-width: .5rem;
+  &.vue-lego-btn-round {
+    border-radius: $btn-small-height;
+    &::after {
+      @include responsive(retina1x) {
+        border-radius: $btn-small-height * 1;
+      }
+      @include responsive(retina2x) {
+        border-radius: $btn-small-height * 2;
+      }
+      @include responsive(retina3x) {
+        border-radius: $btn-small-height * 3;
+      }
+    }
+  }
+};
+
+@include rui-btn(
   $name: "large",
-  $width: 100%,
   $font-size: $btn-large-fontSize,
   $height: $btn-large-height,
 ){

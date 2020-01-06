@@ -20,9 +20,13 @@
       </div>
       <p class="g-title">按钮尺寸</p>
       <div class="btns-wrap">
-        <r-button shape="round" size="large">large按钮</r-button>
-        <r-button size="long">long按钮</r-button>
-        <r-button type="primary" size="medium">medium按钮</r-button>
+        <r-button size="large">large按钮</r-button>
+        <r-button>normal按钮</r-button>
+        <r-button shape="round" size="small">small</r-button>
+      </div>
+      <p class="g-title">块状按钮</p>
+      <div class="btns-wrap">
+        <r-button long>long按钮</r-button>
       </div>
       <p class="g-title">加载状态</p>
       <div class="btns-wrap">

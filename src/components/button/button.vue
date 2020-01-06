@@ -30,8 +30,12 @@ export default {
       type: String,
       default: 'normal',
       validator (value) {
-        return ['normal', 'long', 'large', 'medium'].includes(value)
+        return ['normal', 'large', 'small'].includes(value)
       }
+    },
+    long: {
+      type: Boolean,
+      default: false
     },
     loading: {
       type: Boolean,
@@ -62,6 +66,7 @@ export default {
         classPrefix,
         `${classPrefix}-${this.type}`,
         {
+          [`${basePrefix}-long`]: this.long,
           [`${basePrefix}-loading`]: this.loading,
           [`${basePrefix}-disabled`]: this.disabled,
           [`${basePrefix}-${this.size}`]: this.size !== 'normal',
