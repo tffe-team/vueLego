@@ -22,7 +22,7 @@
       <div class="btns-wrap">
         <r-button size="large">large按钮</r-button>
         <r-button>normal按钮</r-button>
-        <r-button shape="round" size="small">small</r-button>
+        <r-button size="small">small</r-button>
       </div>
       <p class="g-title">块状按钮</p>
       <div class="btns-wrap">
