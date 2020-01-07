@@ -131,16 +131,12 @@
   touch-action: none;
   .loading-container{
     display: inline-block;
-    height: $btn-loading-size;
-  }
-  .loading-wheel {
-    width: $btn-loading-size;
-    height: $btn-loading-size;
-    margin: 0 auto;
-    border-radius: 50%;
-    border: 1px solid #fff;
-    border-left-color: transparent;
-    border-right-color: transparent;
-    @include animation(rotate 1s infinite linear);
+    line-height: 1;
+    .rui-ico {
+      display: inline-block;
+      line-height: $btn-loading-size;
+      font-size: $btn-loading-size;
+      @include animation(rotate 1s infinite linear);
+    }
   }
 };
