@@ -1,7 +1,7 @@
 <template>
   <button :class="classes" :disabled="disabled" @click="tapButton">
     <div v-if="loading" class="loading-container">
-      <i class="rui-ico">&#xe909;</i>
+      <i class="rui-ico">&#xe97b;</i>
     </div>
     <slot></slot>
   </button>
@@ -63,7 +63,6 @@ export default {
       const classPrefix = `${basePrefix}-${this.$LEGO.theme}`
       return [
         basePrefix,
-        classPrefix,
         `${classPrefix}-${this.type}`,
         {
           [`${basePrefix}-long`]: this.long,
