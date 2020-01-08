@@ -3,18 +3,18 @@
    <div class="flex bd">
       <h3 class="g-title">提醒弹窗</h3>
       <div class="btn-box">
-        <div class="rui-btn g-btn" @click="infoDialog(1)">提醒有title</div>
-        <div class="rui-btn g-btn" @click="infoDialog(0)">提醒有无title</div>
+        <r-button type="primary"  @click="infoDialog(1)">有title</r-button>
+        <r-button type="primary"  @click="infoDialog(0)">有无title</r-button>
       </div>
       <h3 class="g-title">确认弹窗</h3>
       <div class="btn-box">
-        <div class="rui-btn g-btn" @click="confirmDialog">确认弹窗</div>
-        <div class="rui-btn g-btn" @click="renderDialog">自定义内容</div>
+        <r-button type="primary"  @click="confirmDialog">确认弹窗</r-button>
+        <r-button type="primary"  @click="renderDialog">自定义内容</r-button>
       </div>
       <h3 class="g-title">反馈弹窗</h3>
       <div class="btn-box">
-        <div class="rui-btn g-btn g-success-btn" @click="successDialog">成功</div>
-        <div class="rui-btn g-btn g-error-btn" @click="errorDialog">失败</div>
+        <r-button type="success"  @click="successDialog">成功</r-button>
+        <r-button type="ghost"  @click="errorDialog">失败</r-button>
       </div>
    </div>
  </div>

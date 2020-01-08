@@ -1,14 +1,11 @@
-.m-toast {
-  transition: opacity .4s;
-  font-size: .15rem;
+@include rui-tips(
+){
+  min-width: 1rem;
+};
+.r-vue-lego-tips {
   .icon-box {
-    margin-bottom: .07rem;
     .icon {
-      width: .5rem;
-      height: .5rem;
+      font-size: .2rem;
     }
   }
-}
-.toast-enter, .toast-leave-active {
-  opacity: 0;
 }

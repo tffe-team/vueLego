@@ -3,13 +3,13 @@
    <div class="flex bd">
       <h3 class="g-title">文字提醒</h3>
       <div class="btn-box">
-        <div class="rui-btn g-btn" @click="shortTips">文字提醒</div>
-        <div class="rui-btn g-btn" @click="longTips">长文字提醒</div>
+        <r-button type="primary" @click="shortTips">文字提醒</r-button>
+        <r-button type="primary" @click="longTips">长文字提醒</r-button>
       </div>
-      <h3 class="title">成功／失败</h3>
+      <h3 class="g-title">成功／失败</h3>
       <div class="btn-box">
-        <div class="rui-btn g-btn g-success-btn" @click="successTips">成功</div>
-        <div class="rui-btn g-btn g-error-btn" @click="errorTips">失败</div>
+        <r-button type="success" @click="successTips">成功</r-button>
+        <r-button type="ghost" @click="errorTips">失败</r-button>
       </div>
    </div>
  </div>
@@ -45,7 +45,3 @@ export default class Tips extends Vue {
   }
 }
 </script>
-<style lang="scss" scoped>
- .m-vue-lego-tips{
- }
-</style>

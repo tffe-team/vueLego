@@ -3,8 +3,8 @@
     <div class="flex bd">
        <h3 class="g-title">基础用法</h3>
       <div class="btn-box">
-        <div class="rui-btn g-btn g-success-btn" @click="showCloum">从左往右</div>
-        <div class="rui-btn g-btn g-success-btn" @click="showCloums">多列文字</div>
+        <r-button type="primary" @click="showCloum">单列数据</r-button>
+        <r-button type="primary" @click="showCloums">多列数据</r-button>
       </div>
     </div>
     <r-picker title="单行列数据" v-if="showCloumPicker" 
@@ -12,8 +12,9 @@
     @cancel="cancel"
     @confirm="confirm"
     @change="changeOne"
+    ref="test"
     ></r-picker>
-    <r-picker title="单行列数据" v-if="showCloumsPicker" 
+    <r-picker title="多行列数据" v-if="showCloumsPicker" 
     :columns='columns'
     @cancel="cancel"
     @confirm="confirm"
@@ -140,7 +141,7 @@
         this.showCloumsPicker = false
       },
       changeOne(picker, value, index) {
-
+       
       },
       changeSecond(picker, value, index) {
         if(index === 0) {
@@ -183,11 +184,3 @@
     }
   };
 </script>
-
-<style lang="scss" scoped>
-  .m-vue-lego-popup {
-    .bd {
-      padding: .2rem;
-    }
-  }
-</style>

@@ -29,8 +29,12 @@
 
 import contentRender from './contentRender'
 import locale from '../../mixins/locale'
+import button from '../button/button'
 export default {
   name: 'r-dialog',
+  components: {
+    'r-button': button
+  },
   mixins: [locale],
   props: {
     iconName:  {

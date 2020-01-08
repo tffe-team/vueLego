@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Dialog from './dialog.vue'
+import Dialog from './Dialog'
 const DialogComponent: any = Dialog
 DialogComponent.newInstance = properties => {
   const _props = Object.assign( {

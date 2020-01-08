@@ -25,7 +25,7 @@ const $tips = properties => {
       duration: 3000
     }),
     mounted() {
-      this.close()
+     // this.close()
     },
     methods: {
       close() {

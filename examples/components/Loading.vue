@@ -2,7 +2,7 @@
   <div class="rui-flex">
    <div class="flex bd">
       <div class="btn-box">
-        <div class="rui-btn g-btn" @click="loading">常规loading</div>
+        <r-button type="primary"  @click="loading">常规loading</r-button>
       </div>
    </div>
  </div>

@@ -4,8 +4,11 @@
       value: Boolean,
       position : {
         type : String,
-        deafult: 'top',
-        required: false
+        deafult: 'center',
+        required: false,
+        validator: function (value) {
+          return ['up', 'down', 'left', 'right', 'center'].indexOf(value) !== -1
+        }
       },
       closeAble : {
         type : Boolean,

@@ -59,8 +59,3 @@
   };
 </script>
 
-<style lang="scss" scoped>
-  .m-vue-lego-popup {
-
-  }
-</style>

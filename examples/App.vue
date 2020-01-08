@@ -31,7 +31,6 @@ export default class App extends Vue {
 </script>
 
 <style lang="scss">
-@import '../src/styles/';
 @import 'common/css/app';
 @import 'common/css/global';
 .wrap{
@@ -41,6 +40,9 @@ export default class App extends Vue {
   padding: .2rem;
   .vue-lego-btn{
     margin: .1rem .1rem 0 0;
+  }
+  .btn-box{
+    margin-bottom: .1rem;
   }
 }
 .child-view {
