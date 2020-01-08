@@ -30,12 +30,12 @@
       </div>
       <p class="g-title">加载状态</p>
       <div class="btns-wrap">
-        <r-button type="ghost" loading>加载状态</r-button>
+        <r-button loading>加载状态</r-button>
       </div>
       <p class="g-title">路由跳转</p>
       <div class="btns-wrap">
-        <r-button type="ghost" url="https://www.baidu.com">url跳转</r-button>
-        <r-button type="ghost" to="/">router跳转</r-button>
+        <r-button url="https://www.baidu.com">url跳转</r-button>
+        <r-button to="/">router跳转</r-button>
       </div>
     </div>
   </div>
