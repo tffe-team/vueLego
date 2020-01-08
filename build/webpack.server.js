@@ -97,7 +97,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.ts$/,
+        test: /\.(ts|tsx)$/,
         loader: 'ts-loader',
         options: { 
           transpileOnly: true,

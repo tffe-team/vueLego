@@ -17,7 +17,7 @@ const $tips = properties => {
   delete _props.onClose
   delete _props.onRemove
   if(!properties.onRemove) {
-    createToast(properties)
+    createTips(properties)
     return 
   }
   const Instance = new Vue({
@@ -25,7 +25,7 @@ const $tips = properties => {
       duration: 3000
     }),
     mounted() {
-     // this.close()
+     this.close()
     },
     methods: {
       close() {
@@ -76,26 +76,26 @@ const $tips = properties => {
   }
 }
 
-function getToastInstance(options) {
+function getTipsInstance(options) {
   tipstInstance = tipstInstance ||  $tips(options)
   return tipstInstance
 }
-function createToast(options) {
+function createTips(options) {
   options.onRemove = function() {
     tipstInstance = null
   }
-  getToastInstance(options)
+  getTipsInstance(options)
   tipstInstance.show()
 }
 $tips.info = (option: ToastOption) => {
-  createToast(option)
+  createTips(option)
 }
 $tips.success = (option: ToastOption) => {
   option.iconName = 'success'
-  createToast(option)
+  createTips(option)
 }
 $tips.error = (option: ToastOption) => {
   option.iconName = 'fail'
-  createToast(option)
+  createTips(option)
 }
 export default $tips
