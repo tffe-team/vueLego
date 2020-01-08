@@ -5,10 +5,7 @@
       position : {
         type : String,
         deafult: 'center',
-        required: false,
-        validator: function (value) {
-          return ['up', 'down', 'left', 'right', 'center'].indexOf(value) !== -1
-        }
+        required: false
       },
       closeAble : {
         type : Boolean,
@@ -52,7 +49,7 @@
           classes.push('animate-right')
           classes.push('vue-lego-slide-in-right')
         break;
-        case 'center':
+        default:
           classes.push('animate-center')
           classes.push('vue-lego-zoom-in')
         break;
