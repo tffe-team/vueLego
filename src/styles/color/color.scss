@@ -9,18 +9,18 @@ $btn-active-borderColor: #dcdee2;
 $btn-round-radius: .17rem;
 $btn-large-height: .44rem;
 $btn-large-fontSize: .17rem;
-$btn-loading-size: .13rem;
+$btn-small-height: .22rem;
+$btn-small-fontSize: .12rem;
+$btn-loading-size: .14rem;
 
 // for toast default
-$toast-info-bgColor: #508CF0;
+$toast-info-bgColor: #508cf0;
 $toast-success-bgColor: #07c160;
 $toast-error-bgColor: #fa5d5d;
 
 // for dialog default
 $toast-sucess-bgColor: #42C905;
-$toast-info-bgColor: #508CF0;
-
-
+$toast-info-bgColor: #508cf0;
 
 // for picker default
 $picker-cancel-color: #00B26D;
@@ -41,24 +41,24 @@ $themes: (
   blue: (
     // for btn
     btn-round-radius:  .17rem,
-    btn-primary-bgcolor: #3790ff,
-    btn-primary-active-bgcolor: #3790ff,
+    btn-primary-bgcolor: #508cf0,
+    btn-primary-active-bgcolor: #508cf0,
     btn-primary-color: #fff,
-    btn-primary-border-color: #3790ff,
+    btn-primary-border-color: #508cf0,
     btn-success-bgcolor: #01c777,
     btn-success-active-bgcolor: #01c777,
     btn-success-color: #fff,
     btn-success-border-color: #01c777,
     btn-ghost-bgcolor: #fff,
-    btn-ghost-active-bgcolor: #3790ff,
-    btn-ghost-color: #3790ff,
-    btn-ghost-border-color: #3790ff,
+    btn-ghost-color: #508cf0,
+    btn-ghost-border-color: #508cf0,
+    btn-ghost-active-bgcolor: #ebedf0,
 
     // for dialog
-    dialog-btn-color: #3790ff,
+    dialog-btn-color: #508cf0,
 
     // for picker
-    picker-btn-color: #3790ff
+    picker-btn-color: #508cf0
   ),
   green: (
     // for btn
@@ -72,9 +72,9 @@ $themes: (
     btn-success-color: #fff,
     btn-success-border-color: #D92E2E,
     btn-ghost-bgcolor: #fff,
-    btn-ghost-active-bgcolor: #01c777,
     btn-ghost-color: #01c777,
     btn-ghost-border-color: #01c777,
+    btn-ghost-active-bgcolor: #ebedf0,
 
     // for dialog
     dialog-btn-color: #01c777,

@@ -11,6 +11,7 @@
     $bgcolor: $main-color,
     $border-color: $border-color,
     $height: $btn-height,
+    $active-color: $color,
     $padding: $btn-padding,
     $font-size: $btn-fontSize,
     $active-border-color: rgba($color: $border-color, $alpha: .8),
@@ -18,11 +19,6 @@
   ){
     &::after {
       box-sizing: border-box;
-    }
-    &.vue-lego-btn-loading .loading-wheel {
-      border: 1px solid $color;
-      border-left-color: transparent;
-      border-right-color: transparent;
     }
     &.vue-lego-btn-disabled {
       &, &:active {
@@ -81,8 +77,30 @@
 );
 
 @include rui-btn(
+  $name: "small",
+  $padding: 0,
+  $font-size: $btn-small-fontSize,
+  $height: $btn-small-height,
+){
+  min-width: .5rem;
+  &.vue-lego-btn-round {
+    border-radius: $btn-small-height;
+    &::after {
+      @include responsive(retina1x) {
+        border-radius: $btn-small-height * 1;
+      }
+      @include responsive(retina2x) {
+        border-radius: $btn-small-height * 2;
+      }
+      @include responsive(retina3x) {
+        border-radius: $btn-small-height * 3;
+      }
+    }
+  }
+};
+
+@include rui-btn(
   $name: "large",
-  $width: 100%,
   $font-size: $btn-large-fontSize,
   $height: $btn-large-height,
 ){
@@ -109,16 +127,12 @@
   touch-action: none;
   .loading-container{
     display: inline-block;
-    height: $btn-loading-size;
-  }
-  .loading-wheel {
-    width: $btn-loading-size;
-    height: $btn-loading-size;
-    margin: 0 auto;
-    border-radius: 50%;
-    border: 1px solid #fff;
-    border-left-color: transparent;
-    border-right-color: transparent;
-    @include animation(rotate 1s infinite linear);
+    line-height: 1;
+    .rui-ico {
+      display: inline-block;
+      line-height: $btn-loading-size;
+      font-size: $btn-loading-size;
+      @include animation(rotate 1s infinite linear);
+    }
   }
 };

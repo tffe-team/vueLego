@@ -1,7 +1,7 @@
 <template>
   <button :class="classes" :disabled="disabled" @click="tapButton">
     <div v-if="loading" class="loading-container">
-      <div class="loading-wheel"></div>
+      <i class="rui-ico">&#xe97b;</i>
     </div>
     <slot></slot>
   </button>
@@ -30,8 +30,12 @@ export default {
       type: String,
       default: 'normal',
       validator (value) {
-        return ['normal', 'long', 'large', 'medium'].includes(value)
+        return ['normal', 'large', 'small'].includes(value)
       }
+    },
+    long: {
+      type: Boolean,
+      default: false
     },
     loading: {
       type: Boolean,
@@ -59,9 +63,9 @@ export default {
       const classPrefix = `${basePrefix}-${this.$LEGO.theme}`
       return [
         basePrefix,
-        classPrefix,
         `${classPrefix}-${this.type}`,
         {
+          [`${basePrefix}-long`]: this.long,
           [`${basePrefix}-loading`]: this.loading,
           [`${basePrefix}-disabled`]: this.disabled,
           [`${basePrefix}-${this.size}`]: this.size !== 'normal',
