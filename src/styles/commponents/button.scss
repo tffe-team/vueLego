@@ -11,6 +11,7 @@
     $bgcolor: $main-color,
     $border-color: $border-color,
     $height: $btn-height,
+    $active-color: $color,
     $padding: $btn-padding,
     $font-size: $btn-fontSize,
     $active-border-color: rgba($color: $border-color, $alpha: .8),
@@ -18,11 +19,6 @@
   ){
     &::after {
       box-sizing: border-box;
-    }
-    &.vue-lego-btn-loading .loading-wheel {
-      border: 1px solid $color;
-      border-left-color: transparent;
-      border-right-color: transparent;
     }
     &.vue-lego-btn-disabled {
       &, &:active {
