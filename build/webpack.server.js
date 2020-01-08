@@ -80,10 +80,11 @@ module.exports = {
         }
       },
       {
-        test: /\.js$/,
-        loader: 'babel-loader',
+        test: /\.(js|tsx)$/,
         exclude: /node_modules/,
-        include: [resolve('../examples'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
+        use: {
+          loader: 'babel-loader'
+        }
       },
       {
         test: /\.(sa|sc|c)ss$/,

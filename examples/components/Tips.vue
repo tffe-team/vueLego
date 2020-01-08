@@ -47,8 +47,5 @@ export default class Tips extends Vue {
 </script>
 <style lang="scss" scoped>
  .m-vue-lego-tips{
-   .bd{
-      padding: .2rem;
-   }
  }
 </style>

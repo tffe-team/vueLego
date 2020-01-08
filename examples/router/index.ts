@@ -9,6 +9,7 @@ const Buttons = () => import('@/components/Buttons')
 const Toast = () => import('@/components/Toast')
 const Loading = () => import('@/components/Loading')
 const Popup = () => import('@/components/Popup')
+const Picker = () => import('@/components/Picker')
 export default new Router({
   mode: 'history',
   routes: [
@@ -46,6 +47,11 @@ export default new Router({
       path: '/popup',
       component: Popup,
       name: 'popup'
+    },
+    {
+      path: '/picker',
+      component: Picker,
+      name: 'picker'
     }
   ]
 })

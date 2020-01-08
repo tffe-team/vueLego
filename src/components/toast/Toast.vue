@@ -1,5 +1,5 @@
 <template>
-  <div class="r-vue-lego-toast" v-show="visible">
+  <div class="r-vue-lego-toast vue-lego-slide-in-down" v-show="visible">
     <div :class="['toast-content', `toast-content--${type}`]">
       <span class="message">
         <slot></slot>

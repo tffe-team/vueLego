@@ -29,7 +29,9 @@ $base: (
     $item-border-width: 1px,
     $active-bgcolor: #fff,
     $label-padding: 0 .1rem,
-    $label-font-size: .14rem
+    $label-font-size: .14rem,
+    $item-bgcolor: #fafafa,
+    $label-bgcolor: #fafafa
 ){
     >.item{
         margin: .15rem .1rem;

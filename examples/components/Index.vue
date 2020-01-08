@@ -35,6 +35,10 @@
           <div class="label flex">Popup</div>
           <div class="label"><i class="rui-ico">&#xe904;</i></div>
         </router-link>
+        <router-link tag="li" class="item" to="/picker">
+          <div class="label flex">Picker</div>
+          <div class="label"><i class="rui-ico">&#xe904;</i></div>
+        </router-link>
       </ul>
    </div>
  </div>
@@ -42,70 +46,10 @@
 
 <script lang="ts">
 import {Component, Vue, Prop} from 'vue-property-decorator'
-import {Action, Getter} from 'vuex-class'
 @Component
-export default class Welcome extends Vue {
+export default class Demo extends Vue {
   title = 'rui-vue-lego'
-  list: Array<any> = []
   mounted() {
-  }
-  errorDialog() {
-     this.$dialog.error({
-      content: '出错了',
-      okText: '我知道了',
-      onOk: function () {
-        console.log('失败窗口')
-      }
-    })
-  }
-  successDialog() {
-     this.$dialog.success({
-      content: '成功了成功了成功了',
-      okText: '成功了',
-      onOk: function () {
-        console.log('成功窗口')
-      }
-    })
-  }
-  infoDialog() {
-     this.$dialog.info({
-      content: '提示信息',
-      okText: '确定',
-      onOk: function () {
-        console.log('提示窗口')
-      }
-    })
-  }
-  confirmDialog() {
-     this.$dialog.confirm({
-      title: '确定弹层',
-      content: '内容没有保存，确定退出吗？',
-      okText: '确定',
-      onOk: function () {
-        console.log('确认窗口')
-      }
-    })
-  }
-  loading() {
-    this.$loading.show()
-    setTimeout(() => {
-      this.$loading.hide()
-    }, 1000)
-  }
-  failTips() {
-    this.$toast.fail({
-      msg: '失败'
-    })
-  }
-  sucessTips() {
-    this.$toast.success({
-      msg: '成功'
-    })
-  }
-  tips() {
-    this.$toast({
-      msg: '测试'
-    })
   }
 }
 </script>
@@ -118,11 +62,13 @@ export default class Welcome extends Vue {
       font-weight: 800;
       padding: .1rem 0;
       color: #404040;
+      background-color: #fff;
       .label{
         font-size: .18rem;
+        background-color: #fff;
       }
       &::after{
-        bordeR: 0;
+        border: 0;
       }
     }
   }

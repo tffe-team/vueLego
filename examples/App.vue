@@ -37,6 +37,12 @@ export default class App extends Vue {
 .wrap{
   height: 100%;
 }
+.bd{
+  padding: .2rem;
+  .vue-lego-btn{
+    margin: .1rem .1rem 0 0;
+  }
+}
 .child-view {
   position: absolute;
   height: 100%;

@@ -1,24 +1,55 @@
 
-@include rui-header(
-  $name:"popup",
-  $bgcolor:#f6f7f7,
-  $height: .24rem,
-  $font-size: .14rem
-){
-  text-align: center;
-  padding: .1rem .2rem;
-};
-
 .r-vue-lego-popup{
-  .popup-regret{
-    float: left;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  .vue-lego-popup-content{
+    background-color: #fff;
+    .close-btn {
+      float: right;
+      margin: .1rem;
+    }
   }
-  .popup-title{
-    font-weight: 800;
-    font-size: .16rem;
+  .animate-center {
+    position: absolute;
+    z-index: 10010;
+    width: 2.5rem;
+    height: 3rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 1px solid #ddd;
+    border-radius: .05rem;
   }
-  .popup-affirm{
-    float: right;
-    color: #508CF0;
+  .animate-up {
+    position: fixed;
+    top:0;
+    z-index: 10010;
+    width: 100%;
+    height: 1.5rem;
+  }
+  .animate-down{
+    position: fixed;
+    bottom:0;
+    z-index: 10010;
+    width: 100%;
+    height: 1.5rem;
+  }
+  .animate-left{
+    position: fixed;
+    left:0;
+    z-index: 10010;
+    width: 1.5rem;
+    height:100%;
+  }
+  .animate-right{
+    position: fixed;
+    right:0;
+    z-index: 10010;
+    width: 1.5rem;
+    height:100%;
   }
 }

@@ -3,9 +3,9 @@ import './styles/index.scss'
 
 import { InstallOption } from '../typings/vue-lego'
 
-import Picker from './components/picker/index'
+import Picker from './components/picker/Picker.js'
+import Popup from './components/popup/Popup.js'
 import Button from './components/button/button'
-import Popup from './components/Popup/Popup'
 
 import $dialog from './components/dialog/'
 import $tips from './components/tips/'

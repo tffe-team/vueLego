@@ -67,9 +67,4 @@
 </script>
 
 <style lang="scss" scoped>
-  .m-vue-lego-toast {
-    .bd {
-      padding: .2rem;
-    }
-  }
 </style>

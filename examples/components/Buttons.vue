@@ -56,7 +56,6 @@ export default class Buttons extends Vue {
     background-color: #fff;
   }
   .bd{
-    padding: .2rem;
     padding-bottom: .4rem;
   }
   .flex{

@@ -1,28 +1,34 @@
-.picker {
+@include rui-header(
+  $name:"picker",
+  $bgcolor:#f6f7f7,
+  $height: .24rem,
+  $font-size: .14rem
+){
+  text-align: center;
+  padding: .1rem .2rem;
+};
+
+.r-vue-lego-picker{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: 1000;
-	.picker-content li{
-		font-size: .14rem;
-	}
-}
-
-.r-vue-lego-blue-picker {
-  .picker-panel .picker-choose {
-    .cancel {
-      color: map-variable-get(blue, dialog, btn-color) !important;
-    }
-    .confirm {
-      color: map-variable-get(blue, dialog, btn-color) !important;
-    }
-	}
-}
-
-.r-vue-lego-green-picker {
-  .picker-panel .picker-choose {
-    .cancel {
-      color: map-variable-get(green, dialog, btn-color) !important;
-    }
-    .confirm {
-      color: map-variable-get(green, dialog, btn-color) !important;
-    }
-	}
+  .vue-lego-popup-picker{
+    position: fixed;
+    bottom: 0;
+    z-index: 100010;
+  }
+  .popup-regret{
+    float: left;
+  }
+  .popup-title{
+    font-weight: 800;
+    font-size: .16rem;
+  }
+  .popup-affirm{
+    float: right;
+    color: #508CF0;
+  }
 }

@@ -1,7 +1,7 @@
 <template>
-  <div :class="['r-vue-lego-dialog', `r-vue-lego-${$LEGO.theme}-dialog`]" v-show="visible">
-    <div class="vue-lego-masker " v-if="showMask"></div>
-    <div class="vue-lego-dialog" >
+  <div :class="['r-vue-lego-dialog',  `r-vue-lego-${$LEGO.theme}-dialog`]" v-show="visible">
+    <div class="vue-lego-masker vue-lego-fade-out" v-if="showMask"></div>
+    <div class="vue-lego-dialog vue-lego-zoom-in" >
       <header class="hd" v-if="title">
         <h2 class="title">
           {{title}}

@@ -101,7 +101,4 @@ export default class Dialog extends Vue {
   .flex{
     background-color: #fff;
   }
-  .bd{
-    padding: .2rem;
-  }
 </style>

@@ -88,7 +88,7 @@ module.exports = {
       },
 
       {
-        test: /\.(js|jsx|es6)$/,
+        test: /\.(js|jsx|es6|tsx)$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
         include: [resolve('../src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
