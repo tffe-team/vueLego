@@ -12,6 +12,7 @@ const Popup = () => import('@/components/Popup')
 const Picker = () => import('@/components/Picker')
 export default new Router({
   mode: 'history',
+  base: '/rui-vue-lego/',
   routes: [
     {
       path: '/',
