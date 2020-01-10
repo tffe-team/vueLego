@@ -10,8 +10,9 @@ import enUS from '../src/locales/lang/en-US'
 import znCN from '../src/locales/lang/zh-CN'
 
 Vue.use(lego, {
-  lang: 'zh-CN',
-  locale: znCN
+  lang: 'en-US',
+  locale: enUS,
+  theme: 'green'
 })
 new Vue({
   router,

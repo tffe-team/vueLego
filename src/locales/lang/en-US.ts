@@ -1,5 +1,6 @@
 export default {
   confirm: 'Confirm',
   cancel: 'Cancel',
-  iKnow: 'I know'
+  iKnow: 'I know',
+  selectData: 'Select Data'
 } 

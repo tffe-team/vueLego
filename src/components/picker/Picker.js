@@ -1,10 +1,12 @@
 import PickerColumn from './PickerColumn';
+import locale from '../../mixins/locale';
 export default {
   name: 'r-picker',
+  mixins: [locale],
   props: {
     title : {
       type : String,
-      deafult: '选择数据',
+      deafult: '',
       required: false
     },
     columns: {
@@ -113,9 +115,9 @@ export default {
         <div class="vue-lego-masker vue-lego-fade-out" onClick={this.onCancel}></div>
         <div class="vue-lego-popup vue-lego-popup-picker vue-lego-slide-in-up">
             <header class="hd vue-lego-header-picker">
-              <span class="popup-regret" onClick={this.onCancel}>取消</span>
-              <span class="popup-title">{this.title}</span>
-              <span class="popup-affirm"  onClick={this.onConfirm}>确定</span>
+              <span class="popup-regret" onClick={this.onCancel}>{ this.$translate('cancel') }</span>
+              <span class="popup-title">{this.title || this.$translate('selectData')}</span>
+              <span class="popup-affirm"  onClick={this.onConfirm}>{ this.$translate('confirm') }</span>
             </header>
             <div class="bd">
               <div class="vue-lego-picker">
