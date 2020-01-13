@@ -7,7 +7,7 @@ const defaultProps: LoadingOption = {
   id: '$loading-common-el',
   zIndex: 10000,
   visible: false,
-  tips: '加载中'
+  tips: ''
 }
 
 

@@ -7,11 +7,11 @@ import lego from '../src/'
 
 // import lego from '../dist/rui-vue-lego.min.js'
 import enUS from '../src/locales/lang/en-US'
-import znCN from '../src/locales/lang/zh-CN'
+import zhCN from '../src/locales/lang/zh-CN'
 
 Vue.use(lego, {
-  lang: 'en-US',
-  locale: enUS,
+  lang: 'zh-CN',
+  locale: zhCN,
   theme: 'green'
 })
 new Vue({
