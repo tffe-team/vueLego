@@ -9,7 +9,7 @@ function resolve(dir) {
 module.exports = {
   mode: "production",
   entry: './src/index.ts',
-  publicPath: '/rui-vue-lego/',
+  publicPath: '/',
   output: {
     path: resolve('../dist'),
     filename: 'rui-vue-lego.min.js',

@@ -12,7 +12,7 @@ module.exports = {
   entry: './examples/main.ts',
   output: {
     path: resolve('../examples/dist'),
-    publicPath : "/",
+    publicPath : "/rui-vue-lego/",
     filename: '[name].js',
     chunkFilename: '[name].js'
   },
