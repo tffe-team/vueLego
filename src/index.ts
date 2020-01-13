@@ -5,7 +5,7 @@ import { InstallOption } from '../typings/vue-lego'
 
 import Picker from './components/picker/Picker.js'
 import Popup from './components/popup/Popup.js'
-import Button from './components/button/button'
+import Button from './components/button/Button'
 
 import $dialog from './components/dialog/'
 import $tips from './components/tips/'
