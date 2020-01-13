@@ -23,10 +23,10 @@
     }
     &.vue-lego-btn-disabled {
       &, &:active {
-        color: rgba($color: $color, $alpha: .5);
-        background-color: rgba($color: $main-color, $alpha: .5);
+        color: rgba($color: $color, $alpha: .6);
+        background-color: rgba($color: $main-color, $alpha: .6);
         &::after {
-          border-color: rgba($color: $border-color, $alpha: .5);
+          border-color: rgba($color: $border-color, $alpha: .2);
         }
       }
     }
@@ -86,7 +86,7 @@
 ){
   &.vue-lego-btn-disabled {
     &, &:active {
-      color: rgba($color: map-variable-get(blue, btn, text-color), $alpha: .5);
+      color: rgba($color: map-variable-get(blue, btn, text-color), $alpha: 1);
     }
   }
 };
