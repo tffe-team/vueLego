@@ -24,14 +24,6 @@ module.exports = {
       'src': resolve('../src'),
     }
   },
-  externals: {
-    vue: {
-      root: 'Vue',
-      commonjs: 'vue',
-      commonjs2: 'vue',
-      umd: 'vue'
-    }
-  },
   plugins: [
     new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
@@ -96,7 +88,7 @@ module.exports = {
         test: /\.(js|jsx|es6|tsx)$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
-        include: [resolve('../src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
+        include: [resolve('../examples'), resolve('../src'), resolve('node_modules/webpack-dev-server/client')]
       },
       {
         test: /\.(sa|sc|c)ss$/,
