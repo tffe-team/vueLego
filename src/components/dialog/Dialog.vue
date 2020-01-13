@@ -29,7 +29,7 @@
 
 import contentRender from './contentRender'
 import locale from '../../mixins/locale'
-import button from '../button/button'
+import button from '../button/Button'
 export default {
   name: 'r-dialog',
   components: {
