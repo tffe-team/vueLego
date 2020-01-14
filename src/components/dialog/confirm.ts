@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Dialog from './Dialog'
+import { i18n } from './../../locales/index'
 const DialogComponent: any = Dialog
 DialogComponent.newInstance = properties => {
   const _props = Object.assign( {
@@ -27,8 +28,8 @@ DialogComponent.newInstance = properties => {
     data: Object.assign({
       title: '',
       content: '',
-      okText: '确认',
-      cancelText: '取消',
+      okText: i18n('confirm'),
+      cancelText: i18n('cancel'),
       iconName:'',
       closeAble: false,
       showCancel: false,
@@ -63,7 +64,7 @@ DialogComponent.newInstance = properties => {
     },
     render (h: any){
       return h(Dialog, {
-        props: Object.assign({}, _props, {
+        props: Object.assign({}, this.$data, {
         }),
         domProps: {
           value: this.visible
