@@ -6,12 +6,16 @@
         <r-button type="primary">primary</r-button>
         <r-button type="success">success</r-button>
         <r-button type="ghost">ghost</r-button>
+        <r-button type="error">error</r-button>
+        <r-button type="text">text</r-button>
       </div>
       <p class="g-title">禁用按钮</p>
       <div class="btns-wrap">
         <r-button disabled type="primary">primary</r-button>
         <r-button disabled type="success">success</r-button>
         <r-button disabled type="ghost">ghost</r-button>
+        <r-button disabled type="error">error</r-button>
+        <r-button disabled type="text">text</r-button>
       </div>
       <p class="g-title">形状按钮</p>
       <div class="btns-wrap">

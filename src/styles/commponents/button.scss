@@ -17,15 +17,16 @@
     $active-border-color: rgba($color: $border-color, $alpha: .8),
     $active-bgcolor: rgba($color: $active-bgcolor, $alpha: .8)
   ){
+    @content;
     &::after {
       box-sizing: border-box;
     }
     &.vue-lego-btn-disabled {
       &, &:active {
-        color: rgba($color: $color, $alpha: .5);
-        background-color: rgba($color: $main-color, $alpha: .5);
+        color: rgba($color: $color, $alpha: .6);
+        background-color: rgba($color: $main-color, $alpha: .6);
         &::after {
-          border-color: rgba($color: $border-color, $alpha: .5);
+          border-color: rgba($color: $border-color, $alpha: .2);
         }
       }
     }
@@ -48,6 +49,11 @@
 );
 
 @include vue-logo-base(
+  $theme: blue,
+  $name: error
+);
+
+@include vue-logo-base(
   $theme: green,
   $name: primary
 );
@@ -62,6 +68,46 @@
   $name: ghost
 );
 
+@include vue-logo-base(
+  $theme: green,
+  $name: error
+);
+
+@include rui-btn(
+  $name: 'blue-text',
+  $height: $btn-height,
+  $padding: $btn-padding,
+  $bgcolor: transparent,
+  $border-width: 0,
+  $font-size: $btn-fontSize,
+  $active-bgcolor: transparent,
+  $active-color: map-variable-get(blue, btn, text-color),
+  $color: map-variable-get(blue, btn, text-color)
+){
+  &.vue-lego-btn-disabled {
+    &, &:active {
+      color: rgba($color: map-variable-get(blue, btn, text-color), $alpha: .5);
+    }
+  }
+};
+
+@include rui-btn(
+  $name: 'green-text',
+  $height: $btn-height,
+  $padding: $btn-padding,
+  $bgcolor: transparent,
+  $border-width: 0,
+  $font-size: $btn-fontSize,
+  $active-bgcolor: transparent,
+  $active-color: map-variable-get(green, btn, text-color),
+  $color: map-variable-get(green, btn, text-color)
+){
+  &.vue-lego-btn-disabled {
+    &, &:active {
+      color: rgba($color: map-variable-get(green, btn, text-color), $alpha: .5);
+    }
+  }
+};
 
 @include rui-btn(
   $name: "round",

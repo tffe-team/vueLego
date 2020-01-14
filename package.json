@@ -8,6 +8,7 @@
   "typings": "typings/vue-lego.d.ts",
   "scripts": {
     "build": "webpack --config ./build/webpack.build.js",
+    "build-doc": "webpack --config ./build/webpack.example.build.js",
     "dev": "node ./build/server.js"
   },
   "files": [

@@ -16,7 +16,7 @@ export default {
       type: String,
       default: 'primary',
       validator (value) {
-        return ['primary', 'ghost', 'success'].includes(value)
+        return ['primary', 'ghost', 'success', 'error', 'text'].includes(value)
       }
     },
     shape: {

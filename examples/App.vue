@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="wrap">
     <header class="rui-header rui-header-vue-lego">
-      <i class="rui-ico back" v-if="this.title !== 'rui-vue-lego'" @click="jumpUrl">&#xe902;</i>
+      <i class="rui-ico back" v-if="showBack" @click="jumpUrl">&#xe902;</i>
       <h2 class="title">{{title}}</h2>
     </header> 
     <transition :name="transitionName">
@@ -17,6 +17,11 @@ import {Component, Vue, Prop, Watch} from 'vue-property-decorator'
 export default class App extends Vue {
   transitionName  = 'slide-right'
   title = ''
+
+  get showBack() {
+    return +this.$route.query.back !== 0 && this.title !== 'rui-vue-lego'
+  }
+
   @Watch('$route')
   onRouterChange(to: any, from: any) {
     const toDepth = to.path.split('/').length
