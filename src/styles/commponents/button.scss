@@ -86,7 +86,7 @@
 ){
   &.vue-lego-btn-disabled {
     &, &:active {
-      color: rgba($color: map-variable-get(blue, btn, text-color), $alpha: 1);
+      color: rgba($color: map-variable-get(blue, btn, text-color), $alpha: .5);
     }
   }
 };
