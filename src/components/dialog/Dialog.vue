@@ -23,7 +23,6 @@
       </footer>
     </div>
   </div>
-  
 </template>
 <script>
 
