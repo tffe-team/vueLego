@@ -4,7 +4,7 @@ import App from '@/App.vue'
 import router from './router'
 import lego from '../src/'
 
-import enUS from '../src/locales/lang/en-US'
+// import enUS from '../src/locales/lang/en-US'
 import zhCN from '../src/locales/lang/zh-CN'
 
 Vue.use(lego, {

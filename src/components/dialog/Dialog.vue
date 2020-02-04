@@ -18,8 +18,8 @@
         <div v-else>{{content}}</div>
       </div>
       <footer class="ft" v-if='!footerHide'>
-        <button class="vue-lego-btn  vue-lego-btn-dialog" v-if="showCancel" @click='cancle'>{{cancelText || $translate('cancel')}}</button>
-        <button class="vue-lego-btn  vue-lego-btn-dialog" @click='ok'>{{okText || $translate('confirm')}}</button>
+        <button class="vue-lego-btn vue-lego-btn-dialog" v-if="showCancel" @click='cancle'>{{ cancelText }}</button>
+        <button class="vue-lego-btn vue-lego-btn-dialog" @click='ok'>{{ okText }}</button>
       </footer>
     </div>
   </div>

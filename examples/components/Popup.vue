@@ -26,7 +26,7 @@
       return {
         show: false,
         closeAble: false,
-        position: ''
+        position: 'center'
       }
     },
     methods: {

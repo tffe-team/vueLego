@@ -38,8 +38,8 @@
       </div>
       <p class="g-title">路由跳转</p>
       <div class="btns-wrap">
-        <r-button url="https://www.baidu.com">url跳转</r-button>
         <r-button to="/">router跳转</r-button>
+        <r-button url="https://www.baidu.com">url跳转</r-button>
       </div>
     </div>
   </div>
