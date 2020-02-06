@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`$toast 1`] = `"<div class=\\"r-vue-lego-toast vue-lego-slide-in-down\\" style=\\"display: none;\\"><div class=\\"toast-content toast-content--info\\"><span class=\\"message\\"></span></div></div>"`;

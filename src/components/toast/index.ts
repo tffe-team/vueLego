@@ -45,6 +45,8 @@ const $toast = (options) => {
       removeInstance()
     }, options.duration)
   }
+
+  return toastInstance
 }
 
 const removeInstance = () => {
