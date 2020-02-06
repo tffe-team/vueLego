@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Tips from './Tips.vue'
-import { ToastOption } from '../../../typings/vue-lego'
+import { TipsOption } from '../../../typings/vue-lego'
 
 let tipstInstance
 
@@ -87,14 +87,14 @@ function createTips(options) {
   getTipsInstance(options)
   tipstInstance.show()
 }
-$tips.info = (option: ToastOption) => {
+$tips.info = (option: TipsOption) => {
   createTips(option)
 }
-$tips.success = (option: ToastOption) => {
+$tips.success = (option: TipsOption) => {
   option.iconName = 'success'
   createTips(option)
 }
-$tips.error = (option: ToastOption) => {
+$tips.error = (option: TipsOption) => {
   option.iconName = 'fail'
   createTips(option)
 }

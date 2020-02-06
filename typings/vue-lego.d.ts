@@ -25,34 +25,54 @@ export interface LoadingOption {
   tips: string
 }
 
-export interface ToastOption {
-  /** 显示内容 */
-  msg:string,
-  /** 持续显示时间 */
+export interface ToastOption { 
   duration?: number,
-  /** 是否成功 */
-  isSuccess?: Boolean,
-  iconName?: String,
-  /** 关闭时回调 */
+  message: string,  
   onClose?: Function
 }
 
-export interface DialogClass {
-  info: Function,
-  fail: Function,
-  error: Function,
-  success : Function,
-  confirm: Function,
-  remove: Function
+export interface ToastClass {
+  info: (options: ToastOption) => void,
+  error: (options: ToastOption) => void,
+  success : (options: ToastOption) => void,
 }
 
+export interface TipsOption {
+  message: string,
+  iconName?: string,
+  onClose?: Function,
+  onRemove?: Function,
+}
+
+export interface TipsClass {
+  info: (options: TipsOption) => void,
+  error: (options: TipsOption) => void,
+  success : (options: TipsOption) => void,
+}
 
 export interface DialogOption {
   title?: string,
+  content?: string,
   okText?: string,
   cancelText? : string,
+  iconName?: string,
+  closeAble?: boolean,
+  showCancel?: boolean,
+  showMask?: boolean,
+  footerHide?: boolean,
   onOk?: Function,
-  onClose?: Function
+  onCancel?: Function,
+  onClose?: Function,
+  render?: Function,
+}
+
+export interface DialogClass {
+  info: (options: DialogOption) => void,
+  fail: (options: DialogOption) => void,
+  error: (options: DialogOption) => void,
+  success : (options: DialogOption) => void,
+  confirm: (options: DialogOption) => void,
+  remove: (options: DialogOption) => void
 }
 
 declare module "vue/types/vue" {
@@ -61,8 +81,8 @@ declare module "vue/types/vue" {
   }
   interface Vue {
     $lang: string,
-    $tips: (option: ToastOption) => void,
-    $toast: (option: ToastOption) => void,
+    $tips: TipsClass,
+    $toast: ToastClass,
     $dialog: DialogClass,
   }
 }
