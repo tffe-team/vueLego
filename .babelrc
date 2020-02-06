@@ -8,6 +8,13 @@
     }],
     "stage-3"
   ],
+  "env": {
+    "test": {
+      "presets": [
+        ["env", { "targets": { "node": "current" }}]
+      ]
+    }
+  },
   "plugins": ["transform-vue-jsx",
     "babel-plugin-transform-runtime",
     "babel-plugin-transform-es2015-modules-commonjs"]
