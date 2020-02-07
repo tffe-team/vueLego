@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`create a dialog 1`] = `null`;
+
+exports[`dialog type 1`] = `null`;

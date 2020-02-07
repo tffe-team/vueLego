@@ -12,9 +12,19 @@ config.mocks['$LEGO'] = {
 const selector = '.r-vue-lego-dialog'
 
 test('create a dialog', async () => {
-  const dialog = $dialog.info({
+  $dialog.info({
     content: 'this is a dialog'
   })
   await later()
   expect(document.querySelector(selector)).toMatchSnapshot()
+  $dialog.remove()
+})
+
+test('dialog type', async () => {
+  $dialog.success({
+    content: 'this is a success dialog'
+  })
+  await later()
+  expect(document.querySelector(selector)).toMatchSnapshot()
+  $dialog.remove()
 })
