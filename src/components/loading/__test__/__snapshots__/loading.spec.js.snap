@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`create a loading 1`] = `"<div class=\\"r-vue-lego-loading vue-lego-loading vue-lego-loading-common\\" style=\\"z-index: 10000;\\" id=\\"$loading-common-el\\"><div class=\\"inner\\"><i class=\\"rui-ico\\"></i> <p class=\\"tips\\"></p></div></div>"`;
