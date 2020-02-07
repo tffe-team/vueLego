@@ -24,12 +24,12 @@ test('type prop', async () => {
 test('duration prop', async () => {
   const toast = $toast({
     message: 'duration prop',
-    duration: 2000,
+    duration: 10,
   })
 
   await later()
   expect(document.body.querySelector(selector)).toBeTruthy()
-  await later(2000)
+  await later(10)
   expect(document.body.querySelector(selector)).toBeFalsy()
 })
 
