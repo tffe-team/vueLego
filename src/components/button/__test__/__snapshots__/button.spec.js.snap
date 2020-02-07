@@ -4,3 +4,34 @@ exports[`create a button 1`] = `
 "<button class=\\"vue-lego-btn vue-lego-btn-[object Object]-success\\">
   <!----> </button>"
 `;
+
+exports[`disabled prop 1`] = `
+"<button disabled=\\"disabled\\" class=\\"vue-lego-btn vue-lego-btn-[object Object]-primary vue-lego-btn-disabled\\">
+  <!----> </button>"
+`;
+
+exports[`loading prop 1`] = `
+"<button class=\\"vue-lego-btn vue-lego-btn-[object Object]-primary vue-lego-btn-loading\\">
+  <div class=\\"loading-container\\"><i class=\\"rui-ico\\"></i></div>
+</button>"
+`;
+
+exports[`long prop 1`] = `
+"<button class=\\"vue-lego-btn vue-lego-btn-[object Object]-primary vue-lego-btn-long\\">
+  <!----> </button>"
+`;
+
+exports[`shape prop 1`] = `
+"<button class=\\"vue-lego-btn vue-lego-btn-[object Object]-primary vue-lego-btn-round\\">
+  <!----> </button>"
+`;
+
+exports[`size prop 1`] = `
+"<button class=\\"vue-lego-btn vue-lego-btn-[object Object]-primary vue-lego-btn-large\\">
+  <!----> </button>"
+`;
+
+exports[`type prop 1`] = `
+"<button class=\\"vue-lego-btn vue-lego-btn-[object Object]-success\\">
+  <!----> </button>"
+`;
