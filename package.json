@@ -10,7 +10,7 @@
     "build": "webpack --config ./build/webpack.build.js",
     "build-doc": "webpack --config ./build/webpack.example.build.js",
     "dev": "node ./build/server.js",
-    "test": "jest"
+    "test": "jest --watch"
   },
   "files": [
     "dist",
@@ -86,9 +86,6 @@
       "json",
       "vue"
     ],
-    "moduleNameMapper": {
-      "^@/(.*)$": "<rootDir>/src/$1"
-    },
     "transform": {
       "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
       ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest",
