@@ -1,6 +1,8 @@
 import $toast from '../index'
 import {later} from '../../../test'
 
+const selector = '.r-vue-lego-toast'
+
 test('create a toast', async () => {
   const toast = $toast({
     message: 'create a toast'
@@ -24,12 +26,11 @@ test('duration prop', async () => {
     message: 'duration prop',
     duration: 2000,
   })
-  const className = `.${toast.$el.classList[0]}`
 
   await later()
-  expect(document.body.querySelector(className)).toBeTruthy()
+  expect(document.body.querySelector(selector)).toBeTruthy()
   await later(2000)
-  expect(document.body.querySelector(className)).toBeFalsy()
+  expect(document.body.querySelector(selector)).toBeFalsy()
 })
 
 test('onClose prop', async () => {
