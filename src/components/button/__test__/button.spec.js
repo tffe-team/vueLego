@@ -9,10 +9,26 @@ config.mocks['$LEGO'] = {
   }
 }
 
-// 获取包裹器
-const wrapper = shallowMount(Button)
-
 test('点击按钮触发 click 事件', () => {
+  const wrapper = shallowMount(Button)
   wrapper.find('button').trigger('click')
   expect(wrapper.emitted().click).toBeTruthy()
 })
+
+test('to', () => {
+  global.window = Object.create(window);
+  const url = "http://dummy.com";
+  Object.defineProperty(window, 'location', {
+    value: {
+      href: url
+    }
+  });
+  const wrapper = shallowMount(Button, {
+    propsData: {
+      url,
+    }
+  })
+  wrapper.find('button').trigger('click')
+  expect(window.location.href).toEqual(url)
+})
+
