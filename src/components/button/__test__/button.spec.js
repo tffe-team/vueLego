@@ -1,12 +1,9 @@
 import {shallowMount, config} from '@vue/test-utils'
 import Button from '../Button'
 
-// TODO: Button 组件依赖这个属性，后续考虑优化，因为很多组件都会依赖
 config.mocks['$LEGO'] = {
-  theme: {
-    theme: 'blue',
-    lang: 'zh-CN'
-  }
+  theme: 'blue',
+  lang: 'zh-CN'
 }
 
 test('type prop', () => {
@@ -73,7 +70,7 @@ test('to prop', () => {
   const push = jest.fn()
   const wrapper = shallowMount(Button, {
     propsData: {
-      to: { path: '/test' }
+      to: {path: '/test'}
     },
     mocks: {
       $router: {
@@ -82,7 +79,7 @@ test('to prop', () => {
     }
   })
   wrapper.find('button').trigger('click')
-  expect(push).toHaveBeenCalled() 
+  expect(push).toHaveBeenCalled()
 })
 
 test('replace prop', () => {
@@ -90,7 +87,7 @@ test('replace prop', () => {
   const wrapper = shallowMount(Button, {
     propsData: {
       replace: true,
-      to: { path: '/test' }
+      to: {path: '/test'}
     },
     mocks: {
       $router: {
@@ -99,17 +96,17 @@ test('replace prop', () => {
     }
   })
   wrapper.find('button').trigger('click')
-  expect(replace).toHaveBeenCalled() 
+  expect(replace).toHaveBeenCalled()
 })
 
 test('url prop', () => {
-  global.window = Object.create(window);
-  const url = "http://dummy.com";
+  global.window = Object.create(window)
+  const url = 'http://dummy.com'
   Object.defineProperty(window, 'location', {
     value: {
       href: 'http://www.baidu.com',
     }
-  });
+  })
   const wrapper = shallowMount(Button, {
     propsData: {
       url
@@ -118,5 +115,3 @@ test('url prop', () => {
   wrapper.find('button').trigger('click')
   expect(window.location.href).toEqual(url)
 })
-
-
