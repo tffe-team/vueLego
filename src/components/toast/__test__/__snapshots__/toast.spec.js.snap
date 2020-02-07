@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`$toast 1`] = `"<div class=\\"r-vue-lego-toast vue-lego-slide-in-down\\" style=\\"display: none;\\"><div class=\\"toast-content toast-content--info\\"><span class=\\"message\\"></span></div></div>"`;
+exports[`create a toast 1`] = `"<div class=\\"r-vue-lego-toast vue-lego-slide-in-down\\" style=\\"\\"><div class=\\"toast-content toast-content--info\\"><span class=\\"message\\">create a toast</span></div></div>"`;
+
+exports[`type prop 1`] = `"<div class=\\"r-vue-lego-toast vue-lego-slide-in-down\\" style=\\"\\"><div class=\\"toast-content toast-content--success\\"><span class=\\"message\\">create a success toast</span></div></div>"`;
