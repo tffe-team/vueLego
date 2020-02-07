@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`create a popup 1`] = `
-"<div vshow=\\"true\\" class=\\"r-vue-lego-popup\\">
+"<div class=\\"r-vue-lego-popup\\">
   <div class=\\"vue-lego-masker vue-lego-fade-in\\"></div>
   <div class=\\"vue-lego-popup-content animate-left vue-lego-slide-in-left\\">
     <div class=\\"bd\\">
