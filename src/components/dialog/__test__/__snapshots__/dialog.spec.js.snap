@@ -102,6 +102,198 @@ exports[`dialog type 1`] = `
 </div>
 `;
 
+exports[`hide footer 1`] = `
+<div
+  class="r-vue-lego-dialog r-vue-lego-blue-dialog"
+  style=""
+>
+  <div
+    class="vue-lego-masker vue-lego-fade-out"
+  />
+   
+  <div
+    class="vue-lego-dialog vue-lego-zoom-in"
+  >
+    <!---->
+     
+    <div
+      class="bd"
+    >
+      <h2
+        class="icon-wrap"
+      >
+        <i
+          class="vue-lego-ico circle-bg info"
+        >
+          
+        </i>
+         
+        <!---->
+         
+        <!---->
+      </h2>
+       
+      <div>
+        i will hide footer
+      </div>
+    </div>
+     
+    <!---->
+  </div>
+</div>
+`;
+
+exports[`hide mask 1`] = `
+<div
+  class="r-vue-lego-dialog r-vue-lego-blue-dialog"
+  style=""
+>
+  <!---->
+   
+  <div
+    class="vue-lego-dialog vue-lego-zoom-in"
+  >
+    <!---->
+     
+    <div
+      class="bd"
+    >
+      <h2
+        class="icon-wrap"
+      >
+        <i
+          class="vue-lego-ico circle-bg info"
+        >
+          
+        </i>
+         
+        <!---->
+         
+        <!---->
+      </h2>
+       
+      <div>
+        i will hide mask
+      </div>
+    </div>
+     
+    <footer
+      class="ft"
+    >
+      <!---->
+       
+      <button
+        class="vue-lego-btn vue-lego-btn-dialog"
+      >
+        
+      </button>
+    </footer>
+  </div>
+</div>
+`;
+
+exports[`show cancel 1`] = `
+<div
+  class="r-vue-lego-dialog r-vue-lego-blue-dialog"
+  style=""
+>
+  <div
+    class="vue-lego-masker vue-lego-fade-out"
+  />
+   
+  <div
+    class="vue-lego-dialog vue-lego-zoom-in"
+  >
+    <!---->
+     
+    <div
+      class="bd"
+    >
+      <h2
+        class="icon-wrap"
+      >
+        <i
+          class="vue-lego-ico circle-bg info"
+        >
+          
+        </i>
+         
+        <!---->
+         
+        <!---->
+      </h2>
+       
+      <div>
+        i will show cancel
+      </div>
+    </div>
+     
+    <footer
+      class="ft"
+    >
+      <!---->
+       
+      <button
+        class="vue-lego-btn vue-lego-btn-dialog"
+      >
+        
+      </button>
+    </footer>
+  </div>
+</div>
+`;
+
+exports[`show closeAble 1`] = `
+<div
+  class="r-vue-lego-dialog r-vue-lego-blue-dialog"
+  style=""
+>
+  <div
+    class="vue-lego-masker vue-lego-fade-out"
+  />
+   
+  <div
+    class="vue-lego-dialog vue-lego-zoom-in"
+  >
+    <!---->
+     
+    <div
+      class="bd"
+    >
+      <h2
+        class="icon-wrap"
+      >
+        <i
+          class="vue-lego-ico circle-bg info"
+        >
+          
+        </i>
+         
+        <!---->
+         
+        <!---->
+      </h2>
+       
+      <div>
+        i will show closeAble
+      </div>
+    </div>
+     
+    <footer
+      class="ft"
+    >
+      <!---->
+       
+      <button
+        class="vue-lego-btn vue-lego-btn-dialog"
+      >
+        
+      </button>
+    </footer>
+  </div>
+</div>
+`;
+
 exports[`title prop 1`] = `
 <div
   class="r-vue-lego-dialog r-vue-lego-blue-dialog"
