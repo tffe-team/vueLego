@@ -1,0 +1,6 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`create a button 1`] = `
+"<button class=\\"vue-lego-btn vue-lego-btn-[object Object]-success\\">
+  <!----> </button>"
+`;
