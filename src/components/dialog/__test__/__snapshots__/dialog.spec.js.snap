@@ -3,3 +3,5 @@
 exports[`create a dialog 1`] = `null`;
 
 exports[`dialog type 1`] = `null`;
+
+exports[`title prop 1`] = `null`;

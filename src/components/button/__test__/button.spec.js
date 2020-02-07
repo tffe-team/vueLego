@@ -24,6 +24,21 @@ test('click button', () => {
   expect(wrapper.emitted().click).toBeTruthy()
 })
 
+test('to', () => {
+  const wrapper = shallowMount(Button, {
+    propsData: {
+      to: { path: '/test' }
+    },
+    mocks: {
+      $router: {
+        push: jest.fn()
+      }
+    }
+  })
+  wrapper.find('button').trigger('click')
+  expect(wrapper.vm.$router.push).toHaveBeenCalled() 
+})
+
 test('url', () => {
   global.window = Object.create(window);
   const url = "http://dummy.com";
