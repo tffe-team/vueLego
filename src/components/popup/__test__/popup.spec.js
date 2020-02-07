@@ -1,4 +1,4 @@
-import {mount, config} from '@vue/test-utils'
+import {mount} from '@vue/test-utils'
 import Popup from '../Popup'
 
 test('create a popup', () => {
@@ -14,7 +14,7 @@ test('create a popup', () => {
   expect(wrapper.html()).toMatchSnapshot()
 })
 
-test('click close btn', () => {
+test('click close btn', async () => {
   const wrapper = mount(Popup, {
     propsData: {
       position: 'down',
@@ -22,9 +22,9 @@ test('click close btn', () => {
       closeAble: true
     }
   })
-  expect(document.querySelector('.r-vue-lego-popup')).toBeTruthy()
+  expect(wrapper.props().value).toBe(true)
   wrapper.find('.close-btn').trigger('click')
-  expect(document.body.querySelector('.r-vue-lego-popup')).toBeFalsy()
+  expect(wrapper.emitted().input[0]).toEqual([false])
 })
 
 test('click masker', () => {
@@ -34,7 +34,7 @@ test('click masker', () => {
       value: true
     }
   })
+  expect(wrapper.props().value).toBe(true)
   wrapper.find('.vue-lego-masker').trigger('click')
-  expect(wrapper.isVisible()).toBe(true)
+  expect(wrapper.emitted().input[0]).toEqual([false])
 })
-
