@@ -9,23 +9,32 @@ config.mocks['$LEGO'] = {
   }
 }
 
-test('点击按钮触发 click 事件', () => {
+test('create a button', () => {
+  const wrapper = shallowMount(Button, {
+    propsData: {
+      type: 'success'
+    }
+  })
+  expect(wrapper.html()).toMatchSnapshot()
+})
+
+test('click button', () => {
   const wrapper = shallowMount(Button)
   wrapper.find('button').trigger('click')
   expect(wrapper.emitted().click).toBeTruthy()
 })
 
-test('to', () => {
+test('url', () => {
   global.window = Object.create(window);
   const url = "http://dummy.com";
   Object.defineProperty(window, 'location', {
     value: {
-      href: url
+      href: 'http://www.baidu.com',
     }
   });
   const wrapper = shallowMount(Button, {
     propsData: {
-      url,
+      url
     }
   })
   wrapper.find('button').trigger('click')
