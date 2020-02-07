@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`create a picker 1`] = `
+"<div class=\\"r-vue-lego-picker\\">
+  <div class=\\"vue-lego-masker vue-lego-fade-out\\"></div>
+  <div class=\\"vue-lego-popup vue-lego-popup-picker vue-lego-slide-in-up\\">
+    <header class=\\"hd vue-lego-header-picker\\"><span class=\\"popup-regret\\"></span><span class=\\"popup-title\\"></span><span class=\\"popup-affirm\\"></span></header>
+    <div class=\\"bd\\">
+      <div class=\\"vue-lego-picker\\"><span class=\\"mask\\"></span>
+        <ul class=\\"list\\" style=\\"transform: translate3d(0, 60px, 0); transition-duration: 0ms; transition-property: none; line-height: 30px; height: 150px;\\">
+          <li class=\\"item\\">option1</li>
+          <li class=\\"item\\">option2</li>
+          <li class=\\"item\\">option3</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>"
+`;

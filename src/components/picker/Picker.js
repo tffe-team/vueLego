@@ -6,7 +6,7 @@ export default {
   props: {
     title : {
       type : String,
-      deafult: '',
+      default: '',
       required: false
     },
     columns: {
@@ -29,7 +29,7 @@ export default {
   methods: {
     insertColumns() {
       return this.columns.map((item, index) => (
-        <PickerColumn 
+        <PickerColumn
           initialOptions={item.options}
           itemHeight={this.itemHeight}
           defaultValue={item.value}
@@ -39,7 +39,7 @@ export default {
           }}
         />
       ))
-     
+
     },
     setColumns() {
       this.columns.forEach((column, index) => {
@@ -109,7 +109,7 @@ export default {
     }
   },
   render() {
-    const wrapClass= ["r-vue-lego-picker", this.className] 
+    const wrapClass = ["r-vue-lego-picker", this.className]
     return (
       <div class={wrapClass}>
         <div class="vue-lego-masker vue-lego-fade-out" onClick={this.onCancel}></div>
