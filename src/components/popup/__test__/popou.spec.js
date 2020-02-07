@@ -1,6 +1,8 @@
 import {mount, config} from '@vue/test-utils'
 import Popup from '../Popup'
 
+const selector = '.r-vue-lego-popup'
+
 test('create a popup', () => {
   const wrapper = mount(Popup, {
     propsData: {
@@ -23,7 +25,7 @@ test('click close btn', () => {
     }
   })
   wrapper.find('.close-btn').trigger('click')
-  expect(wrapper.isVisible()).toBe(true)
+  expect(document.body.querySelector(selector)).toBeFalsy()
 })
 
 test('click masker', () => {
@@ -34,6 +36,6 @@ test('click masker', () => {
     }
   })
   wrapper.find('.vue-lego-masker').trigger('click')
-  expect(wrapper.isVisible()).toBe(true)
+  expect(document.body.querySelector(selector)).toBeFalsy()
 })
 
