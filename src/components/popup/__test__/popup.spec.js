@@ -22,7 +22,6 @@ test('click close btn', () => {
       closeAble: true
     }
   })
-  expect(document.querySelector('.r-vue-lego-popup')).toBeTruthy()
   wrapper.find('.close-btn').trigger('click')
   expect(document.body.querySelector('.r-vue-lego-popup')).toBeFalsy()
 })
