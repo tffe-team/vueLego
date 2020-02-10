@@ -14,7 +14,7 @@
             <i v-if="iconName === 'success'" class="vue-lego-ico circle-bg sucess">&#xe90a;</i>
             <i v-if="iconName === 'error'" class="vue-lego-ico circle-bg">&#xe90b;</i>
         </h2>
-        <!-- <contentRender v-if="render" :render="render" /> -->
+         <contentRender v-if="render" :render="render" />
         <div>{{content}}</div>
       </div>
       <footer class="ft" v-if='!footerHide'>
