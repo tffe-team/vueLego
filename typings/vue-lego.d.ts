@@ -39,6 +39,7 @@ export interface ToastClass {
 
 export interface TipsOption {
   message: string,
+  duration?: number,
   iconName?: string,
   onClose?: Function,
   onRemove?: Function,
