@@ -116,7 +116,7 @@ export default {
         <div class="vue-lego-popup vue-lego-popup-picker vue-lego-slide-in-up">
             <header class="hd vue-lego-header-picker">
               <span class="popup-regret" onClick={this.onCancel}>{ this.$translate('cancel') }</span>
-              <span class="popup-title">{this.title || this.$translate('selectData')}</span>
+              <span class="popup-title">{this.title}</span>
               <span class="popup-affirm"  onClick={this.onConfirm}>{ this.$translate('confirm') }</span>
             </header>
             <div class="bd">
