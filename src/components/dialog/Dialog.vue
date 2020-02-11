@@ -14,8 +14,8 @@
             <i v-if="iconName === 'success'" class="vue-lego-ico circle-bg sucess">&#xe90a;</i>
             <i v-if="iconName === 'error'" class="vue-lego-ico circle-bg">&#xe90b;</i>
         </h2>
-         <contentRender v-if="render" :render="render" />
-        <div>{{content}}</div>
+        <contentRender v-if="render" :render="render" />
+        <div v-else>{{content}}</div>
       </div>
       <footer class="ft" v-if='!footerHide'>
         <button class="vue-lego-btn vue-lego-btn-dialog" v-if="showCancel" @click='cancle'>{{ cancelText }}</button>
