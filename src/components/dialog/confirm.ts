@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Dialog from './Dialog'
+import contentRender from './contentRender'
 import { i18n } from './../../locales/index'
 const DialogComponent: any = Dialog
 DialogComponent.newInstance = properties => {
@@ -64,8 +65,7 @@ DialogComponent.newInstance = properties => {
     },
     render (h: any){
       return h(Dialog, {
-        props: Object.assign({}, this.$data, {
-        }),
+        props: Object.assign({}, this.$data),
         domProps: {
           value: this.visible
         },
@@ -76,8 +76,12 @@ DialogComponent.newInstance = properties => {
           'on-cancel': this.cancel,
           'on-close': this.close,
           'on-ok': this.ok
+        },
+      }, [h(contentRender, {
+        props: {
+          render:  this.$data.render
         }
-      })
+      }), this.$slots.default])
     },
   });
   const component = Instance.$mount();

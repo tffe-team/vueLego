@@ -9,12 +9,39 @@ Vue.prototype.$LEGO = {
 
 const selector = '.r-vue-lego-dialog'
 
-test('create a dialog', () => {
-  $dialog.info({
-    content: 'this is a dialog'
+// test('create a dialog', () => {
+//   $dialog.info({
+//     content: 'this is a dialog'
+//   })
+//   setTimeout(() => {
+//     expect(document.body.querySelector(selector)).toMatchSnapshot()
+//     $dialog.remove()
+//   }, 0)
+// })
+
+test('create a render dialog', () => {
+  $dialog.confirm({
+    title: 'render弹层',
+    render: function (h) {
+      return ('div', {
+        class: ['render-wrap'],
+        style: {
+          height: '40px',
+          maxHeight: '150px',
+          overflow: 'scroll'
+        }
+      },[
+        h('strong', 'render内容展示：render会覆盖content参数传递的文本值')
+      ], 'asda')
+    },   
+    onOk:  () => {
+      
+    }
   })
-  expect(document.body.querySelector(selector)).toMatchSnapshot()
-  $dialog.remove()
+  setTimeout(() => {
+    expect(document.body.querySelector(selector)).toMatchSnapshot()
+    $dialog.remove()
+  }, 0)
 })
 
 // test('dialog type', () => {

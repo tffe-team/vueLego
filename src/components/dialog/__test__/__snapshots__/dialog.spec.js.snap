@@ -1,3 +1,58 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`create a dialog 1`] = `null`;
+
+exports[`create a render dialog 1`] = `
+<div
+  class="r-vue-lego-dialog r-vue-lego-blue-dialog"
+  style="display: none;"
+>
+  <div
+    class="vue-lego-masker vue-lego-fade-out"
+  />
+   
+  <div
+    class="vue-lego-dialog vue-lego-zoom-in"
+  >
+    <header
+      class="hd"
+    >
+      <h2
+        class="title"
+      >
+        
+        render弹层
+      
+      </h2>
+       
+      <!---->
+    </header>
+     
+    <div
+      class="bd"
+    >
+      <!---->
+       
+      <div>
+        asda
+      </div>
+    </div>
+     
+    <footer
+      class="ft"
+    >
+      <button
+        class="vue-lego-btn vue-lego-btn-dialog"
+      >
+        
+      </button>
+       
+      <button
+        class="vue-lego-btn vue-lego-btn-dialog"
+      >
+        
+      </button>
+    </footer>
+  </div>
+</div>
+`;
