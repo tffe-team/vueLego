@@ -1,7 +1,8 @@
-import {mount, config} from '@vue/test-utils'
-import $dialog from '../index'
+import $dialog from '@components/dialog'
+import {later} from '../index'
 
 import Vue from 'vue'
+
 Vue.prototype.$LEGO = {
   theme: 'blue',
   lang: 'zh-CN'
@@ -9,17 +10,16 @@ Vue.prototype.$LEGO = {
 
 const selector = '.r-vue-lego-dialog'
 
-// test('create a dialog', () => {
+// test('create a dialog', async () => {
 //   $dialog.info({
 //     content: 'this is a dialog'
 //   })
-//   setTimeout(() => {
-//     expect(document.body.querySelector(selector)).toMatchSnapshot()
-//     $dialog.remove()
-//   }, 0)
+//   await later()
+//   expect(document.body.querySelector(selector)).toMatchSnapshot()
+//   $dialog.remove()
 // })
 
-test('create a render dialog', () => {
+test('create a render dialog', async () => {
   $dialog.confirm({
     title: 'render弹层',
     render: function (h) {
@@ -30,18 +30,17 @@ test('create a render dialog', () => {
           maxHeight: '150px',
           overflow: 'scroll'
         }
-      },[
+      }, [
         h('strong', 'render内容展示：render会覆盖content参数传递的文本值')
-      ], 'asda')
-    },   
-    onOk:  () => {
-      
+      ], 'text')
+    },
+    onOk: () => {
+
     }
   })
-  setTimeout(() => {
-    expect(document.body.querySelector(selector)).toMatchSnapshot()
-    $dialog.remove()
-  }, 0)
+  await later()
+  expect(document.body.querySelector(selector)).toMatchSnapshot()
+  $dialog.remove()
 })
 
 // test('dialog type', () => {

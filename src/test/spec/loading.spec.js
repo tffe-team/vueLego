@@ -1,5 +1,5 @@
-import $loading from '../index'
-import {later} from '../../../test'
+import $loading from '@components/loading/index'
+import {later} from '../index'
 
 const selector = '.r-vue-lego-loading'
 

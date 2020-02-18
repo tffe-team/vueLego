@@ -1,5 +1,5 @@
-import $tips from '../index'
-import {later} from '../../../test'
+import $tips from '@components/tips'
+import {later} from '../index'
 
 const selector = '.r-vue-lego-tips'
 

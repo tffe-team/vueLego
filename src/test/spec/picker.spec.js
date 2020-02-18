@@ -1,5 +1,5 @@
 import {mount} from '@vue/test-utils'
-import Picker from '../Picker'
+import Picker from '@components/picker/Picker'
 
 const singleColumns = [{
   value: 1,

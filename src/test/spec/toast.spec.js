@@ -1,5 +1,5 @@
-import $toast from '../index'
-import {later} from '../../../test'
+import $toast from '@components/toast'
+import {later} from '../index'
 
 const selector = '.r-vue-lego-toast'
 

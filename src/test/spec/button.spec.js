@@ -1,5 +1,5 @@
 import {shallowMount, config} from '@vue/test-utils'
-import Button from '../Button'
+import Button from '@components/button/Button.vue'
 
 config.mocks['$LEGO'] = {
   theme: 'blue',

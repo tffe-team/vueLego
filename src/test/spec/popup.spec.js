@@ -1,5 +1,5 @@
 import {mount} from '@vue/test-utils'
-import Popup from '../Popup'
+import Popup from '@components/popup/Popup'
 
 test('create a popup', () => {
   const wrapper = mount(Popup, {

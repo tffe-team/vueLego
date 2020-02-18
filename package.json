@@ -92,6 +92,9 @@
       "^.+\\.tsx?$": "ts-jest"
     },
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleNameMapper": {
+      "^@components(.*)$": "<rootDir>/src/components$1"
+    },
     "globals": {
       "ts-jest": {
         "diagnostics": false

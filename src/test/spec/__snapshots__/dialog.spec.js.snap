@@ -1,11 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`create a dialog 1`] = `null`;
-
 exports[`create a render dialog 1`] = `
 <div
   class="r-vue-lego-dialog r-vue-lego-blue-dialog"
-  style="display: none;"
+  style=""
 >
   <div
     class="vue-lego-masker vue-lego-fade-out"
@@ -33,9 +31,6 @@ exports[`create a render dialog 1`] = `
     >
       <!---->
        
-      <div>
-        asda
-      </div>
     </div>
      
     <footer
