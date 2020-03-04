@@ -5,7 +5,7 @@ let toastInstance: any
 let timer: any
 
 const $toast = (options) => {
-  const globalConfig = Vue.prototype.$LEGO.toast
+  const globalConfig =  Vue.prototype.$LEGO && Vue.prototype.$LEGO.toast || {}
   options = {
     type: 'info',
     message: '',
