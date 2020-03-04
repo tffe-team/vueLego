@@ -4,20 +4,20 @@
       value: Boolean,
       position : {
         type : String,
-        deafult: 'center',
+        default: 'center',
         required: false
       },
       closeAble : {
         type : Boolean,
-        deafult: false
+        default: false
       },
       className: {
         type : String,
-        deafult: false
+        default: ''
       }
     },
     mounted() {
-     
+
     },
     methods: {
       close() {
@@ -57,8 +57,8 @@
       if(this.className) {
         classes.push(this.className)
       }
-      return (    
-        <div class="r-vue-lego-popup"  vShow={this.value} >
+      return (
+        <div class="r-vue-lego-popup"  v-show={this.value}>
           <div class="vue-lego-masker vue-lego-fade-in" onClick={this.close}></div>
           <div class={classes} style={this.style}>
             {this.closeAble &&
