@@ -109,7 +109,7 @@ export default {
     }
   },
   render() {
-    const wrapClass = ["r-vue-lego-picker", this.className]
+    const wrapClass = ["r-vue-lego-picker", `r-vue-lego-${this.$LEGO.theme}-picker`, this.className]
     return (
       <div class={wrapClass}>
         <div class="vue-lego-masker vue-lego-fade-out" onClick={this.onCancel}></div>
