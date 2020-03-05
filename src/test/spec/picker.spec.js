@@ -1,6 +1,13 @@
 import {mount} from '@vue/test-utils'
 import Picker from '@components/picker/Picker'
 
+import Vue from 'vue'
+
+Vue.prototype.$LEGO = {
+  theme: 'blue',
+  lang: 'zh-CN'
+}
+
 const singleColumns = [{
   value: 1,
   options: [

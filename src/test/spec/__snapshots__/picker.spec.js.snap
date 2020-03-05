@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`create a single-column picker 1`] = `
-"<div class=\\"r-vue-lego-picker\\">
+"<div class=\\"r-vue-lego-picker r-vue-lego-blue-picker\\">
   <div class=\\"vue-lego-masker vue-lego-fade-out\\"></div>
   <div class=\\"vue-lego-popup vue-lego-popup-picker vue-lego-slide-in-up\\">
     <header class=\\"hd vue-lego-header-picker\\"><span class=\\"popup-regret\\"></span><span class=\\"popup-title\\">单列数据</span><span class=\\"popup-affirm\\"></span></header>
@@ -19,7 +19,7 @@ exports[`create a single-column picker 1`] = `
 `;
 
 exports[`create multi-column picker 1`] = `
-"<div class=\\"r-vue-lego-picker\\">
+"<div class=\\"r-vue-lego-picker r-vue-lego-blue-picker\\">
   <div class=\\"vue-lego-masker vue-lego-fade-out\\"></div>
   <div class=\\"vue-lego-popup vue-lego-popup-picker vue-lego-slide-in-up\\">
     <header class=\\"hd vue-lego-header-picker\\"><span class=\\"popup-regret\\"></span><span class=\\"popup-title\\">多列数据</span><span class=\\"popup-affirm\\"></span></header>
