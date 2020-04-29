@@ -4,17 +4,14 @@ import Toast from './Toast.vue'
 let toastInstance: any
 let timer: any
 
-const defaultOptions = {
-  type: 'info',
-  message: '',
-  visible: true,
-  duration: 3000,
-  onClose: null
-}
-
 const $toast = (options) => {
+  const globalConfig =  Vue.prototype.$LEGO && Vue.prototype.$LEGO.toast || {}
   options = {
-    ...defaultOptions,
+    type: 'info',
+    message: '',
+    visible: true,
+    duration: globalConfig.duration || 3000,
+    onClose: null,
     ...options
   }
 
@@ -45,6 +42,8 @@ const $toast = (options) => {
       removeInstance()
     }, options.duration)
   }
+
+  return toastInstance
 }
 
 const removeInstance = () => {

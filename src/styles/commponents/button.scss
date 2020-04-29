@@ -1,6 +1,6 @@
 
 
-@mixin vue-logo-base($theme, $name) {
+@mixin vue-logo-base($theme, $name, $border-width: 0px) {
   $color: map-variable-get($theme, btn, #{$name}-color);
   $main-color: map-variable-get($theme, btn, #{$name}-bgcolor);
   $border-color: map-variable-get($theme, btn, #{$name}-border-color);
@@ -9,6 +9,7 @@
     $name: #{$theme}-#{$name},
     $color: $color,
     $bgcolor: $main-color,
+    $border-width: $border-width,
     $border-color: $border-color,
     $height: $btn-height,
     $active-color: $color,
@@ -45,7 +46,8 @@
 
 @include vue-logo-base(
   $theme: blue,
-  $name: ghost
+  $name: ghost,
+  $border-width: 1px
 );
 
 @include vue-logo-base(
@@ -65,7 +67,8 @@
 
 @include vue-logo-base(
   $theme: green,
-  $name: ghost
+  $name: ghost,
+  $border-width: 1px
 );
 
 @include vue-logo-base(

@@ -21,9 +21,9 @@ const $tips = properties => {
     return 
   }
   const Instance = new Vue({
-    data: Object.assign(_props, {
+    data: Object.assign({
       duration: 3000
-    }),
+    }, _props),
     mounted() {
      this.close()
     },

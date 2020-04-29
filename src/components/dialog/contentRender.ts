@@ -4,6 +4,9 @@ export default {
   props: {
     render: Function,
   },
+  created() {
+    console.log('CREATED!')
+  },
   render: (h, ctx) => {
     return ctx.props.render(h)
   }

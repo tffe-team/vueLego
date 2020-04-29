@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`create a tips 1`] = `
+<div
+  class="r-vue-lego-tips vue-lego-tips vue-lego-fade-out"
+  style=""
+>
+  <!---->
+   
+  <div
+    class="message"
+  >
+    create a tips
+  </div>
+</div>
+`;
+
+exports[`tips type 1`] = `
+<div
+  class="r-vue-lego-tips vue-lego-tips vue-lego-tips-icon vue-lego-fade-out"
+  style=""
+>
+  <div
+    class="icon-box"
+  >
+    <i
+      class="rui-ico icon"
+    >
+      
+    </i>
+     
+    <!---->
+  </div>
+   
+  <div
+    class="message"
+  >
+    a success tips
+  </div>
+</div>
+`;

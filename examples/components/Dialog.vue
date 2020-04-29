@@ -77,7 +77,6 @@ export default class Dialog extends Vue {
   renderDialog() {
     this.$dialog.confirm({
       title: 'render弹层',
-      content: '内容没有保存，确定退出吗？',
       render: function (h) {
         return h('div', {
           class: ['render-wrap'],

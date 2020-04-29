@@ -38,7 +38,7 @@ export default {
   mixins: [TouchMixin],
   props: {
     defaultValue: {
-      type: Number || String,
+      type: [String, Number],
       default: 0
     },
     itemHeight: {
@@ -159,14 +159,13 @@ export default {
       const duration = Date.now() - this.touchStartTime;
       const allowMomentum =
         duration < MOMENTUM_LIMIT_TIME && Math.abs(distance) > MOMENTUM_LIMIT_DISTANCE;
-
+      this.moving = false;
       if (allowMomentum) {
         this.momentum(distance, duration);
         return;
       }
 
       const index = this.getIndexByOffset(this.offset);
-      this.moving = false;
       this.duration = DEFAULT_DURATION;
       this.setIndex(index, true);
     },
@@ -211,7 +210,6 @@ export default {
     setValue(value) {
       const { options } = this;
       for (let i = 0; i < options.length; i++) {
-        console.log(this.getOptionText(options[i]), value, 44444)
         if (this.getOptionText(options[i]) === value) {
           return this.setIndex(i);
         }

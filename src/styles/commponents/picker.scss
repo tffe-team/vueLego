@@ -29,6 +29,17 @@
   }
   .popup-affirm{
     float: right;
-    color: #508CF0;
+  }
+}
+
+.r-vue-lego-blue-picker {
+  .popup-affirm{
+    color: map-variable-get(blue, dialog, btn-color);
+  }
+}
+
+.r-vue-lego-green-picker {
+  .popup-affirm{
+    color: map-variable-get(green, dialog, btn-color);
   }
 }

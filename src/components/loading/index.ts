@@ -1,7 +1,7 @@
 
 import Vue from 'vue'
 import Loading from './Loading.vue'
-import { LoadingOption } from '../../../typings/vue-lego'
+import { LoadingOption, LoadingClass } from '../../../typings/vue-lego'
 
 const defaultProps: LoadingOption = {
   id: '$loading-common-el',
@@ -46,13 +46,6 @@ const getInstance  = () => {
   return loadingInstance
 }
 
-export interface LoadingType {
-  /** loading 隐藏 */
-  hide: Function,
-  /** loading 显示 */
-  show: Function
-}
-
-const $loading:LoadingType = getInstance()
+const $loading:LoadingClass = getInstance()
 
 export default $loading

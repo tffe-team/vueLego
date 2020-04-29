@@ -6,3 +6,4 @@ examples/dist
 # Editor directories and files
 .idea
 .vscode
+coverage

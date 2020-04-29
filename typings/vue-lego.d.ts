@@ -25,6 +25,11 @@ export interface LoadingOption {
   tips: string
 }
 
+export interface LoadingClass {
+  hide: Function,
+  show: Function
+}
+
 export interface ToastOption { 
   duration?: number,
   message: string,  
@@ -39,6 +44,7 @@ export interface ToastClass {
 
 export interface TipsOption {
   message: string,
+  duration?: number,
   iconName?: string,
   onClose?: Function,
   onRemove?: Function,
@@ -84,6 +90,7 @@ declare module "vue/types/vue" {
     $tips: TipsClass,
     $toast: ToastClass,
     $dialog: DialogClass,
+    $loading: LoadingClass
   }
 }
 

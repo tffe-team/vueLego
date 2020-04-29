@@ -6,7 +6,7 @@ export default {
   props: {
     title : {
       type : String,
-      deafult: '',
+      default: '',
       required: false
     },
     columns: {
@@ -29,7 +29,7 @@ export default {
   methods: {
     insertColumns() {
       return this.columns.map((item, index) => (
-        <PickerColumn 
+        <PickerColumn
           initialOptions={item.options}
           itemHeight={this.itemHeight}
           defaultValue={item.value}
@@ -39,7 +39,7 @@ export default {
           }}
         />
       ))
-     
+
     },
     setColumns() {
       this.columns.forEach((column, index) => {
@@ -109,14 +109,14 @@ export default {
     }
   },
   render() {
-    const wrapClass= ["r-vue-lego-picker", this.className] 
+    const wrapClass = ["r-vue-lego-picker", `r-vue-lego-${this.$LEGO.theme}-picker`, this.className]
     return (
       <div class={wrapClass}>
         <div class="vue-lego-masker vue-lego-fade-out" onClick={this.onCancel}></div>
         <div class="vue-lego-popup vue-lego-popup-picker vue-lego-slide-in-up">
             <header class="hd vue-lego-header-picker">
               <span class="popup-regret" onClick={this.onCancel}>{ this.$translate('cancel') }</span>
-              <span class="popup-title">{this.title || this.$translate('selectData')}</span>
+              <span class="popup-title">{this.title}</span>
               <span class="popup-affirm"  onClick={this.onConfirm}>{ this.$translate('confirm') }</span>
             </header>
             <div class="bd">
