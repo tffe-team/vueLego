@@ -8,7 +8,7 @@ function resolve(dir) {
 }
 module.exports = {
   mode: "production",
-  entry: './src/index.ts',
+  entry: ['babel-polyfill','./examples/main.ts'],
   output: {
     path: resolve('../dist'),
     filename: 'rui-vue-lego.min.js',

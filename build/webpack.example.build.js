@@ -7,9 +7,10 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 function resolve(dir) {
   return path.join(__dirname, dir);
 }
+
 module.exports = {
   mode: "production",
-  entry: './examples/main.ts',
+  entry: ['babel-polyfill','./examples/main.ts'],
   output: {
     path: resolve('../examples/dist'),
     publicPath : "/rui-vue-lego/",
