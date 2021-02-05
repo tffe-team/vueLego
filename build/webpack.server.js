@@ -7,7 +7,7 @@ function resolve (dir) {
 }
 module.exports = {
   mode: "development",
-  entry: './examples/main.ts',
+  entry: ['babel-polyfill','./examples/main.ts'],
   output: {
     path: resolve('../dist'),
     publicPath : "/",
